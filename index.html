@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The R³ Model by AH-HA Coaching — a sequenced framework for emotional regulation through Reflection, Resistance, and Revelation. Move from automatic reaction to conscious choice.">
 <title>R³ Agency Practice (R.A.P.) — AH-HA Coaching, LLC</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Permanent+Marker&family=Reenie+Beanie&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Permanent+Marker&family=Reenie+Beanie&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 * {box-sizing:border-box; margin:0; padding:0;}
 html {scroll-behavior:smooth;}
@@ -45,7 +45,6 @@ body {
 ::selection {background:var(--orange-pop);color:#fff;}
 .page {max-width:100%; margin:0 auto; background:transparent; overflow-x:clip; position:relative; z-index: 1;}
 
-.sg { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
 .mono { font-family: 'Space Mono', monospace; }
 .handwritten {font-family: 'Reenie Beanie', cursive; font-size: 32px; color: var(--teal-light);}
 
@@ -97,10 +96,10 @@ body {
 }
 
 .logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
   font-size: 1.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   color: var(--teal-dark);
   text-decoration: none;
 }
@@ -130,7 +129,7 @@ body {
 .nav-links a {
   text-decoration: none;
   color: var(--teal-dark);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95rem;
   transition: color 0.2s;
   font-family: 'Inter', sans-serif;
@@ -166,7 +165,6 @@ body {
 }
 .hero-slide.active { opacity: 1; }
 
-/* Cinematic dark overlay instead of tan */
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -220,13 +218,13 @@ body {
 }
 
 .sleeve-text {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
   font-size: clamp(20px, 2.5vw, 34px);
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.02em;
   text-align: left;
   width: 100%;
 }
@@ -280,7 +278,7 @@ body {
 @keyframes spinRecord { 100% { transform: rotate(360deg); } }
 
 /* =====================================================================
-   UNIFIED DYNAMIC HEADERS
+   UNIFIED DYNAMIC HEADERS (PERMANENT MARKER)
    ===================================================================== */
 .hero-main-title {
   font-family: 'Permanent Marker', cursive;
@@ -298,11 +296,11 @@ body {
 .sup-3 { font-size: 0.45em; vertical-align: top; position: relative; top: 0.2em; }
 
 .hero-sub-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(24px, 3.5vw, 32px);
   font-weight: 700; 
   color: #fff; 
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
 }
 
@@ -336,6 +334,13 @@ body {
   display: inline-block; padding: 0; line-height: 1.2;
   filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.1));
 }
+.text-gradient-amber {
+  font-family: 'Permanent Marker', cursive;
+  background: linear-gradient(135deg, var(--amber) 0%, var(--orange-pop) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent;
+  display: inline-block; padding: 0; line-height: 1.2;
+  filter: drop-shadow(2px 3px 0px rgba(0,0,0,0.1));
+}
 
 .header-marker { font-size: clamp(40px, 6vw, 70px); margin-bottom: 0.5rem; letter-spacing: 0.05em;}
 .sub-marker { font-size: clamp(26px, 3.5vw, 36px); margin-bottom: 1.5rem; letter-spacing: 0.05em;}
@@ -345,12 +350,13 @@ body {
   color: #fff;
   border: none;
   padding: 1rem 2.5rem;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.02em;
   display: inline-block;
   text-decoration: none;
   box-shadow: 0 10px 20px -5px rgba(255, 107, 0, 0.4);
@@ -393,24 +399,44 @@ body {
   background-size: cover; background-position: center;
 }
 
-.scenario-intro { position: relative; z-index: 2; text-align: center; margin: 0 auto; max-width: 800px; }
+.scenario-intro { position: relative; z-index: 2; text-align: center; margin: 0 auto; max-width: 900px; }
 
 .scenario-intro-head {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(24px, 3.5vw, 32px);
-  font-weight: 700; letter-spacing: -0.02em; color: var(--teal-dark); line-height: 1.2; margin-bottom: 1.5rem;
+  font-weight: 800; letter-spacing: -0.04em; color: var(--dark); line-height: 1.2; margin-bottom: 1.5rem;
 }
 
-.scenario-intro-body { font-family: 'Inter', sans-serif; font-size: clamp(18px, 2vw, 22px); color: var(--body); line-height: 1.6; margin-bottom: 4rem; font-weight: 300;}
+.scenario-intro-body { font-family: 'Inter', sans-serif; font-size: clamp(18px, 2vw, 22px); color: var(--body); line-height: 1.6; margin-bottom: 4rem; font-weight: 500;}
 
-.sc-categories { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem; position: relative; z-index: 2;}
+.sc-categories { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 4rem; position: relative; z-index: 2;}
 
 .sc-cat-btn {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 16px; font-weight: 600; padding: 8px 0; border: none; border-bottom: 2px solid transparent; background: transparent; color: var(--muted); cursor: pointer; transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px; 
+  font-weight: 700; 
+  padding: 14px 28px; 
+  border: 1px solid rgba(0,0,0,0.1); 
+  background: rgba(255, 255, 255, 0.9); 
+  backdrop-filter: blur(8px);
+  color: var(--body); 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
-.sc-cat-btn:hover { color: var(--teal-dark); }
-.sc-cat-btn.active { color: var(--orange-pop); border-bottom: 2px solid var(--orange-pop); }
+.sc-cat-btn:hover { 
+  color: var(--teal-dark); 
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.2);
+}
+.sc-cat-btn.active { 
+  background: var(--teal-light);
+  color: #fff; 
+  border-color: var(--teal-dark); 
+  box-shadow: 0 10px 20px rgba(26, 95, 122, 0.3);
+}
 
 .sc-prompt { text-align: center; padding: 2rem 1rem; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 18px; }
 
@@ -434,11 +460,11 @@ body {
 .scenario-nav button:hover { background: var(--orange-pop); color: #fff; transform: translateY(-2px); }
 .scenario-nav button svg { width: 22px; height: 22px; flex-shrink: 0; fill: currentColor; }
 
-.scenario-counter { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 600; color: var(--muted); }
-.scenario-trigger { order: 1; font-family: 'Space Grotesk', sans-serif; font-size: clamp(20px, 3vw, 28px); font-weight: 500; letter-spacing: -0.02em; color: var(--teal-dark); margin-bottom: 2rem; line-height: 1.3; text-align: left; }
+.scenario-counter { font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; color: var(--muted); }
+.scenario-trigger { order: 1; font-family: 'Inter', sans-serif; font-size: clamp(20px, 3vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: var(--teal-dark); margin-bottom: 2rem; line-height: 1.3; text-align: left; }
 
 .sc-toggle { order: 2; display: flex; justify-content: flex-start; background: transparent; gap: 16px; margin-bottom: 1.5rem; }
-.sc-btn { padding: 10px 20px; border: 1px solid rgba(0,0,0,0.1); background: var(--bg-color); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.3s; color: var(--muted); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px; border-radius: 4px;}
+.sc-btn { padding: 10px 20px; border: 1px solid rgba(0,0,0,0.1); background: var(--bg-color); font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.3s; color: var(--muted); font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px; border-radius: 4px;}
 .sc-btn.active { background: var(--surface); color: var(--teal-dark); border-color: var(--teal-light); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
 .sc-content { order: 3; display: none; animation: aFadeUp 0.5s ease forwards; background: transparent; padding: 1.5rem 0; font-size: clamp(15px,1.6vw,17px); line-height: 1.6; color: var(--body); position: relative; }
@@ -446,13 +472,17 @@ body {
 .sc-content.conditioned { border-left: 4px solid var(--muted); padding-left: 1.5rem; }
 .sc-content.conscious { border-left: 4px solid var(--orange-pop); padding-left: 1.5rem; }
 .sc-content p + p { margin-top: 1.5rem; }
-.sc-content strong { color: var(--teal-dark); font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 600; display: block; margin-bottom: 8px; }
+.sc-content strong { color: var(--teal-dark); font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 700; display: block; margin-bottom: 8px; }
 .r3-label { color: var(--orange-pop); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255, 107, 0, 0.1); padding: 4px 8px; border-radius: 2px; display: inline-block; margin-bottom: 4px; margin-right: 6px; font-weight: 700; }
 
 @media(min-width: 900px) {
-  .scenario-card { padding: 4rem; }
-  .boombox-anchor { top: -60px; right: 50px; width: 120px; height: 120px; }
-  .boombox-anchor img { border-width: 4px; }
+  .scenario-card { padding: 4rem; display: grid; grid-template-columns: 260px 1fr; grid-template-rows: auto auto 1fr auto; gap: 0 3rem; }
+  .boombox-anchor { display: flex; flex-direction: column; justify-content: center; grid-column: 1 / 2; grid-row: 1 / 5; position: sticky; top: 120px; top: -60px; right: 50px; width: 120px; height: 120px; }
+  .boombox-anchor img { border-width: 4px; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; box-shadow: 0 20px 30px rgba(0,0,0,0.1); border: 8px solid #fff; }
+  .scenario-trigger { grid-column: 2 / 3; grid-row: 1 / 2; order: unset; text-align: left; padding: 0; margin-bottom: 1.5rem;}
+  .sc-toggle { grid-column: 2 / 3; grid-row: 2 / 3; order: unset; margin: 0 0 1.5rem 0; max-width:100%; }
+  .sc-content { grid-column: 2 / 3; grid-row: 3 / 4; order: unset; }
+  .scenario-nav { grid-column: 2 / 3; grid-row: 4 / 5; order: unset; margin-top: 1.5rem; padding-top: 1.5rem; }
 }
 
 /* =====================================================================
@@ -464,7 +494,7 @@ body {
   background-size: cover; background-position: center; background-attachment: fixed; 
 }
 
-.assessment-intro-head { font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 3.5vw, 32px); font-weight: 700; letter-spacing: -0.02em; color: #fff; line-height: 1.2; margin-bottom: 1.5rem; }
+.assessment-intro-head { font-family: 'Inter', sans-serif; font-size: clamp(24px, 3.5vw, 32px); font-weight: 800; letter-spacing: -0.04em; color: #fff; line-height: 1.2; margin-bottom: 1.5rem; }
 .assessment-intro-body { font-family: 'Inter', sans-serif; font-size: clamp(18px, 2vw, 22px); color: rgba(255,255,255,0.8); line-height: 1.6; margin-bottom: 4rem; max-width: 600px; font-weight: 300;}
 
 .assessment-card {
@@ -483,7 +513,7 @@ body {
 .a-step { display: none; }
 .a-step.active { display: block; animation: aFadeUp 0.5s ease forwards; }
 
-.a-question { font-family: 'Space Grotesk', sans-serif; font-size: clamp(26px, 3.5vw, 36px); font-weight: 500; letter-spacing: -0.02em; color: #fff; line-height: 1.2; margin-bottom: 2.5rem;}
+.a-question { font-family: 'Inter', sans-serif; font-size: clamp(26px, 3.5vw, 36px); font-weight: 700; letter-spacing: -0.04em; color: #fff; line-height: 1.2; margin-bottom: 2.5rem;}
 .a-options {display:flex;flex-direction:column;gap:16px}
 .a-opt {
   background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 1.5rem 2rem; text-align: left; cursor: pointer; font-family: 'Inter', sans-serif; font-size: clamp(16px, 1.8vw, 18px); color: #fff; line-height: 1.6; transition: all 0.2s ease;
@@ -494,10 +524,10 @@ body {
 .a-result { display: none; }
 .a-result.active { display: block; animation: aFadeUp 0.5s ease forwards; }
 
-.result-head{font-family: 'Space Grotesk', sans-serif;font-size:clamp(32px,4.5vw,46px);font-weight:600;letter-spacing: -0.02em;color:#fff;line-height:1.1;margin-bottom:1.5rem;}
+.result-head{font-family: 'Inter', sans-serif;font-size:clamp(32px,4.5vw,46px);font-weight:800;letter-spacing: -0.04em;color:#fff;line-height:1.1;margin-bottom:1.5rem;}
 .result-body{font-family: 'Inter', sans-serif;font-size:clamp(18px,2vw,20px);color: rgba(255,255,255,0.8);line-height:1.8;margin-bottom:3rem;font-weight: 300;}
 .result-actions { display: flex; gap: 1.5rem; align-items: center; }
-.restart-btn { background: transparent; border: none; color: rgba(255,255,255,0.6); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 500; text-decoration: underline; cursor: pointer; transition: all 0.2s;}
+.restart-btn { background: transparent; border: none; color: rgba(255,255,255,0.6); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: underline; cursor: pointer; transition: all 0.2s;}
 .restart-btn:hover { color: #fff; }
 
 /* =====================================================================
@@ -526,7 +556,7 @@ body {
 .record.spinning { animation: spinRecord 1.8s linear infinite; }
 .record-label { width: 35%; height: 35%; border-radius: 50%; background: var(--teal-light); position: relative; z-index: 3; display: flex; align-items: center; justify-content: center; flex-direction: column; border: none; transition: background 0.4s ease; box-shadow: inset 0 0 10px rgba(0,0,0,0.3);}
 .record-label::before { content: 'TRACK'; font-family: 'Space Mono', monospace; font-size: 8px; font-weight: 700; color: var(--surface); letter-spacing: 0.15em; opacity: 0.9; margin-bottom: 2px;}
-.record-label-text { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--surface); line-height: 1;}
+.record-label-text { font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 800; color: var(--surface); line-height: 1;}
 .record-label::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; background: #FCF9F4; border-radius: 50%; z-index: 4;}
 
 .tonearm-container { position: absolute; top: 20px; right: 20px; width: 50px; height: 65%; transform-origin: 25px 25px; transform: rotate(15deg); transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; filter: drop-shadow(-6px 12px 6px rgba(0,0,0,0.3));}
@@ -545,19 +575,30 @@ body {
 
 .readout-panel { padding: 4rem; display: flex; flex-direction: column; justify-content: center; position: relative;}
 .readout-content { animation: aFadeUp 0.4s ease forwards;}
-.readout-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(32px, 4vw, 48px); font-weight: 600; margin-bottom: 1.5rem; line-height: 1.1; transition: color 0.3s ease;}
+.readout-title { font-family: 'Inter', sans-serif; font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 1.5rem; line-height: 1.1; transition: color 0.3s ease;}
 .readout-desc { font-size: clamp(18px, 2vw, 22px); line-height: 1.8; color: var(--body); font-weight: 300;}
 
 /* =====================================================================
-   LINER NOTES
+   LINER NOTES / THE PLAYBOOK
    ===================================================================== */
 .sec-alt { padding-top: 6rem; padding-bottom: 6rem; background: var(--bg-color); position: relative; z-index: 10;}
 .rap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:3rem}
 .rap-col{position:relative;}
+
+/* BIG PLAYBOOK HEADERS */
+.rap-col-head {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
 .rap-item{cursor:pointer;padding:16px;margin:-16px;transition:background 0.2s;margin-bottom:8px;outline:none; border:2px solid transparent; border-radius: 8px;}
 .rap-item:hover{background:rgba(0,0,0,0.02); border-color:rgba(0,0,0,0.05);}
 .rap-row{display:flex;align-items:baseline;gap:16px}
-.rap-letter{font-family:'Space Grotesk',sans-serif; font-size:32px;font-weight:700;color:var(--amber);min-width:24px;flex-shrink:0;}
+.rap-letter{font-family:'Permanent Marker', cursive; font-size:36px;font-weight:400;color:var(--amber);min-width:24px;flex-shrink:0; transform: translateY(-4px);}
 .rap-term{font-family:'Space Mono',monospace; font-size:clamp(14px,1.6vw,16px);color:var(--dark);flex:1;font-weight:700; text-transform:uppercase; letter-spacing:0.05em;}
 .rap-wtag{font-size:11px;color:var(--muted);text-transform:uppercase; letter-spacing:0.2em;}
 .expand-caret{font-size:12px;color:var(--dark);transition:transform 0.3s ease;margin-left:8px}
@@ -566,7 +607,7 @@ body {
 /* Integrating the Studio Images cleanly into the dropdowns */
 .rap-detail{font-size:clamp(16px,1.8vw,18px);color:var(--body);line-height:1.8;margin-top:0;padding:0 20px;background:transparent;border-left:4px solid transparent;max-height:0;overflow:hidden;opacity:0;transition:max-height 0.4s ease,opacity 0.3s ease,padding 0.4s ease,margin 0.4s ease}
 .rap-detail.open{max-height:900px;opacity:1;padding:20px 24px;margin-top:16px; margin-bottom:24px; border:1px solid rgba(0,0,0,0.05); background:#fff; border-left:4px solid var(--amber); box-shadow: var(--shadow-soft); border-radius: 8px;}
-.rap-detail strong{color:var(--teal-dark); font-weight:600;}
+.rap-detail strong{color:var(--teal-dark); font-weight:700;}
 .rap-detail-img { width: 100%; height: 160px; object-fit: cover; border-radius: 4px; margin-bottom: 1.5rem; border: 1px solid rgba(0,0,0,0.1); }
 
 /* =====================================================================
@@ -594,7 +635,7 @@ body {
 .ctx-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 80px; height: 25px; background: rgba(255,255,255,0.4); box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 10;}
 
 .ctx-label { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; color: var(--teal-light); position: relative; z-index: 1;}
-.ctx-punch { font-family: 'Space Grotesk', sans-serif; font-size: clamp(20px, 2.5vw, 24px); font-weight: 600; color: var(--dark); line-height: 1.2; margin-bottom: 16px; position: relative; z-index: 1;}
+.ctx-punch { font-family: 'Inter', sans-serif; font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; letter-spacing: -0.02em; color: var(--dark); line-height: 1.2; margin-bottom: 16px; position: relative; z-index: 1;}
 .ctx-body { font-size: 15px; color: var(--body); line-height: 1.7; font-weight: 400; position: relative; z-index: 1;}
 
 /* =====================================================================
@@ -620,25 +661,48 @@ body {
 .p0-plural-space{height:clamp(80px,14vw,120px);display:flex;align-items:flex-end;justify-content:center;margin-bottom:0}
 
 /* PERFECT CENTERING LOGIC */
-.p0-word{display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;margin-bottom:2rem;width:100%;}
-.p0-left-wrap{display:inline-flex;align-items:baseline;justify-self:end;transition:opacity 0.65s ease}
-.p0-self-txt{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:300;color:rgba(255,255,255,0.5);line-height:0.88;}
-.p0-cen-txt{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:300;color:rgba(255,255,255,0.5);line-height:0.88;display:inline-block;overflow:hidden;max-width:0;opacity:0;white-space:nowrap;transition:max-width 1.2s ease,opacity 1s ease;}
+.p0-word {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  transition: opacity 0.8s ease;
+}
+.p0-word.dim-out { opacity: 0.1; }
+
+.p0-left-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  transition: opacity 0.65s ease;
+}
+
+.p0-self-txt{font-family:'Inter',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:700; letter-spacing: -0.04em; color:rgba(255,255,255,0.5);line-height:0.88;}
+.p0-cen-txt{font-family:'Inter',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:700; letter-spacing: -0.04em; color:rgba(255,255,255,0.5);line-height:0.88;display:inline-block;overflow:hidden;max-width:0;opacity:0;white-space:nowrap;transition:max-width 1.2s ease,opacity 1s ease;}
 .p0-cen-txt.show{max-width:180px;opacity:1}
-.p0-letter-wrap{position:relative;display:inline-block;line-height:0.88;justify-self:center;text-align:center;}
 
-.p0-plural-row{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px, 1.2vw, 18px);opacity:0;transition:opacity 0.7s ease, bottom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);line-height:1;z-index:10;width:max-content}
-.p0-plural-row.show{opacity:1;bottom:88%}
-.p0-pl{font-family:'Space Grotesk',sans-serif;font-size:clamp(48px,8vw,80px);font-weight:700;color:var(--surface);line-height:1;display:inline-block;letter-spacing:0.05em;margin-bottom:4px;}
+.p0-letter-wrap {
+  flex: 0 0 auto;
+  position: relative;
+  display: inline-block;
+  line-height: 0.88;
+  text-align: center;
+}
 
-.p0-i{font-family:'Space Grotesk',sans-serif;font-size:clamp(110px,20vw,200px);font-weight:700;color:var(--surface);line-height:0.88;display:inline-block;transition:color 1s ease,opacity 1.2s ease}
+.p0-plural-row{position:absolute;bottom:15%;left:50%;transform:translateX(-50%);display:flex;justify-content:center;align-items:flex-end;gap:clamp(8px, 1.2vw, 18px);opacity:0;transition:opacity 0.8s ease, bottom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);line-height:1;z-index:10;width:max-content}
+.p0-plural-row.show{opacity:1;}
+.p0-pl{font-family:'Inter',sans-serif;font-size:clamp(48px,8vw,80px);font-weight:800; letter-spacing:-0.02em; color:var(--surface);line-height:1;display:inline-block;margin-bottom:4px;}
+
+.p0-i{font-family:'Inter',sans-serif;font-size:clamp(110px,20vw,200px);font-weight:800;color:var(--surface);line-height:0.88;display:inline-block;transition:color 1s ease,opacity 1.2s ease}
 .p0-i.to-teal{color:var(--orange-pop)}
 .p0-i.fade-out{opacity:0}
 
 .p0-t-overlay {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(110px,20vw,200px);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--orange-pop);
   line-height: 0.88;
   position: absolute;
@@ -646,18 +710,17 @@ body {
   left: 50%;
   opacity: 0;
   transition: opacity 1.5s ease, text-shadow 0.5s ease, transform 0.5s ease;
-  transform: translateX(-50%) scale(1);
+  transform: translateX(-53%);
   white-space: nowrap;
   z-index: 2;
 }
 .p0-t-overlay.show { opacity: 1; }
 .p0-t-overlay.loaded {
   text-shadow: 0 0 50px rgba(255, 107, 0, 0.8);
-  transform: translateX(-50%) scale(1.05);
 }
 
 .p0-t-beam { 
-  font-family: 'Space Grotesk', sans-serif; 
+  font-family: 'Inter', sans-serif; 
   font-weight: 900; 
   font-size: clamp(110px,20vw,200px); 
   color: var(--amber); 
@@ -667,40 +730,25 @@ body {
   left: 50%; 
   opacity: 0; 
   transition: opacity 0.8s ease, transform 0.8s ease; 
-  transform: translateX(-50%) scale(1); 
+  transform: translateX(-53%); 
   text-shadow: 0px -2px 0px #Fae5cd, -3px 0px 0px #b08151, 3px 0px 0px #b08151, 0px 5px 0px #7d5731, 0px 15px 30px rgba(0,0,0,0.5); 
   z-index: 1;
 }
-.p0-t-beam.show { opacity: 1; transform: translateX(-50%) scale(1.05); }
+.p0-t-beam.show { opacity: 1; }
 .p0-t-beam.fade-out { opacity: 0 !important; transition: opacity 0.8s ease !important; }
 
-/* THE ARCHITECTURAL CROSSBAR */
-.p0-t-crossbar {
-  position: absolute;
-  top: 0.15em; 
-  left: 50%; 
-  transform: translateX(-50%);
-  width: 0;
-  height: 0.12em; 
-  background: var(--orange-pop);
-  border-radius: 8px;
-  z-index: 1;
-  opacity: 0;
-  transition: width 1s cubic-bezier(0.2, 0.9, 0.4, 1), opacity 0.5s ease;
+.p0-right-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  position: relative;
+  line-height: 0.88;
+  transition: opacity 0.65s ease;
 }
-.p0-t-crossbar.show {
-  opacity: 1;
-  width: clamp(280px, 45vw, 550px); 
-}
-.p0-t-crossbar.full-glow {
-  background: #fff;
-  box-shadow: 0 0 20px rgba(255,107,0,0.8), 0 0 40px rgba(255,107,0,0.5);
-}
-
-.p0-right-wrap{position:relative;display:inline-block;line-height:0.88;justify-self:start;transition:opacity 0.65s ease}
-.p0-sh-txt{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:300;color:rgba(255,255,255,0.5);line-height:0.88;display:inline-block;transition:opacity 0.8s ease;}
+.p0-sh-txt{font-family:'Inter',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:700; letter-spacing: -0.04em; color:rgba(255,255,255,0.5);line-height:0.88;display:inline-block;transition:opacity 0.8s ease;}
 .p0-sh-txt.fade-out{opacity:0}
-.p0-er-txt{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:300;color:rgba(255,255,255,0.5);line-height:0.88;position:absolute;left:0;top:0;opacity:0;transition:opacity 0.8s ease;white-space:nowrap;}
+.p0-er-txt{font-family:'Inter',sans-serif;font-size:clamp(40px,7vw,70px);font-weight:700; letter-spacing: -0.04em; color:rgba(255,255,255,0.5);line-height:0.88;position:absolute;left:0;top:0;opacity:0;transition:opacity 0.8s ease;white-space:nowrap;}
 .p0-er-txt.show{opacity:1}
 
 .p0-desc{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,0.8);line-height:1.8;font-weight:300;margin-bottom:0;transition:opacity 0.4s ease}
@@ -711,12 +759,12 @@ body {
 .plural-full{display:flex;justify-content:space-between;align-items:flex-start;width:100%;margin-bottom:5rem; position: relative; z-index: 5;}
 .pf-item{display:flex;flex-direction:column;align-items:center;flex:1;opacity:0;transform:translateY(12px);transition:opacity 0.5s ease,transform 0.5s ease;padding:0 10px}
 .pf-item.show{opacity:1;transform:translateY(0)}
-.pf-letter{font-family:'Space Grotesk',sans-serif;font-size:clamp(52px,9vw,90px);font-weight:700;color:var(--surface);line-height:1;display:block; margin-bottom:4px; }
+.pf-letter{font-family:'Inter',sans-serif;font-size:clamp(52px,9vw,90px);font-weight:800; letter-spacing:-0.02em; color:var(--surface);line-height:1;display:block; margin-bottom:4px; }
 .pf-word{font-family:'Space Mono',monospace; font-size:clamp(10px,1.3vw,14px);letter-spacing:0.15em;text-transform:uppercase;color:var(--orange-pop);font-weight:700;display:block;opacity:0;transition:opacity 0.5s ease 0.25s;margin-bottom:12px;}
 .pf-meaning{font-family:'Space Mono',monospace; font-size:clamp(9px,1.2vw,12px);letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);font-weight:700;display:block;opacity:0;transition:opacity 0.5s ease 0.35s;line-height:1.6;max-width:140px}
 .pf-item.show .pf-word, .pf-item.show .pf-meaning{opacity:1}
 
-.remix-statement{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:500;color:var(--surface);line-height:1.5;max-width:800px;margin:0 auto 4rem;}
+.remix-statement{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:700; letter-spacing:-0.02em; color:var(--surface);line-height:1.5;max-width:800px;margin:0 auto 4rem;}
 .fade-line { opacity: 0; display: inline-block; transform: translateY(12px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); margin-bottom: 0.5rem; }
 .fade-line.show { opacity: 1; transform: translateY(0); }
 .rs-w { opacity: 0; display: inline-block; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); margin-right: 6px; }
@@ -786,7 +834,7 @@ body {
 .test-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 .quote-mark { font-family: 'Space Grotesk', sans-serif; font-size: 80px; color: rgba(50, 117, 140, 0.1); line-height: 0; position: absolute; top: 40px; left: 20px;}
 .test-quote { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.8; color: var(--body); font-weight: 400; margin-bottom: 2rem; position: relative; z-index: 2; font-style: italic;}
-.test-author { font-family: 'Space Grotesk', sans-serif; font-weight: 600; color: var(--dark); font-size: 16px; }
+.test-author { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--dark); font-size: 16px; }
 .test-context { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--orange-pop); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 4px; }
 
 .cta-sec { padding-top: 4rem; padding-bottom: 8rem; background-color: var(--bg-color); position: relative; z-index: 10;}
@@ -801,7 +849,7 @@ body {
 textarea.form-control { resize: vertical; min-height: 120px; }
 
 .footer{padding-top:3rem;padding-bottom:3rem;border-top:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;background:var(--bg-color); position:relative; z-index:10;}
-.footer-name{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;color:var(--dark);}
+.footer-name{font-family:'Inter',sans-serif;font-size:24px;font-weight:700; letter-spacing: -0.02em; color:var(--dark);}
 .footer-sub{font-family:'Space Mono',monospace; font-size:12px;color:var(--muted);letter-spacing:0.2em; text-transform:uppercase;}
 
 /* RESPONSIVE FIXES */
@@ -876,10 +924,11 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   <div class="hd-collage fade-in">
     
     <div class="hero-slideshow">
-      <div class="hero-slide active" style="background-image: url('8_A_Black_woman_sits_cross_legge_1_20260327_123619.png');"></div>
-      <div class="hero-slide" style="background-image: url('10_A_wide_shot_of_a_recording_stu_1_20260327_123637.png');"></div>
+      <div class="hero-slide active" style="background-image: url('PEACE (2).jpg');"></div>
+      <div class="hero-slide" style="background-image: url('8_A_Black_woman_sits_cross_legge_1_20260327_123619.jpg');"></div>
+      <div class="hero-slide" style="background-image: url('10_A_wide_shot_of_a_recording_stu_1_20260327_123637.jpg');"></div>
       <div class="hero-slide" style="background-image: url('13_A_Black_woman_stands_behind_a_1_20260328_182847.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('IMG_2199.JPG');"></div>
+      <div class="hero-slide" style="background-image: url('1_A_vinyl_record_spins_on_a_turn_1_20260327_123519.jpg');"></div>
     </div>
     <div class="hero-overlay"></div>
 
@@ -914,9 +963,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
   <div class="scenario-sec curve-flow fade-in" id="scenarios">
     <div class="scenario-intro">
-      <span class="scenario-intro-label text-gradient-orange">In The Booth</span>
-      <h2 class="scenario-intro-head" style="color: #fff;">Which world feels most like yours right now?</h2>
-      <p class="scenario-intro-body" style="color: rgba(255,255,255,0.8);">Choose your context and see how the R³ Model shifts the same high-stress moment from automatic reaction to conscious choice.</p>
+      <span class="header-marker text-gradient-orange">In The Booth</span>
+      <h2 class="scenario-intro-head" style="color: var(--dark);">Which world feels most like yours right now?</h2>
+      <p class="scenario-intro-body" style="color: var(--body);">Choose your context and see how the R³ Model shifts the same high-stress moment from automatic reaction to conscious choice.</p>
     </div>
 
     <div class="sc-categories fade-in d1">
@@ -932,7 +981,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
     <div class="scenario-card glass-panel-light fade-in d2" id="scenario-card">
       <div class="boombox-anchor">
-        <img src="9_An_overhead_view_of_a_circle_o_1_20260327_123628.png" alt="Cassettes in a circle">
+        <img src="9_An_overhead_view_of_a_circle_o_1_20260327_123628.jpg" alt="Cassettes in a circle">
       </div>
 
       <div class="scenario-trigger" id="sc-trigger"></div>
@@ -959,7 +1008,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
   <div class="assessment-sec curve-flow fade-in" id="assessment">
     <div class="assessment-intro text-center max-w-3xl mx-auto mb-16">
-      <span class="assessment-intro-label text-gradient-bronze">Find Your Levels</span>
+      <span class="header-marker text-gradient-bronze">Find Your Levels</span>
       <h2 class="assessment-intro-head text-center">Where are you on the Equalizer Board right now?</h2>
       <p class="assessment-intro-body mx-auto text-center">Take 60 seconds to find your entry point. Your answers shape how the R³ Model isolates your specific frequency.</p>
     </div>
@@ -1038,7 +1087,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
   <div class="sec curve-flow fade-in" id="phases">
     <div style="text-align: center;">
-      <span class="eyebrow text-gradient-teal" style="font-size: clamp(40px, 6vw, 70px);">The Studio Desk</span>
+      <span class="header-marker text-gradient-teal">The Studio Desk</span>
     </div>
     <div class="agency-console fade-in d1">
       <div class="deck-panel">
@@ -1084,7 +1133,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <div class="rap-row"><span class="rap-letter">R</span><span class="rap-term">Reflect</span><span class="rap-wtag">What</span><span class="expand-caret">▾</span></div>
         </div>
         <div class="rap-detail" id="r1">
-          <img src="2_A_pair_of_vintage_studio_headp_1_20260327_123529.png" class="rap-detail-img" alt="Reflect">
+          <img src="2_A_pair_of_vintage_studio_headp_1_20260327_123529.jpg" class="rap-detail-img" alt="Reflect">
           Reflection is not about reliving or judging the moment. It is about looking at it clearly enough to understand what it is showing you. You can't remix a song if you don't listen to the original sample first.
         </div>
         
@@ -1150,13 +1199,13 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     
     <div class="ctx-grid fade-in d2">
       <div class="ctx-card ctx1">
-        <div class="ctx-img-wrap"><img src="8_A_Black_woman_sits_cross_legge_1_20260327_123619.png" alt="Personal Growth"></div>
+        <div class="ctx-img-wrap"><img src="8_A_Black_woman_sits_cross_legge_1_20260327_123619.jpg" alt="Personal Growth"></div>
         <p class="ctx-label">Personal</p>
         <p class="ctx-punch">Without requiring the full origin story.</p>
         <p class="ctx-body">The nervous system carries the imprint of past harm, and present triggers can activate survival responses (like an old track firing up). The R³ Model interrupts those patterns, building capacity to ground your response in current reality.</p>
       </div>
       <div class="ctx-card ctx2">
-        <div class="ctx-img-wrap"><img src="IMG_2385.jpg" alt="Educator Connection"></div>
+        <div class="ctx-img-wrap"><img src="IMG_2385.jpeg" alt="Educator Connection"></div>
         <p class="ctx-label">Educator</p>
         <p class="ctx-punch">Your reaction travels across the room.</p>
         <p class="ctx-body">Educators are rarely given tools to interrupt their own conditioned responses under pressure. The R³ Model restores intentional response, giving educators a process for navigating stress with clarity rather than conditioning.</p>
@@ -1173,9 +1222,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   <div class="remix-sec curve-flow fade-in" id="remix">
     <div class="remix-glass-stage">
       <div class="remix-phase active" id="remix-p0">
-        <span class="remix-eyebrow text-gradient-teal" style="font-size: clamp(30px, 4vw, 50px); letter-spacing: 0.1em; display: inline-block; margin-bottom: 2rem;">The Mastered Flow</span>
+        <span class="header-marker text-gradient-teal" style="display: inline-block; margin-bottom: 2rem;">The Mastered Flow</span>
         <div class="p0-plural-space"></div>
-        <div class="p0-word">
+        <div class="p0-word" id="p0-word-wrapper">
           <span class="p0-left-wrap" id="p0-left-wrap">
             <span class="p0-self-txt">self</span><span class="p0-cen-txt" id="p0-cen">cen</span>
           </span>
@@ -1185,9 +1234,6 @@ textarea.form-control { resize: vertical; min-height: 120px; }
               <span class="p0-pl">P</span><span class="p0-pl">L</span><span class="p0-pl">U</span><span class="p0-pl">R</span><span class="p0-pl">A</span><span class="p0-pl">L</span>
             </span>
             <span class="p0-i" id="p0-i">I</span>
-            
-            <!-- OPTION 1: THE ARCHITECTURAL PILLAR T -->
-            <span class="p0-t-crossbar" id="p0-t-crossbar"></span>
             
             <span class="p0-t-overlay" id="p0-t">T</span>
             <span class="p0-t-beam" id="p0-t-beam">T</span>
@@ -1212,7 +1258,10 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       </div>
 
       <div class="remix-phase" id="remix-p2">
-        <span class="plural-eyebrow-line cg text-gradient-orange" id="plural-eyebrow-line" style="font-size: clamp(30px, 4vw, 50px);">Whole enough to grow. Present enough to notice.</span>
+        <span class="header-marker text-gradient-orange" id="plural-eyebrow-line" style="opacity:0; transition: opacity 0.6s ease; margin-bottom: 3rem;">Whole enough to grow. Present enough to notice.</span>
+        
+        <img src="PEACE (2).jpg" id="plural-masterpiece" alt="Plural Framework Masterpiece" style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); margin: 0 auto 4rem; display: block; border: 1px solid rgba(255,255,255,0.15); opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
+
         <div class="plural-full">
           <div class="pf-item" id="pf-P"><span class="pf-letter">P</span><span class="pf-word">Peace</span><span class="pf-meaning">A nervous system that finally knows it's safe</span></div>
           <div class="pf-item" id="pf-L"><span class="pf-letter">L</span><span class="pf-word">Love</span><span class="pf-meaning">Relationships that don't require you to disappear</span></div>
@@ -1244,10 +1293,10 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p class="scenario-intro-body" style="color: #aaa; margin: 0 auto;">This is what it looks like when a community shifts from exhaustion to connection.</p>
     
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="IMG_2392.jpg" alt="Fiesta Celebration"></div>
+      <div class="gallery-item"><img src="IMG_2392.jpeg" alt="Fiesta Celebration"></div>
       <div class="gallery-item"><img src="joy.jpg" alt="Joy in the gym"></div>
       <div class="gallery-item"><img src="joy2.jpg" alt="High Performing Teacher"></div>
-      <div class="gallery-item"><img src="IMG_2389.jpg" alt="Spurs Coyote"></div>
+      <div class="gallery-item"><img src="IMG_2389.jpeg" alt="Spurs Coyote"></div>
       <div class="gallery-item"><img src="IMG_1094.jpg" alt="Megaphone Energy"></div>
       <div class="gallery-item"><img src="Resized_Resized_20220505_152015.JPEG" alt="Nacho Average Principal"></div>
     </div>
@@ -1264,10 +1313,10 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         <p class="handwritten">Your Signature Here</p>
       </div>
       <div class="about-visuals">
-        <img src="IMG_2393.jpg" class="floating-pic pic-1" alt="Community Leadership">
+        <img src="IMG_2393.jpeg" class="floating-pic pic-1" alt="Community Leadership">
         <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.jpg" class="floating-pic pic-2" alt="DJ / In the Booth">
         
-        <img src="5_Below_is_the_corrected_image_p_1_20260328_190420.jpg" class="coach-cutout" alt="Coach Portrait">
+        <img src="marlitha.r3.jpeg" class="coach-cutout" alt="Coach Portrait">
       </div>
     </div>
   </div>
@@ -1347,7 +1396,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+const initScrollEffects = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1367,9 +1416,15 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const firstCatBtn = document.querySelector('.sc-cat-btn');
     if (firstCatBtn) {
-        selectCategory('classroom', firstCatBtn);
+        selectCategory('classroom', firstCatBtn, true);
     }
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initScrollEffects);
+} else {
+    initScrollEffects();
+}
 
 let heroSlides = document.querySelectorAll('.hero-slide');
 let currentHeroSlide = 0;
@@ -1491,7 +1546,6 @@ classroom: [
       conscious: `<p><strong>Reflection:</strong> <span class="r3-label">Aware:</span> Silence as a response has a specific effect on you — it activates something much older than this relationship or this disagreement. <span class="r3-label">Attentive:</span> You notice a particular quality of anxiety in your body — urgent, slightly desperate, disorienting — that doesn't quite match the size of the situation.</p><p><strong>Resistance:</strong> <span class="r3-label">Pattern Recognition:</span> The urge to pursue and over-apologize is a conditioned Press pattern — you've learned that someone's silence is your responsibility to end, and that your job is to restore peace regardless of what the original conflict was about. <span class="r3-label">Alignment Check:</span> Does pursuing resolution from a place of urgency serve the relationship or your own integrity? No. <span class="r3-label">Consequence Awareness:</span> Over-apologizing concedes accountability you may not actually owe and reinforces a dynamic that will repeat. You give it time and return when you're grounded.</p><p><strong>Revelation — Beat 1:</strong> You recognize that your response to silence is not really about this person — it is a conditioned response rooted in earlier experiences where someone going quiet meant love was being withdrawn. That signal in your nervous system is real. And it is not an accurate read of this moment.</p><p><strong>Revelation — Beat 2:</strong> You give it time — a specific, chosen pause rather than an anxious wait. When you return, you open with your own experience rather than a demand: <em>"I\'ve had some time to think, and I\'m ready to keep talking when you are. I want to understand what happened for you — I also need us to be able to come back to each other."</em> You name what you need without weaponizing the silence against them. You come back as someone who chose to return — not someone who was pulled back by panic.</p>`
     }
   ]
-
 };
 
 let currentCategory = null;
@@ -1509,7 +1563,7 @@ function scrollToScenarioTop() {
   });
 }
 
-function selectCategory(cat, element) {
+function selectCategory(cat, element, isInitialLoad = false) {
   currentCategory = cat;
   scIndex = 0;
   document.querySelectorAll('.sc-cat-btn').forEach(function(btn) {
@@ -1531,7 +1585,10 @@ function selectCategory(cat, element) {
   
   renderScenario();
   switchSc('conditioned');
-  scrollToScenarioTop();
+  
+  if (!isInitialLoad) {
+      scrollToScenarioTop();
+  }
 }
 
 function renderScenario() {
@@ -1662,30 +1719,17 @@ function playTrack(trackId) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    playTrack(1);
-    const style = document.createElement('style');
-    document.head.appendChild(style);
-    style.sheet.insertRule(".record-label::before { color: var(--pseudo-color, var(--surface)); }", 0);
-});
-
 function startRemix() {
   const btn  = document.getElementById('remix-btn');
   const desc = document.getElementById('p0-desc');
   const bigI = document.getElementById('p0-i');
   const bigT = document.getElementById('p0-t');
-  const beamT = document.getElementById('p0-t-beam');
 
   if(btn) { btn.style.pointerEvents = 'none'; btn.style.opacity = '0.3'; }
   if(desc) desc.style.opacity = '0';
 
   setTimeout(() => { if(bigI) bigI.classList.add('to-teal'); }, 500);
   setTimeout(() => { if(bigT) bigT.classList.add('show'); }, 1500); 
-  
-  setTimeout(() => { 
-      const cb = document.getElementById('p0-t-crossbar');
-      if(cb) cb.classList.add('show');
-  }, 1600);
 
   setTimeout(() => { if(bigI) bigI.classList.add('fade-out'); }, 2500); 
   setTimeout(() => { 
@@ -1701,18 +1745,21 @@ function startRemix() {
 
   setTimeout(() => {
     if(desc) {
-        desc.innerHTML = '<p style="font-family:\'Space Grotesk\',sans-serif; font-size:clamp(18px,2.2vw,22px); font-style:italic; color:var(--orange-pop); font-weight:600;">Hitting pause. Becoming a <span style="text-decoration:underline;">centered self</span>.</p>';
+        desc.innerHTML = '<p style="font-family:\'Inter\',sans-serif; font-size:clamp(18px,2.2vw,22px); font-style:italic; color:var(--orange-pop); font-weight:600;">Hitting pause. Becoming a <span style="text-decoration:underline;">centered self</span>.</p>';
         desc.style.opacity = '1';
     }
   }, 5200);
   
   setTimeout(() => { if(desc) desc.style.opacity = '0'; }, 8200); 
+  
+  // RESTORED FADE OUT EFFECT
   setTimeout(() => { 
       const lw = document.getElementById('p0-left-wrap');
       const rw = document.getElementById('p0-right-wrap');
       if(lw) lw.style.opacity = '0'; 
       if(rw) rw.style.opacity = '0'; 
   }, 8500);
+  
   setTimeout(() => { 
       if(bigT) bigT.classList.add('fade-out'); 
       if(beamT) beamT.classList.add('show'); 
@@ -1724,19 +1771,18 @@ function startRemix() {
 
   setTimeout(() => {
     if(desc) {
-        desc.innerHTML = '<p style="font-family:\'Space Grotesk\',sans-serif; font-size:clamp(18px,2.2vw,22px); font-style:italic; color:var(--orange-pop); font-weight:600;">The foundation for a Plural life.</p>';
+        desc.innerHTML = '<p style="font-family:\'Inter\',sans-serif; font-size:clamp(18px,2.2vw,22px); font-style:italic; color:var(--orange-pop); font-weight:600;">The foundation for a Plural life.</p>';
         desc.style.opacity = '1';
     }
   }, 9700);
   
   setTimeout(() => { if(desc) desc.style.opacity = '0'; }, 12700);
   setTimeout(() => { 
-      if(beamT) beamT.classList.add('fade-out'); 
       const pr = document.getElementById('p0-plural-row');
       if(pr) pr.style.opacity = '0'; 
       
-      const cb = document.getElementById('p0-t-crossbar');
-      if(cb) cb.style.opacity = '0';
+      const wrapper = document.getElementById('p0-word-wrapper');
+      if(wrapper) wrapper.style.opacity = '0';
   }, 13000);
 
   setTimeout(() => {
@@ -1749,6 +1795,14 @@ function startRemix() {
         const eLine = document.getElementById('plural-eyebrow-line');
         if(eLine) eLine.classList.add('show'); 
     }, 150);
+
+    setTimeout(() => {
+        const masterpiece = document.getElementById('plural-masterpiece');
+        if(masterpiece) {
+            masterpiece.style.opacity = '1';
+            masterpiece.style.transform = 'translateY(0)';
+        }
+    }, 350);
     
     setTimeout(() => {
       ['pf-P','pf-L','pf-U','pf-R','pf-A','pf-L2'].forEach(id => {
@@ -1795,6 +1849,12 @@ function resetRemix() {
   const eLine = document.getElementById('plural-eyebrow-line');
   if(eLine) eLine.classList.remove('show');
   
+  const masterpiece = document.getElementById('plural-masterpiece');
+  if(masterpiece) {
+      masterpiece.style.opacity = '0';
+      masterpiece.style.transform = 'translateY(20px)';
+  }
+  
   const rtb = document.getElementById('rtb-btn');
   if(rtb) rtb.classList.remove('show');
 
@@ -1807,9 +1867,6 @@ function resetRemix() {
   const beamT = document.getElementById('p0-t-beam');
   if(beamT) beamT.classList.remove('show','fade-out');
   
-  const cb = document.getElementById('p0-t-crossbar');
-  if(cb) cb.classList.remove('show', 'full-glow');
-  
   const sh = document.getElementById('p0-sh');
   if(sh) sh.classList.remove('fade-out');
   
@@ -1819,14 +1876,11 @@ function resetRemix() {
   const cen = document.getElementById('p0-cen');
   if(cen) cen.classList.remove('show');
   
+  const wrapper = document.getElementById('p0-word-wrapper');
+  if(wrapper) { wrapper.classList.remove('dim-out'); wrapper.style.opacity = '1'; }
+  
   const pr = document.getElementById('p0-plural-row');
   if(pr) { pr.classList.remove('show'); pr.style.opacity = ''; }
-  
-  const lw = document.getElementById('p0-left-wrap');
-  if(lw) lw.style.opacity = '';
-  
-  const rw = document.getElementById('p0-right-wrap');
-  if(rw) rw.style.opacity = '';
   
   const glow = document.getElementById('rs-glow-container');
   if(glow) glow.classList.remove('full-glow');
