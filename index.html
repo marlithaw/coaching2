@@ -671,7 +671,7 @@ body {
    ===================================================================== */
 .remix-sec {
   padding-top: 10rem; padding-bottom: 8rem;
-  background-image: linear-gradient(135deg, rgba(12, 54, 69, 0.95) 0%, rgba(26, 95, 122, 0.9) 100%), url('Frustration Tape.png');
+  background-image: linear-gradient(135deg, rgba(12, 54, 69, 0.95) 0%, rgba(26, 95, 122, 0.9) 100%), url('10_A_wide_shot_of_a_recording_stu_1_20260327_123637.png');
   background-size: cover; background-position: center; background-attachment: fixed;
   display: flex; align-items: center; justify-content: center; min-height: 800px; 
   position: relative;
@@ -974,10 +974,10 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     
     <div class="hero-slideshow">
       <div class="hero-slide active" style="background-image: url('PEACE (2).jpg');"></div>
-      <div class="hero-slide" style="background-image: url('Teacher in peace.png');"></div>
-      <div class="hero-slide" style="background-image: url('joy.jpg');"></div>
-      <div class="hero-slide" style="background-image: url('teacher student bonding.2.png');"></div>
-      <div class="hero-slide" style="background-image: url('Presenting Mic.png');"></div>
+      <div class="hero-slide" style="background-image: url('8_A_Black_woman_sits_cross_legge_1_20260327_123619.png');"></div>
+      <div class="hero-slide" style="background-image: url('Joy.png');"></div>
+      <div class="hero-slide" style="background-image: url('13_A_Black_woman_stands_behind_a_1_20260328_182847.png');"></div>
+      <div class="hero-slide" style="background-image: url('teacher cypher.png');"></div>
     </div>
     <div class="hero-overlay" id="hero-overlay"></div>
 
@@ -1214,7 +1214,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <div class="rap-row"><span class="rap-letter">R</span><span class="rap-term">Resist</span><span class="rap-wtag">What</span><span class="expand-caret">▾</span></div>
         </div>
         <div class="rap-detail" id="r4">
-          <img src="Frustration Tape.png" class="rap-detail-img" alt="Resist">
+          <img src="4_A_chrome_cassette_tape_lies_on_1_20260327_123546.png" class="rap-detail-img" alt="Resist">
           <span style="color: var(--teal-dark); font-weight: 700; font-style: italic; display: block; margin-bottom: 12px; border-left: 2px solid var(--amber); padding-left: 10px;">"Sleep is the cousin of death." — Nas</span>
           The intentional interruption of the conditioned response (inhibitory control)—like catching the needle before it drops on a bad track. Resistance is the practice of hitting pause long enough to wake up and choose whether to press forward or change direction based on consciousness, not habit.
         </div>
@@ -1379,12 +1379,12 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <p class="scenario-intro-body" style="color: #aaa; margin: 0 auto;">This is what it looks like when a community shifts from exhaustion to connection.</p>
     
     <div class="gallery-grid">
-      <div class="gallery-item"><img src="IMG_2392.jpeg" alt="Fiesta Celebration"></div>
-      <div class="gallery-item"><img src="joy.jpg" alt="Joy in the gym"></div>
+      <div class="gallery-item"><img src="Joy.png" alt="Fiesta Celebration"></div>
+      <div class="gallery-item"><img src="joy_run.png" alt="Megaphone Energy"></div>
       <div class="gallery-item"><img src="joy2.jpg" alt="High Performing Teacher"></div>
-      <div class="gallery-item"><img src="IMG_2389.jpeg" alt="Spurs Coyote"></div>
-      <div class="gallery-item"><img src="IMG_1094.jpg" alt="Megaphone Energy"></div>
-      <div class="gallery-item"><img src="Screenshot_20220511-042305_Gallery.jpg" alt="Nacho Average Principal"></div>
+      <div class="gallery-item"><img src="Team.jpg" alt="AH-HA Coaching Team"></div>
+      <div class="gallery-item"><img src="Day_One.jpg" alt="Classroom Success"></div>
+      <div class="gallery-item"><img src="Zach_and_me.jpg" alt="Professional Connection"></div>
     </div>
   </div>
 
@@ -1518,7 +1518,14 @@ if (document.readyState === 'loading') {
 let heroSlides = document.querySelectorAll('.hero-slide');
 let currentHeroSlide = 0;
 const heroOverlay = document.getElementById('hero-overlay');
-const overlayOpacities = [0.95, 0.75, 0.55, 0.35, 0.10]; 
+
+// Custom Glass Overlay Settings (0.0 is invisible, 1.0 is pitch black)
+// Slide 0: PEACE (2).jpg -> Clearer glass (0.35)
+// Slide 1: 8_A_Black_woman... -> Medium glass (0.55)
+// Slide 2: Joy.jpg -> Deeper glass (0.75) to make text readable over the faces
+// Slide 3: 13_A_Black_woman... -> Medium-deep glass (0.65)
+// Slide 4: teacher cypher.png -> Clearer glass (0.45)
+const overlayOpacities = [0.35, 0.55, 0.75, 0.65, 0.45]; 
 
 function nextHeroSlide() {
   if(heroSlides.length === 0) return;
