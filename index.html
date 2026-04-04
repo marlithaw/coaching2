@@ -673,10 +673,10 @@ body {
    R.A.P. REMIX SECTION
    ===================================================================== */
 .remix-sec {
-  padding-top: 10rem; padding-bottom: 8rem;
+  padding-top: 6rem; padding-bottom: 6rem;
   background-image: linear-gradient(135deg, rgba(12, 54, 69, 0.95) 0%, rgba(26, 95, 122, 0.9) 100%), url('10_A_wide_shot_of_a_recording_stu_1_20260327_123637.png');
   background-size: cover; background-position: center; background-attachment: fixed;
-  display: flex; align-items: center; justify-content: center; min-height: 800px; 
+  display: flex; align-items: center; justify-content: center; 
   position: relative;
   z-index: 10;
 }
@@ -684,12 +684,12 @@ body {
 .remix-glass-stage {
   width: 100%; max-width: 1100px; margin: 0 auto; background: rgba(0,0,0,0.4); 
   border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--orange-pop); border-radius: 12px; 
-  padding: 6rem 2rem; box-shadow: 0 30px 60px rgba(0,0,0,0.4); position: relative; z-index: 2; text-align: center;
+  padding: 4rem 2rem; box-shadow: 0 30px 60px rgba(0,0,0,0.4); position: relative; z-index: 2; text-align: center;
 }
 
 .remix-phase{display:none;width:100%}
 .remix-phase.active{display:block}
-.p0-plural-space{height:clamp(80px,14vw,120px);display:flex;align-items:flex-end;justify-content:center;margin-bottom:0}
+.p0-plural-space{height:clamp(40px,8vw,80px);display:flex;align-items:flex-end;justify-content:center;margin-bottom:0}
 
 /* PERFECT CENTERING LOGIC */
 .p0-word {
@@ -800,7 +800,7 @@ body {
 
 .p2-bottom-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
-.remix-statement{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:700; letter-spacing:-0.02em; color:var(--surface);line-height:1.5;max-width:800px; text-align: center;}
+.remix-statement{font-family:'Inter',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700; letter-spacing:-0.02em; color:var(--surface);line-height:1.4;max-width:800px; text-align: center;}
 .fade-line { opacity: 0; display: inline-block; transform: translateY(12px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); margin-bottom: 0.5rem; }
 .fade-line.show { opacity: 1; transform: translateY(0); }
 .rs-w { opacity: 0; display: inline-block; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); margin-right: 6px; }
@@ -837,40 +837,35 @@ body {
 .rtb-btn:hover{background:var(--surface);color:var(--teal-dark);}
 
 /* =====================================================================
-   GALLERY OF IMPACT
-   ===================================================================== */
-.gallery-sec {
-  padding-top: 8rem; padding-bottom: 8rem;
-  background: linear-gradient(180deg, var(--teal-dark) 0%, #000 100%); 
-  color: #fff; text-align: center; position: relative; z-index: 10;
-}
-
-.gallery-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 4rem auto 0;
-}
-
-.gallery-item { position: relative; aspect-ratio: 4/3; overflow: hidden; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.5);}
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;}
-.gallery-item:hover img { transform: scale(1.05); }
-
-/* =====================================================================
    ABOUT THE COACH SECTION
    ===================================================================== */
 .about-sec {
-  padding-top: 8rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10;
+  padding-top: 8rem; padding-bottom: 8rem; background-color: #ffffff; position: relative; z-index: 10; overflow: hidden;
 }
 
 .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto;}
 
 .about-bio p { font-size: 18px; color: var(--body); margin-bottom: 1.5rem; line-height: 1.8; font-weight: 300;}
 
-.about-visuals { position: relative; width: 100%; height: 600px; display: flex; justify-content: center; align-items: flex-end;}
-.floating-pic { position: absolute; width: 220px; height: 220px; object-fit: cover; border-radius: 4px; border: 8px solid #fff; box-shadow: var(--shadow-hover); z-index: 1; transition: transform 0.4s ease;}
-.floating-pic.pic-1 { top: 10%; left: 0; transform: rotate(-8deg); }
-.floating-pic.pic-2 { top: 25%; right: 0; transform: rotate(12deg); }
-.floating-pic:hover { z-index: 10; transform: scale(1.05) rotate(0deg); }
+.about-visuals { position: relative; width: 100%; height: 500px; display: flex; justify-content: center; align-items: center; margin-top: 2rem;}
 
-.coach-cutout { position: relative; z-index: 5; width: 350px; height: 350px; max-width: 100%; object-fit: cover; border-radius: 50%; border: 12px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-bottom: 2rem;}
+.coach-cutout { position: relative; z-index: 10; width: 320px; height: 320px; max-width: 100%; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transform: translateY(-30px);}
+
+/* Anchoring all cutouts to the bottom to hide crop lines */
+.floating-cutout { position: absolute; bottom: -20px; z-index: 4; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1)); mix-blend-mode: multiply; transform-origin: bottom center; }
+
+.floating-cutout.c-zach { width: clamp(160px, 22vw, 240px); left: 0%; z-index: 5; transform: rotate(2deg); }
+.floating-cutout.c-leonard { width: clamp(180px, 25vw, 260px); right: 5%; z-index: 6; transform: rotate(-2deg); }
+.floating-cutout.c-fiesta { width: clamp(140px, 18vw, 200px); right: -15%; z-index: 4; transform: rotate(4deg); }
+
+.floating-cutout:hover { transform: scale(1.05) rotate(0deg); z-index: 15; }
+
+/* Background Framed Photos */
+.floating-photo { position: absolute; z-index: 1; border: 8px solid #fff; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); opacity: 0.45; transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); object-fit: cover; }
+.floating-photo.p-team { width: clamp(200px, 28vw, 340px); height: clamp(140px, 20vw, 240px); top: 5%; left: -10%; transform: rotate(-6deg); }
+.floating-photo.p-run { width: clamp(220px, 30vw, 360px); height: clamp(150px, 22vw, 250px); top: 15%; right: -12%; transform: rotate(8deg); }
+
+.floating-photo:hover { opacity: 1; transform: scale(1.08) rotate(0deg); z-index: 20; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
 
 /* =====================================================================
    TESTIMONIALS & CTA
@@ -906,9 +901,11 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .readout-panel { padding: 3rem 2rem; }
   .about-container { grid-template-columns: 1fr; gap: 2rem; }
   .about-visuals { height: 450px; }
-  .floating-pic { width: 150px; height: 150px; }
+  .floating-cutout.c-zach { left: -5%; }
+  .floating-cutout.c-fiesta { right: -5%; }
+  .floating-photo.p-team { top: -5%; left: 0; width: 180px; height: 120px; }
+  .floating-photo.p-run { top: 5%; right: 0; width: 180px; height: 120px; }
   .test-grid { grid-template-columns: 1fr 1fr; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
   .cta-container { grid-template-columns: 1fr; }
   .cta-info, .contact-form { padding: 3rem 2rem; }
 }
@@ -930,7 +927,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .scenario-sec, .assessment-sec, .sec, .remix-sec { background-attachment: scroll; }
 
   .curve-flow { margin-top: -30px; border-radius: 50% 30px; }
-  .remix-glass-stage { padding: 4rem 1rem; border-radius: 12px;}
+  .remix-glass-stage { padding: 2.5rem 1rem; border-radius: 12px;}
   .hd-collage { padding: 4rem 1.5rem; position: relative; } 
   
   .ctx-grid { grid-template-columns: 1fr; }
@@ -1352,9 +1349,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       </div>
 
       <div class="remix-phase" id="remix-p2">
-        <span class="header-marker text-gradient-orange" id="plural-eyebrow-line" style="opacity:0; transition: opacity 0.6s ease; margin-bottom: 3rem;">Whole enough to grow. Present enough to notice.</span>
+        <span class="header-marker text-gradient-orange" id="plural-eyebrow-line" style="opacity:0; transition: opacity 0.6s ease; margin-bottom: 2rem; display: block; font-size: clamp(28px, 4vw, 42px); line-height: 1.2;">Whole enough to grow. Present enough to notice.</span>
         
-        <div class="plural-full" style="margin-bottom: 4rem;">
+        <div class="plural-full" style="margin-bottom: 2.5rem;">
           <div class="pf-item" id="pf-P"><span class="pf-letter">P</span><span class="pf-word">Peace</span><span class="pf-meaning">A nervous system that finally knows it's safe</span></div>
           <div class="pf-item" id="pf-L"><span class="pf-letter">L</span><span class="pf-word">Love</span><span class="pf-meaning">Relationships that don't require you to disappear</span></div>
           <div class="pf-item" id="pf-U"><span class="pf-letter">U</span><span class="pf-word">Understanding</span><span class="pf-meaning">Seeing your own patterns without shame</span></div>
@@ -1364,7 +1361,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         </div>
         
         <div class="p2-bottom-center">
-          <div class="remix-statement cg" id="remix-statement" style="margin-bottom: 2rem;">
+          <div class="remix-statement cg" id="remix-statement" style="margin-bottom: 1.5rem;">
             <span class="fade-line" id="rs-line-1">This is what you're building toward.</span><br>
             <span class="fade-line" id="rs-line-2">A life where&nbsp;</span>
             <span class="rs-glow-text" id="rs-glow-container">
@@ -1380,38 +1377,30 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     </div>
   </div>
 
-  <div class="gallery-sec curve-flow fade-in">
-    <span class="header-marker text-gradient-teal">Proof of Practice</span>
-    <h2 class="scenario-intro-head" style="color: #fff;">The Culture in Action</h2>
-    <p class="scenario-intro-body" style="color: #aaa; margin: 0 auto;">This is what it looks like when a community shifts from exhaustion to connection.</p>
-    
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="Joy.png" alt="Fiesta Celebration"></div>
-      <div class="gallery-item"><img src="joy_run.png" alt="Megaphone Energy"></div>
-      <div class="gallery-item"><img src="joy2.jpg" alt="High Performing Teacher"></div>
-      <div class="gallery-item"><img src="Team.jpg" alt="AH-HA Coaching Team"></div>
-      <div class="gallery-item"><img src="Day_One.jpg" alt="Classroom Success"></div>
-      <div class="gallery-item"><img src="Zach_and_me.jpg" alt="Professional Connection"></div>
-    </div>
-  </div>
-
   <div class="about-sec curve-flow fade-in" id="about">
     <div class="about-container">
       <div class="about-bio">
         <span class="header-marker text-gradient-orange">The Producer</span>
         <h2 class="scenario-intro-head">Meet Marlitha Williams</h2>
-        <p style="font-weight: 600; color: var(--teal-dark);">The greatest lyricists in hip-hop don't just make noise—they use rhythm and language to process reality, organize their thinking, and tell the truth about their environment. That same ability to look at a heavy situation, find clarity, and shift the narrative is the foundation of the R³ Framework.</p>
+        <p style="font-weight: 600; color: var(--teal-dark);">The greatest lyricists in hip-hop aren't just delivering highly skilled performances—they use rhythm and language to process reality, organize their thinking, and tell the truth about their environment. That same ability to look at a heavy situation, find clarity, and shift the narrative is the foundation of the R³ Framework.</p>
         <p>As the founder of AH-HA Coaching, LLC, I specialize in helping educators, caregivers, and professionals shift from chronic exhaustion to intentionality. My approach is rooted in over 15 years of deep, systemic experience at the intersection of education and trauma-informed practice.</p>
-        <p>Before developing the R³ Model and the Lee and Tee Learning Series, my foundation was built through years of work in addictions counseling, domestic violence advocacy, and restorative practices. This background profoundly shaped my tenure as a school principal. I understand that burnout and behavioral challenges aren't solved by quick tips—they require true psychological safety and emotional regulation.</p>
+        <p>Before developing the R³ Model and the Lee and Tee Learning Series, my foundation was built through years of work in addictions counseling, domestic violence advocacy, and restorative practices. This background profoundly shaped my tenure as a school principal. I understand that burnout and behavioral challenges aren't solved by quick tips—require true psychological safety and emotional regulation.</p>
         <p>By implementing these exact coaching frameworks on a campus facing relentless demands, we transformed the culture. We achieved an 87% teacher growth rate, significantly improved staff retention, and created an environment where adults and students could actually thrive.</p>
         <p>I built this practice because I believe joy and balance shouldn't be luxuries. Together, we can locate your conditioned patterns, hit pause, and write a healthier track.</p>
         <br>
         <p class="handwritten">Marlitha Williams</p>
       </div>
       <div class="about-visuals">
-        <img src="IMG_2393.jpeg" class="floating-pic pic-1" alt="Community Leadership">
-        <img src="Presenting Mic.png" class="floating-pic pic-2" alt="DJ / In the Booth">
+        <!-- Background memory photos (Framed, opaque) -->
+        <img src="Team.jpg" class="floating-photo p-team" alt="AH-HA Coaching Team">
+        <img src="joy_run.png" class="floating-photo p-run" alt="Joyful Run">
+
+        <!-- Anchored base layer of connections (Cutouts) -->
+        <img src="me and fiesta.jpg" class="floating-cutout c-fiesta" alt="Community Leader">
+        <img src="Zach_and_me.jpg" class="floating-cutout c-zach" alt="Professional Connection">
+        <img src="me and leonard.jpg" class="floating-cutout c-leonard" alt="Joyful Connection">
         
+        <!-- Elevated centerpiece -->
         <img src="marlitha.r3.jpeg" class="coach-cutout" alt="Coach Portrait">
       </div>
     </div>
