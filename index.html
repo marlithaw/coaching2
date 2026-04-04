@@ -660,6 +660,9 @@ body {
 .ctx-img-wrap { width: 100%; height: 200px; margin-bottom: 1.5rem; background: #000; position: relative; z-index: 1; border-radius: 4px; overflow: hidden;}
 .ctx-img-wrap img, .ctx-img-wrap video { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(1.1); display: block; }
 
+.ctx-card.ctx1 { transform: rotate(-2deg); }
+.ctx-card.ctx3 { transform: rotate(2deg); }
+
 .ctx-card::before { content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 80px; height: 25px; background: rgba(255,255,255,0.4); box-shadow: 0 1px 3px rgba(0,0,0,0.1); z-index: 10;}
 
 .ctx-label { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; color: var(--teal-light); position: relative; z-index: 1;}
@@ -795,13 +798,9 @@ body {
 .pf-item.show-text .pf-word { text-shadow: 0 0 10px rgba(255, 107, 0, 0.4); }
 .pf-item.full-glow .pf-word { color: #fff; animation: igniteGlowSmall 1.5s ease-out forwards, radiatePulseSmall 4s ease-in-out 1.5s infinite; }
 
-.p2-bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; text-align: left; }
-@media(max-width: 900px) {
-  .p2-bottom-grid { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
-  .p2-bottom-grid .remix-statement { margin-left: auto; margin-right: auto; }
-}
+.p2-bottom-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
-.remix-statement{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:700; letter-spacing:-0.02em; color:var(--surface);line-height:1.5;max-width:800px;}
+.remix-statement{font-family:'Inter',sans-serif;font-size:clamp(28px,4vw,40px);font-weight:700; letter-spacing:-0.02em; color:var(--surface);line-height:1.5;max-width:800px; text-align: center;}
 .fade-line { opacity: 0; display: inline-block; transform: translateY(12px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); margin-bottom: 0.5rem; }
 .fade-line.show { opacity: 1; transform: translateY(0); }
 .rs-w { opacity: 0; display: inline-block; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); margin-right: 6px; }
@@ -1279,24 +1278,37 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       <div class="ctx-card ctx1">
         <div class="ctx-img-wrap"><img src="IMG_1094.jpg" alt="1:1 Coaching"></div>
         <p class="ctx-label">The Solo Track</p>
-        <p class="ctx-punch">1-on-1 Coaching</p>
-        <p class="ctx-body">Deep, individualized work to identify your specific conditioned tracks and build a custom R³ playbook. For the person ready to fundamentally change their baseline from reaction to intentionality.</p>
+        <p class="ctx-punch">1-on-1 &amp; Culture Coaching</p>
+        <p class="ctx-body">Deep, individualized work to identify specific conditioned tracks and build a custom R³ playbook. For leaders and educators ready to fundamentally change their baseline from reaction to intentionality.</p>
       </div>
       
-      <div class="ctx-card ctx2">
+      <!-- The Center Bridge (PLURAL Card) -->
+      <div class="ctx-card ctx-bridge" style="border-top-color: var(--orange-pop); transform: translateY(-0.5rem); box-shadow: 0 15px 35px rgba(0,0,0,0.1); z-index: 10;">
+        <div class="ctx-img-wrap" style="height: 180px; margin-bottom: 1.5rem; border: 1px solid rgba(0,0,0,0.05);">
+          <img src="PEACE (2).jpg" alt="PLURAL State" style="transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        
+        <p class="ctx-label" style="color: var(--orange-pop);">The Destination</p>
+        <p class="ctx-punch" style="font-size: clamp(18px, 2vw, 22px);">The PLURAL State</p>
+        
+        <div class="ctx-body" style="font-size: 14.5px; line-height: 1.6; margin-bottom: 1.5rem;">
+          <strong style="color: var(--teal-dark);">PLURAL is the mastered flow.</strong> R³ clears the static—shifting the heavy weight of a <em>selfish</em> reaction into the clarity of a <em>selfcenter</em> presence. 
+          <br><br>
+          You stop surviving the beat and start choosing your rhythm on purpose. You build your freestyle, making room to experience the joy that is already wherever you are.
+        </div>
+
+        <button class="btn-primary" style="padding: 0.8rem; font-size: 13px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; box-shadow: none;" onclick="document.getElementById('remix').scrollIntoView({behavior: 'smooth'});">
+          See The Master Flow <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/></svg>
+        </button>
+      </div>
+      
+      <div class="ctx-card ctx3">
         <div class="ctx-img-wrap">
           <video src="IMG_4240.MP4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(1.1);"></video>
         </div>
         <p class="ctx-label">The Group Cypher</p>
-        <p class="ctx-punch">Workshops & PD</p>
-        <p class="ctx-body">Interactive training for schools, caregiving teams, and organizations. We equip your people with the tools to interrupt their own conditioned responses under pressure, shifting culture from the inside out.</p>
-      </div>
-      
-      <div class="ctx-card ctx3">
-        <div class="ctx-img-wrap"><img src="Presenting Mic.png" alt="Keynote Speaking"></div>
-        <p class="ctx-label">The Live Show</p>
-        <p class="ctx-punch">Keynote Speaking</p>
-        <p class="ctx-body">Bring the R³ Agency Practice to your next large event. High-energy, deeply resonant presentations that challenge audiences to stop managing their stress and start remixing their reality.</p>
+        <p class="ctx-punch">Workshops, PD &amp; Keynotes</p>
+        <p class="ctx-body">Interactive training and high-energy live events for schools, caregiving teams, and organizations. We equip your people with the tools to interrupt their own conditioned responses, shifting culture from the inside out.</p>
       </div>
     </div>
   </div>
@@ -1351,23 +1363,18 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           <div class="pf-item" id="pf-L2"><span class="pf-letter">L</span><span class="pf-word">Learning</span><span class="pf-meaning">Turning every hard season into something you carry forward</span></div>
         </div>
         
-        <div class="p2-bottom-grid">
-          <div class="p2-text-side">
-            <div class="remix-statement cg" id="remix-statement" style="margin-bottom: 2rem;">
-              <span class="fade-line" id="rs-line-1">This is what you're building toward.</span><br>
-              <span class="fade-line" id="rs-line-2">A life where&nbsp;</span>
-              <span class="rs-glow-text" id="rs-glow-container">
-                <span class="rs-w">you</span> <span class="rs-w">are</span> <span class="rs-w">enough</span> <span class="rs-w">—</span> <span class="rs-w">and</span> <span class="rs-w">still</span> <span class="rs-w">becoming.</span>
-              </span>
-            </div>
-            <button class="rtb-btn" id="rtb-btn" onclick="resetRemix()">
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
-              Run That Back
-            </button>
+        <div class="p2-bottom-center">
+          <div class="remix-statement cg" id="remix-statement" style="margin-bottom: 2rem;">
+            <span class="fade-line" id="rs-line-1">This is what you're building toward.</span><br>
+            <span class="fade-line" id="rs-line-2">A life where&nbsp;</span>
+            <span class="rs-glow-text" id="rs-glow-container">
+              <span class="rs-w">you</span> <span class="rs-w">are</span> <span class="rs-w">enough</span> <span class="rs-w">—</span> <span class="rs-w">and</span> <span class="rs-w">still</span> <span class="rs-w">becoming.</span>
+            </span>
           </div>
-          <div class="p2-image-side">
-            <img src="PEACE (2).jpg" id="plural-masterpiece" alt="Plural Framework Masterpiece" style="width: 100%; border-radius: 12px; box-shadow: 0 30px 60px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.15); opacity: 0; transform: scale(0.95); transition: opacity 0.8s ease, transform 0.8s ease;">
-          </div>
+          <button class="rtb-btn" id="rtb-btn" onclick="resetRemix()">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+            Run That Back
+          </button>
         </div>
       </div>
     </div>
@@ -1904,14 +1911,6 @@ function startRemix() {
         const eLine = document.getElementById('plural-eyebrow-line');
         if(eLine) eLine.classList.add('show'); 
     }, 150);
-
-    setTimeout(() => {
-        const masterpiece = document.getElementById('plural-masterpiece');
-        if(masterpiece) {
-            masterpiece.style.opacity = '1';
-            masterpiece.style.transform = 'scale(1)';
-        }
-    }, 1500);
     
     setTimeout(() => {
       ['pf-P','pf-L','pf-U','pf-R','pf-A','pf-L2'].forEach(id => {
@@ -1974,12 +1973,6 @@ function resetRemix() {
   });
   const eLine = document.getElementById('plural-eyebrow-line');
   if(eLine) eLine.classList.remove('show');
-  
-  const masterpiece = document.getElementById('plural-masterpiece');
-  if(masterpiece) {
-      masterpiece.style.opacity = '0';
-      masterpiece.style.transform = 'scale(0.95)';
-  }
   
   const rtb = document.getElementById('rtb-btn');
   if(rtb) rtb.classList.remove('show');
