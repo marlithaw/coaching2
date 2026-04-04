@@ -73,7 +73,7 @@ body {
 .curve-flow {
   border-top-left-radius: 50% 4vw;
   border-top-right-radius: 50% 4vw;
-  margin-top: -3vw;
+  margin-top: 0;
   position: relative;
   z-index: 10;
   box-shadow: 0 -20px 40px rgba(0,0,0,0.1);
@@ -150,8 +150,7 @@ body {
    HERO
    ===================================================================== */
 .hd-collage {
-  position: sticky; 
-  top: 0;
+  position: relative; 
   z-index: 0;
   width: 100%;
   min-height: 100vh; 
@@ -251,6 +250,10 @@ body {
   line-height: 0.5;
   display: inline-block;
   margin: 15px 0 5px 0;
+}
+
+.purpose-spaced {
+  letter-spacing: 0.1em;
 }
 
 .vinyl-record {
@@ -853,33 +856,47 @@ body {
    ABOUT THE COACH SECTION
    ===================================================================== */
 .about-sec {
-  padding-top: 8rem; padding-bottom: 8rem; background-color: #ffffff; position: relative; z-index: 10; overflow: hidden;
+  padding-top: 8rem; padding-bottom: 8rem; 
+  background-color: var(--bg-color); 
+  background-image: url('PLURAL_Mural.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed;
+  position: relative; z-index: 10; overflow: hidden;
+}
+.about-sec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 247, 248, 0.75); /* Softens the wall so your photos pop */
+  z-index: 1;
 }
 
-.about-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto;}
+.about-container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto;}
 
+.about-bio { padding: 3.5rem; }
 .about-bio p { font-size: 18px; color: var(--body); margin-bottom: 1.5rem; line-height: 1.8; font-weight: 300;}
 
-.about-visuals { position: relative; width: 100%; height: 550px; display: flex; justify-content: center; align-items: center; margin-top: 2rem;}
+.about-visuals { position: relative; width: 100%; height: 500px; display: flex; justify-content: center; align-items: center; margin-top: 2rem;}
 
-.coach-cutout { position: relative; z-index: 25; width: 280px; height: 280px; max-width: 100%; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transform: translateY(0);}
+.coach-cutout { position: relative; z-index: 25; width: 320px; height: 320px; max-width: 100%; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transform: translateY(-20px);}
 
-/* Anchoring all cutouts to the bottom to hide crop lines */
-.floating-cutout { position: absolute; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); transform-origin: bottom center; }
+/* Anchoring all cutouts to the bottom and restoring mix-blend-mode to hide white backgrounds */
+.floating-cutout { position: absolute; bottom: -20px; z-index: 4; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); mix-blend-mode: multiply; transform-origin: bottom center; }
 
-.floating-cutout.c-zach { width: clamp(200px, 28vw, 380px); bottom: -5%; left: -10%; z-index: 20; transform: rotate(2deg); }
-.floating-cutout.c-leonard { width: clamp(140px, 18vw, 220px); top: 5%; right: 15%; z-index: 8; transform: rotate(-3deg); }
-.floating-cutout.c-fiesta { width: clamp(160px, 22vw, 280px); bottom: -2%; right: -10%; z-index: 22; transform: rotate(-2deg); }
+.floating-cutout.c-zach { width: clamp(240px, 32vw, 420px); left: -15%; z-index: 6; transform: rotate(1deg); }
+.floating-cutout.c-leonard { width: clamp(150px, 20vw, 240px); right: 12%; z-index: 4; transform: rotate(-3deg); }
+.floating-cutout.c-fiesta { width: clamp(180px, 24vw, 280px); right: -15%; z-index: 5; transform: rotate(4deg); }
 
-.floating-cutout:hover { transform: scale(1.08) rotate(0deg) !important; z-index: 50 !important; }
+.floating-cutout:hover { transform: scale(1.05) rotate(0deg) !important; z-index: 50 !important; }
 
 /* Background Framed Photos */
-.floating-photo { position: absolute; border: 6px solid #fff; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); opacity: 0.85; transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); object-fit: cover; }
-.floating-photo.p-team { width: clamp(180px, 24vw, 280px); height: clamp(120px, 16vw, 200px); top: 5%; left: -5%; transform: rotate(-6deg); z-index: 10; }
-.floating-photo.p-dj { width: clamp(180px, 24vw, 280px); height: clamp(180px, 24vw, 280px); top: -5%; right: -2%; transform: rotate(5deg); border-radius: 8px; z-index: 12; }
-.floating-photo.p-run { width: clamp(160px, 20vw, 240px); height: clamp(110px, 15vw, 160px); bottom: 10%; right: 10%; transform: rotate(8deg); z-index: 15; }
+.floating-photo { position: absolute; z-index: 1; border: 8px solid #fff; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.15); opacity: 0.6; transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); object-fit: cover; }
+.floating-photo.p-team { width: clamp(180px, 26vw, 320px); height: clamp(120px, 18vw, 220px); top: 5%; left: -10%; transform: rotate(-6deg); }
+.floating-photo.p-dj { width: clamp(180px, 24vw, 280px); height: clamp(180px, 24vw, 280px); top: -8%; right: 0%; transform: rotate(5deg); border-radius: 8px; }
+.floating-photo.p-run { width: clamp(180px, 24vw, 280px); height: clamp(120px, 16vw, 190px); top: 40%; right: -12%; transform: rotate(8deg); }
 
-.floating-photo:hover { opacity: 1; transform: scale(1.08) rotate(0deg) !important; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.4); cursor: pointer; }
+.floating-photo:hover { opacity: 1; transform: scale(1.08) rotate(0deg) !important; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
 
 /* =====================================================================
    TESTIMONIALS & CTA
@@ -914,14 +931,15 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .deck-panel { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 3rem 2rem; }
   .readout-panel { padding: 3rem 2rem; }
   .about-container { grid-template-columns: 1fr; gap: 2rem; }
-  .about-visuals { height: 480px; }
-  .floating-cutout.c-zach { left: -5%; width: 220px; bottom: 0; }
-  .floating-cutout.c-fiesta { right: -5%; width: 180px; bottom: 0; }
-  .floating-cutout.c-leonard { right: 10%; top: 5%; width: 120px; }
+  .about-bio { padding: 2.5rem 1.5rem; }
+  .about-visuals { height: 450px; }
+  .floating-cutout.c-zach { left: -5%; width: 280px; }
+  .floating-cutout.c-fiesta { right: -5%; width: 180px;}
+  .floating-cutout.c-leonard { right: 10%; width: 140px;}
   .floating-photo.p-team { top: 0%; left: -5%; width: 160px; height: 110px; }
-  .floating-photo.p-dj { top: -5%; right: -5%; width: 160px; height: 160px; }
-  .floating-photo.p-run { bottom: 20%; right: 0; width: 140px; height: 100px; }
-  .coach-cutout { width: 240px; height: 240px; }
+  .floating-photo.p-dj { top: -10%; right: 5%; width: 160px; height: 160px; }
+  .floating-photo.p-run { top: 35%; right: -5%; width: 160px; height: 110px; }
+  .coach-cutout { width: 280px; height: 280px; }
   .test-grid { grid-template-columns: 1fr 1fr; }
   .cta-container { grid-template-columns: 1fr; }
   .cta-info, .contact-form { padding: 3rem 2rem; }
@@ -996,9 +1014,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <div class="hero-content-wrapper">
       <div class="hero-text-side fade-in d1">
         <h1 class="hero-main-title">The R<span class="sup-3">3</span>.A.P. Method</h1>
-        <h2 class="hero-sub-title">A framework for conscious living.</h2>
+        <h2 class="hero-sub-title">Decision-making on purpose.</h2>
         <p class="hero-catchphrase" style="text-align: left;">
-          Stop reacting. Start remixing.
+          Stop Reacting. Start Remixing.
         </p>
         <button type="button" class="btn-primary" onclick="document.getElementById('scenarios').scrollIntoView();">Enter The Cypher →</button>
       </div>
@@ -1014,7 +1032,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           </div>
           <div class="album-sleeve">
             <div class="sleeve-text">
-              Do it on <br><em>purpose</em>.<br>Not perfectly &mdash;<br><em>purposefully.</em>
+              Master your freestyle on <br><em class="purpose-spaced">purpose</em>.<br>Not perfectly &mdash;<br><em>purposefully</em>.
             </div>
           </div>
         </div>
@@ -1238,7 +1256,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           Remaining present creates conditions for intentional action. Act moves through three layers:<br><br>
           <strong>Pattern Recognition</strong> — Am I playing the default track or making a choice?<br><br>
           <strong>Alignment Check</strong> — <em style="color: var(--orange-pop);">"What y'all really want?"</em> Does this align with my values and what I am trying to preserve?<br><br>
-          <strong>Consequence Awareness</strong> — What does my action produce? What is the cost of this verse?
+          <strong>Consequence Awareness</strong> — What does myaction produce? What is the cost of this verse?
         </div>
         
         <div class="rap-item" role="button" tabindex="0" onclick="toggleRap(this,'r6')">
@@ -1297,7 +1315,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       
       <div class="ctx-card ctx-bridge" style="border-top-color: var(--orange-pop); transform: translateY(-0.5rem); box-shadow: 0 15px 35px rgba(0,0,0,0.1); z-index: 10;">
         <div class="ctx-img-wrap" style="height: 180px; margin-bottom: 1.5rem; border: 1px solid rgba(0,0,0,0.05);">
-          <img src="PEACE (2).jpg" alt="PLURAL State Mindset" style="transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+          <img src="PLURAL_Mural.jpg" alt="PLURAL State Mural" style="transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
         </div>
         
         <p class="ctx-label" style="color: var(--orange-pop);">The Destination</p>
@@ -1397,7 +1415,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 
   <section class="about-sec curve-flow fade-in" id="about">
     <div class="about-container">
-      <div class="about-bio">
+      <div class="about-bio glass-panel-light">
         <span class="header-marker text-gradient-orange">The Producer</span>
         <h2 class="scenario-intro-head">Meet Marlitha Williams</h2>
         <p style="font-weight: 600; color: var(--teal-dark);">The greatest lyricists in hip-hop aren't just delivering highly skilled performances—they use rhythm and language to process reality, organize their thinking, and tell the truth about their environment. That same ability to look at a heavy situation, find clarity, and shift the narrative is the foundation of the R³ Framework.</p>
