@@ -877,35 +877,46 @@ body {
 .about-bio { padding: 3rem; }
 .about-bio p { font-size: 16px; color: var(--body); margin-bottom: 1.5rem; line-height: 1.8; font-weight: 400;}
 
-.about-visuals { position: relative; width: 100%; height: 480px; display: flex; justify-content: center; align-items: center; margin-top: 1rem;}
+/* * SCRAPBOOK CLUSTER LAYOUT 
+ * All images are anchored perfectly to the center to prevent shifting/crashing on zoom
+ */
+.about-visuals { position: relative; width: 100%; height: 750px; display: block; margin-top: 0;}
 
-/* Main Portrait - Pushed higher up */
-.coach-cutout { position: relative; z-index: 25; width: 280px; height: 280px; max-width: 100%; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transform: translateY(-10px);}
+.cluster-item { position: absolute; top: 50%; left: 50%; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; }
 
-/* CUTOUTS (Transparent Backgrounds) 
-   Using absolute px widths fixes the "car crash" effect when zoomed out */
-.floating-cutout { position: absolute; z-index: 4; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); mix-blend-mode: multiply; transform-origin: bottom center; }
+/* Main Portrait (Center) */
+.coach-cutout { z-index: 25; width: 380px; height: 380px; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transform: translate(-50%, -50%); margin-top: -40px; }
 
-/* Zach & Me - Bottom Left */
-.floating-cutout.c-zach { width: 240px; bottom: -10%; left: -5%; z-index: 6; transform: rotate(2deg); transform-origin: bottom left; }
-/* Fiesta - Bottom Right */
-.floating-cutout.c-fiesta { width: 180px; bottom: -5%; right: 0%; z-index: 5; transform: rotate(-4deg); transform-origin: bottom right;}
-/* Leonard - Middle Left */
-.floating-cutout.c-leonard { width: 130px; top: 20%; left: 0%; z-index: 8; transform: rotate(-6deg); }
-
-.floating-cutout:hover { transform: scale(1.08) rotate(0deg) !important; z-index: 50 !important; }
+/* CUTOUTS (Transparent Backgrounds) */
+.floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); mix-blend-mode: multiply; z-index: 10; }
 
 /* PHOTOS (Solid Framed Borders) */
-.floating-photo { position: absolute; z-index: 1; border: 8px solid #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.8; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); object-fit: cover; }
+.floating-photo { border: 8px solid #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.85; object-fit: cover; z-index: 5; }
 
-/* DJ Mic - Top Right */
-.floating-photo.p-dj { width: 180px; height: 180px; top: -5%; right: 5%; transform: rotate(8deg); border-radius: 8px; z-index: 3;}
-/* Joy Run - Middle Right */
-.floating-photo.p-run { width: 200px; height: 130px; top: 35%; right: -10%; transform: rotate(-8deg); z-index: 2;}
-/* Team - Top Left */
-.floating-photo.p-team { width: 200px; height: 140px; top: 0%; left: 5%; transform: rotate(-5deg); z-index: 2;}
+/* 1: Team (Top Left, ~11 o'clock) */
+.p-team { width: 320px; height: 200px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -240px; margin-left: -260px; z-index: 5;}
+/* 2: Zach & Me (Top Right, ~1 o'clock) */
+.c-zach { width: 300px; transform: translate(-50%, -50%) rotate(4deg); margin-top: -160px; margin-left: 260px; z-index: 15; }
+/* 3: Joy Run (Middle Right, ~3 o'clock) */
+.p-run { width: 300px; height: 180px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 60px; margin-left: 300px; z-index: 8;}
+/* 4: Fiesta (Bottom Right, ~5 o'clock) */
+.c-fiesta { width: 240px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 240px; margin-left: 180px; z-index: 15;}
+/* 5: DJ Mic (Bottom Left, ~7 o'clock) */
+.p-dj { width: 280px; height: 280px; transform: translate(-50%, -50%) rotate(6deg); border-radius: 8px; margin-top: 220px; margin-left: -220px; z-index: 5;}
+/* 6: Leonard (Middle Left, ~9 o'clock) */
+.c-leonard { width: 180px; transform: translate(-50%, -50%) rotate(-8deg); margin-top: 20px; margin-left: -300px; z-index: 12; }
 
-.floating-photo:hover { opacity: 1; transform: scale(1.1) rotate(0deg) !important; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
+/* Hover States - specifically reapplying translate so it stays in place when scaling */
+.floating-photo:hover { opacity: 1; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
+.floating-cutout:hover { z-index: 50 !important; }
+
+.p-team:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.c-zach:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
+.p-run:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.c-fiesta:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.p-dj:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.c-leonard:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; cursor: pointer; }
 
 /* =====================================================================
    TESTIMONIALS & CTA
@@ -942,14 +953,14 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .about-container { grid-template-columns: 1fr; gap: 2rem; }
   .about-bio { padding: 2.5rem 1.5rem; }
   
-  .about-visuals { height: 480px; }
-  .coach-cutout { width: 240px; height: 240px; }
-  .floating-cutout.c-zach { width: 200px; bottom: -5%; left: 0%; }
-  .floating-cutout.c-fiesta { width: 150px; bottom: 0%; right: 5%; }
-  .floating-cutout.c-leonard { width: 120px; left: 0%; top: 20%; }
-  .floating-photo.p-dj { width: 160px; height: 160px; top: 0%; right: 5%; }
-  .floating-photo.p-run { width: 160px; height: 110px; right: 0%; top: 40%; }
-  .floating-photo.p-team { width: 160px; height: 110px; left: 5%; top: 5%; }
+  .about-visuals { height: 600px; padding-top: 30px; }
+  .coach-cutout { width: 300px; height: 300px; margin-top: -30px; }
+  .p-team { width: 260px; height: 160px; margin-top: -180px; margin-left: -200px; }
+  .c-zach { width: 240px; margin-top: -120px; margin-left: 200px; }
+  .p-run { width: 240px; height: 150px; margin-top: 40px; margin-left: 220px; }
+  .c-fiesta { width: 200px; margin-top: 180px; margin-left: 140px; }
+  .p-dj { width: 220px; height: 220px; margin-top: 160px; margin-left: -180px; }
+  .c-leonard { width: 140px; margin-top: 20px; margin-left: -220px; }
   
   .test-grid { grid-template-columns: 1fr 1fr; }
   .cta-container { grid-template-columns: 1fr; }
@@ -982,6 +993,15 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .plural-full { flex-wrap:wrap; gap:20px; }
   .pf-item { flex: 0 0 40%; }
   .test-grid { grid-template-columns: 1fr; }
+  
+  .about-visuals { height: 500px; margin-top: 2rem; transform: scale(0.9); }
+  .coach-cutout { width: 240px; height: 240px; margin-top: 0; }
+  .p-team { width: 200px; height: 130px; margin-top: -140px; margin-left: -140px; }
+  .c-zach { width: 180px; margin-top: -100px; margin-left: 150px; }
+  .p-run { width: 180px; height: 120px; margin-top: 40px; margin-left: 160px; }
+  .c-fiesta { width: 160px; margin-top: 140px; margin-left: 100px; }
+  .p-dj { width: 160px; height: 160px; margin-top: 120px; margin-left: -130px; }
+  .c-leonard { width: 110px; margin-top: 10px; margin-left: -160px; }
 }
 </style>
 </head>
@@ -1043,7 +1063,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
           </div>
           <div class="album-sleeve">
             <div class="sleeve-text">
-              Master your freestyle on <br><em class="purpose-spaced">purpose</em>.<br>Not perfectly &mdash;<br><em>purposefully</em>.
+              MASTER YOUR <br>FREESTYLE ON <br><em class="purpose-spaced">purpose</em>.<br>NOT PERFECTLY &mdash;<br><em>purposefully</em>.
             </div>
           </div>
         </div>
@@ -1438,15 +1458,21 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         <p class="handwritten">Marlitha Williams</p>
       </div>
       <div class="about-visuals">
-        <img src="Team.png" class="floating-photo p-team" alt="AH-HA Coaching Team">
-        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="floating-photo p-dj" alt="DJ In the Booth">
-        <img src="joy_run.png" class="floating-photo p-run" alt="Joyful Run">
-
-        <img src="me and fiesta.png" class="floating-cutout c-fiesta" alt="Community Leader">
-        <img src="Zach_and_me.png" class="floating-cutout c-zach" alt="Professional Connection">
-        <img src="me and leonard.png" class="floating-cutout c-leonard" alt="Joyful Connection">
+        <!-- 1: Team (Top Left, ~11 o'clock) -->
+        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
+        <!-- 2: Zach & Me (Top Right, ~1 o'clock) -->
+        <img src="Zach_and_me.png" class="cluster-item floating-cutout c-zach" alt="Professional Connection">
+        <!-- 3: Joy Run (Middle Right, ~3 o'clock) -->
+        <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
+        <!-- 4: Fiesta (Bottom Right, ~5 o'clock) -->
+        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Community Leader">
+        <!-- 5: DJ Mic (Bottom Left, ~7 o'clock) -->
+        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
+        <!-- 6: Leonard (Middle Left, ~9 o'clock) -->
+        <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Joyful Connection">
         
-        <img src="marlitha.r3.jpeg" class="coach-cutout" alt="Coach Marlitha Williams Portrait">
+        <!-- Main Portrait (Center) -->
+        <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
       </div>
     </div>
   </section>
