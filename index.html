@@ -109,8 +109,19 @@ body {
   letter-spacing: -0.04em;
   color: var(--teal-dark);
   text-decoration: none;
+  display: flex;
+  align-items: baseline;
 }
 .logo span { color: var(--orange-pop); }
+.logo-sub {
+  font-size: 0.6em;
+  margin-left: 6px;
+  letter-spacing: 0.02em;
+}
+.logo-sub sup {
+  font-size: 0.65em;
+  vertical-align: super;
+}
 
 .menu-toggle {
   display: none;
@@ -230,6 +241,15 @@ body {
   padding: 2.5rem;
 }
 
+.sleeve-actual-logo {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  width: 90px;
+  mix-blend-mode: screen; /* This removes the black background from the JPG! */
+  opacity: 0.95;
+}
+
 .sleeve-text {
   font-family: 'Inter', sans-serif;
   font-weight: 800;
@@ -310,7 +330,7 @@ body {
   margin-bottom: 0.5rem;
   line-height: 1.2;
 }
-.sup-3 { font-size: 0.45em; vertical-align: top; position: relative; top: 0.2em; }
+.sup-3 { font-size: 0.5em; vertical-align: super; }
 
 .hero-sub-title {
   font-family: 'Inter', sans-serif;
@@ -625,6 +645,46 @@ body {
 .readout-title { font-family: 'Inter', sans-serif; font-size: clamp(26px, 3vw, 38px); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 1.5rem; line-height: 1.1; transition: color 0.3s ease;}
 .readout-desc { font-size: 18px; line-height: 1.8; color: var(--body); font-weight: 300;}
 .readout-tag { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--orange-pop); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 700; }
+
+/* =====================================================================
+   MODALITY BRIDGE (LEARNING PATHS)
+   ===================================================================== */
+.modality-bridge { text-align: center; margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(0,0,0,0.05); max-width: 1100px; margin-inline: auto; }
+.modality-title { font-family: 'Inter', sans-serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--teal-dark); margin-bottom: 1rem; }
+.modality-desc { font-size: 16px; color: var(--body); margin-bottom: 2.5rem; }
+.modality-grid { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+.mod-card { background: #fff; border: 2px solid transparent; border-top: 3px solid var(--teal-light); border-radius: 12px; padding: 2.5rem 1.5rem; width: calc(25% - 18px); min-width: 220px; max-width: 280px; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-soft); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.mod-card:hover, .mod-card:focus-visible { transform: translateY(-5px); border-color: var(--orange-pop); box-shadow: var(--shadow-hover); outline: none; }
+.mod-icon-wrap { width: 64px; height: 64px; border-radius: 50%; background: rgba(26, 95, 122, 0.05); display: flex; align-items: center; justify-content: center; color: var(--teal-light); transition: all 0.3s ease; }
+.mod-card:hover .mod-icon-wrap, .mod-card:focus-visible .mod-icon-wrap { background: var(--orange-pop); color: #fff; transform: scale(1.1); }
+.mod-label { font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: var(--dark); text-transform: uppercase; letter-spacing: 0.15em; }
+.mod-desc-text { font-family: 'Inter', sans-serif; font-size: 14.5px; color: var(--muted); line-height: 1.6; margin-top: 0.5rem; }
+
+/* =====================================================================
+   MEDIA MODAL
+   ===================================================================== */
+.media-modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  z-index: 2000; display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+.media-modal.active { opacity: 1; pointer-events: auto; }
+.media-modal-content {
+  background: var(--bg-color); padding: 2.5rem; border-radius: 12px; width: 90%; max-width: 800px;
+  position: relative; transform: translateY(20px); transition: transform 0.3s ease; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  border-top: 4px solid var(--orange-pop);
+}
+.media-modal.active .media-modal-content { transform: translateY(0); }
+.media-close {
+  position: absolute; top: -15px; right: -15px; background: var(--teal-dark); color: #fff; border: none;
+  width: 40px; height: 40px; border-radius: 50%; font-size: 24px; cursor: pointer; display: flex;
+  align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: all 0.2s;
+}
+.media-close:hover { background: var(--orange-pop); transform: scale(1.1); }
+.media-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--teal-dark); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
+.media-player-wrap { width: 100%; border-radius: 8px; overflow: hidden; background: #000; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); }
+.media-player-wrap audio { width: 100%; display: block; background: #f1f3f4; }
+.media-player-wrap video { width: 100%; display: block; max-height: 65vh; object-fit: contain; }
 
 /* =====================================================================
    LINER NOTES / THE PLAYBOOK
@@ -950,6 +1010,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .agency-console { grid-template-columns: 1fr; }
   .deck-panel { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 3rem 2rem; }
   .readout-panel { padding: 3rem 2rem; }
+  .mod-card { width: calc(50% - 12px); max-width: none; }
   .about-container { grid-template-columns: 1fr; gap: 2rem; }
   .about-bio { padding: 2.5rem 1.5rem; }
   
@@ -990,6 +1051,8 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .ctx-grid { grid-template-columns: 1fr; }
   .ctx-card:nth-child(1), .ctx-card:nth-child(2), .ctx-card:nth-child(3) { transform: none; }
   
+  .mod-card { width: 100%; }
+  
   .plural-full { flex-wrap:wrap; gap:20px; }
   .pf-item { flex: 0 0 40%; }
   .test-grid { grid-template-columns: 1fr; }
@@ -1008,7 +1071,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 <body>
 
 <header class="header">
-  <a href="#" class="logo">R³</a>
+  <a href="#" class="logo">R³ Agency Practice <span class="logo-sub">(R<sup>3</sup>.A.P.)</span></a>
   
   <button type="button" class="menu-toggle" id="mobile-menu-btn" aria-label="Open Menu">
     <span></span>
@@ -1045,7 +1108,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     <div class="hero-content-wrapper">
       <div class="hero-text-side fade-in d1">
         <h1 class="hero-main-title">The R<span class="sup-3">3</span>.A.P. Method</h1>
-        <h2 class="hero-sub-title">Decision-making on purpose.</h2>
+        <h2 class="hero-sub-title">R³ Agency Practice</h2>
         <p class="hero-catchphrase" style="text-align: left;">
           Stop Reacting. Start Remixing.
         </p>
@@ -1062,8 +1125,9 @@ textarea.form-control { resize: vertical; min-height: 120px; }
             <div class="vinyl-hole"></div>
           </div>
           <div class="album-sleeve">
+            <img src="f732061bc3664fa69d1cde21f967fd8a (1).jpg" class="sleeve-actual-logo" alt="AH-HA Coaching Logo">
             <div class="sleeve-text">
-              MASTER YOUR <br>FREESTYLE ON <br><em class="purpose-spaced">purpose</em>.<br>NOT PERFECTLY &mdash;<br><em>purposefully</em>.
+              MASTER YOUR <br>"FREESTYLE" ON <br><em class="purpose-spaced">purpose</em>.<br>NOT PERFECTLY &mdash;<br><em>purposefully</em>.
             </div>
           </div>
         </div>
@@ -1238,7 +1302,50 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       <h2 class="scenario-intro-head">A detailed breakdown of the R³ Architecture.</h2>
     </div>
     
-    <div class="rap-grid fade-in d1">
+    <div class="modality-bridge fade-in d1">
+      <h3 class="modality-title">Choose Your Frequency</h3>
+      <p class="modality-desc">Everyone processes differently. How do you want to learn the method?</p>
+      
+      <div class="modality-grid">
+        <!-- 1. READ -->
+        <a href="#rap-text-grid" class="mod-card" onclick="document.getElementById('rap-text-grid').scrollIntoView({behavior: 'smooth'}); return false;">
+          <div class="mod-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          </div>
+          <span class="mod-label">Read The Manual</span>
+          <span class="mod-desc-text">Dive into the detailed liner notes of each phase below.</span>
+        </a>
+        
+        <!-- 2. HEAR -->
+        <a href="#" class="mod-card" onclick="openMediaModal('audio'); return false;">
+          <div class="mod-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+          </div>
+          <span class="mod-label">Hear The Track</span>
+          <span class="mod-desc-text">Listen to the original rap breaking down the R³ framework.</span>
+        </a>
+
+        <!-- 3. WATCH -->
+        <a href="#" class="mod-card" onclick="openMediaModal('video'); return false;">
+          <div class="mod-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+          </div>
+          <span class="mod-label">Watch The Studio</span>
+          <span class="mod-desc-text">Watch a visual deep-dive into the framework's core concepts.</span>
+        </a>
+
+        <!-- 4. DOWNLOAD -->
+        <a href="The_Mind_Remix.pdf" class="mod-card" target="_blank" download="The_Mind_Remix.pdf">
+          <div class="mod-icon-wrap">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </div>
+          <span class="mod-label">Grab The Freebie</span>
+          <span class="mod-desc-text">Download the complete R³ Mind Remix PDF guide for your practice.</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="rap-grid fade-in d2" id="rap-text-grid">
       <div class="rap-col rc1">
         <span class="rap-col-head text-gradient-amber">Phase 1: Reflection</span>
         
@@ -1548,6 +1655,16 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   </div>
   <span class="footer-sub">ahhacoaching.com</span>
 </footer>
+
+<!-- REUSABLE MEDIA MODAL OVERLAY -->
+<div id="media-modal" class="media-modal">
+  <div class="media-modal-content">
+    <button type="button" class="media-close" aria-label="Close" onclick="closeMediaModal()">&times;</button>
+    <div id="media-container" class="media-player-wrap">
+      <!-- Media dynamically injected here via JS -->
+    </div>
+  </div>
+</div>
 
 </main>
 
@@ -2093,6 +2210,52 @@ function toggleRap(el, id) {
   el.classList.toggle('active', !open);
   el.setAttribute('aria-expanded', !open);
 }
+
+// --- MEDIA MODAL LOGIC ---
+function openMediaModal(type) {
+  const modal = document.getElementById('media-modal');
+  const container = document.getElementById('media-container');
+  
+  if (type === 'audio') {
+    container.innerHTML = `
+      <h3 class="media-title">The R.A.P. Breakdown (Audio)</h3>
+      <audio controls autoplay>
+        <source src="R-cubed Agency.wav" type="audio/wav">
+        Your browser does not support the audio element.
+      </audio>
+    `;
+  } else if (type === 'video') {
+    container.innerHTML = `
+      <h3 class="media-title">The Studio Deep Dive (Video)</h3>
+      <video controls autoplay>
+        <source src="R3.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    `;
+  }
+  
+  modal.classList.add('active');
+}
+
+function closeMediaModal() {
+  const modal = document.getElementById('media-modal');
+  const container = document.getElementById('media-container');
+  
+  modal.classList.remove('active');
+  
+  // Wait for the fade-out transition to finish before destroying the player
+  // This automatically stops the audio/video from playing in the background
+  setTimeout(() => {
+    container.innerHTML = '';
+  }, 300);
+}
+
+// Close media modal if clicking outside the content box
+document.getElementById('media-modal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeMediaModal();
+  }
+});
 
 // --- MOBILE MENU LOGIC ---
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
