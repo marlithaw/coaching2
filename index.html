@@ -953,29 +953,29 @@ body {
 /* PHOTOS (Solid Framed Borders) */
 .floating-photo { border: 8px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.9; object-fit: cover; z-index: 5; }
 
-/* 1: Team (Top Left, ~10 o'clock) */
-.p-team { width: 320px; height: 210px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -240px; margin-left: -280px; z-index: 5;}
-/* 2: DJ Mic (Top Right, ~1 o'clock) */
-.p-dj { width: 280px; height: 280px; transform: translate(-50%, -50%) rotate(8deg); border-radius: 8px; margin-top: -200px; margin-left: 260px; z-index: 5;}
-/* 3: Joy Run (Middle Right, ~3 o'clock) */
-.p-run { width: 300px; height: 190px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 80px; margin-left: 320px; z-index: 8;}
-/* 4: Fiesta (Bottom Right, ~5 o'clock) */
-.c-fiesta { width: 300px; transform: translate(-50%, -50%) rotate(3deg); margin-top: 260px; margin-left: 180px; z-index: 15;}
-/* 5: Zach & Me (Bottom Left, ~7 o'clock) */
-.c-zach { width: 360px; transform: translate(-50%, -50%) rotate(-2deg); margin-top: 250px; margin-left: -180px; z-index: 15; }
-/* 6: Leonard (Middle Left, ~9 o'clock) */
-.c-leonard { width: 260px; transform: translate(-50%, -50%) rotate(5deg); margin-top: 40px; margin-left: -320px; z-index: 12; }
+/* 1: Zach & Me (Top Left, ~11 o'clock) CUTOUT */
+.c-zach { width: 320px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -220px; margin-left: -280px; z-index: 10; }
+/* 2: Team (Top Right, ~1 o'clock) PHOTO */
+.p-team { width: 300px; height: 190px; transform: translate(-50%, -50%) rotate(8deg); margin-top: -220px; margin-left: 280px; z-index: 5;}
+/* 3: Fiesta (Middle Right, ~3 o'clock) CUTOUT */
+.c-fiesta { width: 240px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 40px; margin-left: 340px; z-index: 10;}
+/* 4: Joy Run (Bottom Right, ~5 o'clock) PHOTO */
+.p-run { width: 280px; height: 180px; transform: translate(-50%, -50%) rotate(5deg); margin-top: 260px; margin-left: 220px; z-index: 5;}
+/* 5: Leonard (Bottom Left, ~7 o'clock) CUTOUT */
+.c-leonard { width: 220px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 260px; margin-left: -220px; z-index: 10; }
+/* 6: DJ Mic (Middle Left, ~9 o'clock) PHOTO */
+.p-dj { width: 260px; height: 260px; transform: translate(-50%, -50%) rotate(-8deg); border-radius: 8px; margin-top: 20px; margin-left: -320px; z-index: 5;}
 
 /* Hover States - specifically reapplying translate so it stays in place when scaling */
 .floating-photo:hover { opacity: 1; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
 .floating-cutout:hover { z-index: 50 !important; }
 
+.c-zach:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .p-team:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
-.p-dj:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
-.p-run:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
 .c-fiesta:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
-.c-zach:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
+.p-run:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
 .c-leonard:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
+.p-dj:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; cursor: pointer; }
 
 /* =====================================================================
@@ -1016,12 +1016,12 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   
   .about-visuals { height: 600px; padding-top: 0px; }
   .coach-cutout { width: 300px; height: 300px; margin-top: -20px; }
-  .p-team { width: 240px; height: 150px; margin-top: -180px; margin-left: -200px; }
-  .p-dj { width: 200px; height: 200px; margin-top: -160px; margin-left: 200px; }
-  .p-run { width: 220px; height: 140px; margin-top: 60px; margin-left: 220px; }
-  .c-fiesta { width: 200px; margin-top: 200px; margin-left: 140px; }
-  .c-zach { width: 260px; margin-top: 180px; margin-left: -150px; }
-  .c-leonard { width: 180px; margin-top: 30px; margin-left: -220px; }
+  .c-zach { width: 240px; margin-top: -180px; margin-left: -220px; }
+  .p-team { width: 240px; height: 150px; margin-top: -180px; margin-left: 220px; }
+  .c-fiesta { width: 180px; margin-top: 40px; margin-left: 260px; }
+  .p-run { width: 220px; height: 140px; margin-top: 200px; margin-left: 160px; }
+  .c-leonard { width: 180px; margin-top: 200px; margin-left: -160px; }
+  .p-dj { width: 200px; height: 200px; margin-top: 20px; margin-left: -240px; }
   
   .test-grid { grid-template-columns: 1fr 1fr; }
   .cta-container { grid-template-columns: 1fr; }
@@ -1057,14 +1057,14 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .pf-item { flex: 0 0 40%; }
   .test-grid { grid-template-columns: 1fr; }
   
-  .about-visuals { height: 550px; margin-top: 2rem; transform: scale(0.9); }
+  .about-visuals { height: 550px; margin-top: 2rem; transform: scale(0.85); }
   .coach-cutout { width: 240px; height: 240px; margin-top: 0; }
-  .p-team { width: 200px; height: 130px; margin-top: -140px; margin-left: -140px; }
-  .p-dj { width: 160px; height: 160px; margin-top: -130px; margin-left: 140px; }
-  .p-run { width: 180px; height: 120px; margin-top: 40px; margin-left: 160px; }
-  .c-fiesta { width: 160px; margin-top: 160px; margin-left: 100px; }
-  .c-zach { width: 200px; margin-top: 160px; margin-left: -120px; }
-  .c-leonard { width: 140px; margin-top: 20px; margin-left: -160px; }
+  .c-zach { width: 200px; margin-top: -140px; margin-left: -150px; }
+  .p-team { width: 180px; height: 110px; margin-top: -140px; margin-left: 150px; }
+  .c-fiesta { width: 140px; margin-top: 20px; margin-left: 180px; }
+  .p-run { width: 160px; height: 100px; margin-top: 150px; margin-left: 120px; }
+  .c-leonard { width: 140px; margin-top: 150px; margin-left: -120px; }
+  .p-dj { width: 160px; height: 160px; margin-top: 20px; margin-left: -180px; }
 }
 </style>
 </head>
@@ -1252,7 +1252,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       <div class="a-result" id="result-revelation">
         <span class="result-badge">Phase 3: Revelation (Flipping the Sample)</span>
         <h3 class="result-head">You've found the sample. Now make it your default.</h3>
-        <p class="result-body">Purposeful Practicing — applying insight consistently — is how neuroplasticity works. You have to play the new beat repeatedly until the nervous system updates its default rhythm. That's what Phase 3 builds toward.</p>
+        <p class="result-body">Purposeful Practice — applying insight consistently — is how neuroplasticity works. You have to play the new beat repeatedly until the nervous system updates its default rhythm. That's what Phase 3 builds toward.</p>
         <div class="result-actions">
           <button type="button" class="btn-primary" onclick="playTrack(3); document.getElementById('phases').scrollIntoView({behavior: 'smooth'});">Load Track 3 →</button>
           <button type="button" class="restart-btn" onclick="resetAssessment()">Reset Fader</button>
@@ -1290,7 +1290,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       </div>
 
       <div class="readout-panel">
-        <div class="readout-tag">Track Info</div>
+        <div class="readout-tag"></div>
         <div id="readout-content" class="readout-content"></div>
       </div>
     </div>
@@ -1367,11 +1367,11 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         </div>
         
         <div class="rap-item" role="button" tabindex="0" onclick="toggleRap(this,'r3')">
-          <div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Pondering</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div>
+          <div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Ponder</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div>
         </div>
         <div class="rap-detail" id="r3">
           <span style="color: var(--teal-dark); font-weight: 700; font-style: italic; display: block; margin-bottom: 12px; border-left: 2px solid var(--amber); padding-left: 10px;">"We gonna get to the bottom of this, even if it takes all night." — DMX</span>
-          Notice the "we." That is the ultimate self-talk—your conscious mind partnering with your nervous system instead of fighting it. Purposeful Pondering asks: what is this moment actually showing us? It is active inquiry rather than spiraling into shame, transforming observation into direction so you can write a better verse.
+          Notice the "we." That is the ultimate self-talk—your conscious mind partnering with your nervous system instead of fighting it. Purposeful Ponder asks: what is this moment actually showing us? It is active inquiry rather than spiraling into shame, transforming observation into direction so you can write a better verse.
         </div>
       </div>
 
@@ -1398,7 +1398,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         </div>
         
         <div class="rap-item" role="button" tabindex="0" onclick="toggleRap(this,'r6')">
-          <div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Pressing</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div>
+          <div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Press or Pivot</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div>
         </div>
         <div class="rap-detail" id="r6">
           <span style="color: var(--teal-dark); font-weight: 700; font-style: italic; display: block; margin-bottom: 12px; border-left: 2px solid var(--amber); padding-left: 10px;">"Stay far from timid, only make moves when your heart's in it." — The Notorious B.I.G.</span>
@@ -1427,11 +1427,11 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         </div>
         
         <div class="rap-item" role="button" tabindex="0" onclick="toggleRap(this,'r9')">
-          <div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Practicing</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div>
+          <div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Practice</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div>
         </div>
         <div class="rap-detail" id="r9">
           <span style="color: var(--teal-dark); font-weight: 700; font-style: italic; display: block; margin-bottom: 12px; border-left: 2px solid var(--amber); padding-left: 10px;">"The marathon continues." — Nipsey Hussle</span>
-          The truth compounds through consistent application. The nervous system does not update on insight alone (neuroplasticity requires repetition). Purposeful Practicing is the commitment to playing the new beat continuously, generating new evidence with each cycle until you've permanently changed your rhythm.
+          The truth compounds through consistent application. The nervous system does not update on insight alone (neuroplasticity requires repetition). Purposeful Practice is the commitment to playing the new beat continuously, generating new evidence with each cycle until you've permanently changed your rhythm.
         </div>
       </div>
     </div>
@@ -1565,18 +1565,18 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         <p class="handwritten">Marlitha Williams</p>
       </div>
       <div class="about-visuals">
-        <!-- 1: Team (Top Left) -->
-        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
-        <!-- 2: DJ Mic (Top Right) -->
-        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
-        <!-- 3: Joy Run (Middle Right) -->
-        <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
-        <!-- 4: Fiesta (Bottom Right) -->
-        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Community Leader">
-        <!-- 5: Zach & Me (Bottom Left) -->
+        <!-- 1: Zach & Me (Top Left / Cutout) -->
         <img src="Zach_and_me.png" class="cluster-item floating-cutout c-zach" alt="Professional Connection">
-        <!-- 6: Leonard (Middle Left) -->
+        <!-- 2: Team (Top Right / Photo) -->
+        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
+        <!-- 3: Fiesta (Middle Right / Cutout) -->
+        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Community Leader">
+        <!-- 4: Joy Run (Bottom Right / Photo) -->
+        <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
+        <!-- 5: Leonard (Bottom Left / Cutout) -->
         <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Joyful Connection">
+        <!-- 6: DJ Mic (Middle Left / Photo) -->
+        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
         
         <!-- Main Portrait (Center) -->
         <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
