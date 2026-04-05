@@ -927,7 +927,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(244, 247, 248, 0.85); /* Softens the wall so your photos pop */
+  background: rgba(244, 247, 248, 0.85); 
   z-index: 1;
 }
 
@@ -936,67 +936,95 @@ body {
 .about-bio { padding: 3rem; }
 .about-bio p { font-size: 16px; color: var(--body); margin-bottom: 1.5rem; line-height: 1.8; font-weight: 400;}
 
-/* * SCRAPBOOK CLUSTER LAYOUT 
- * All images are anchored perfectly to the center to prevent shifting/crashing on zoom
- */
+/* * SCRAPBOOK CLUSTER LAYOUT */
 .about-visuals { position: relative; width: 100%; height: 800px; display: block; margin-top: 0;}
-
 .cluster-item { position: absolute; top: 50%; left: 50%; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; }
 
 /* Main Portrait (Center) */
 .coach-cutout { z-index: 25; width: 380px; height: 380px; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transform: translate(-50%, -50%); margin-top: -20px; }
 
-/* CUTOUTS (Transparent Backgrounds with Multiply for white bgs) */
 .floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); mix-blend-mode: multiply; z-index: 10; }
-
-/* GRAPHICS (True PNGs without white borders) */
 .floating-graphic { filter: drop-shadow(0 15px 35px rgba(0,0,0,0.2)); z-index: 10; }
-
-/* PHOTOS (Solid Framed Borders) */
 .floating-photo { border: 8px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.9; object-fit: cover; z-index: 5; }
 
-/* 1: First Class (Top Left, ~10 o'clock) PHOTO */
-.p-first { width: 260px; height: 340px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -160px; margin-left: -280px; z-index: 10; }
-/* 2: Zach Solo (Top Right, ~1 o'clock - Left edge tucked under center portrait!) GRAPHIC */
-.c-zach { width: 280px; transform: translate(-50%, -50%) rotate(4deg); margin-top: -180px; margin-left: 140px; z-index: 8; }
-/* 3: DJ Mic (Top Far Right, ~2 o'clock) PHOTO */
-.p-dj { width: 240px; height: 240px; transform: translate(-50%, -50%) rotate(8deg); border-radius: 8px; margin-top: -120px; margin-left: 320px; z-index: 5;}
-/* 4: Joy Run (Middle Right, ~4 o'clock) PHOTO */
-.p-run { width: 300px; height: 180px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 80px; margin-left: 320px; z-index: 7;}
-/* 5: David (Bottom Right, ~5 o'clock) GRAPHIC */
-.p-david { width: 280px; transform: translate(-50%, -50%) rotate(3deg); margin-top: 260px; margin-left: 180px; z-index: 12;}
-/* 6: Leonard (Bottom Left, ~7 o'clock) CUTOUT */
-.c-leonard { width: 220px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 240px; margin-left: -220px; z-index: 10; }
-/* 7: Team (Middle Left, ~9 o'clock) PHOTO */
-.p-team { width: 320px; height: 190px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: 40px; margin-left: -320px; z-index: 5;}
+/* Cluster Placements Matched to Mockup */
+/* 1: First Class (Top Left) PHOTO */
+.p-first { width: 280px; height: 260px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -160px; margin-left: -280px; z-index: 10; }
+/* 2: Zach Solo (Top Center-Right) GRAPHIC */
+.c-zach { width: 240px; transform: translate(-50%, -50%) rotate(4deg); margin-top: -240px; margin-left: 100px; z-index: 8; }
+/* 3: DJ Mic (Middle/Top Right) PHOTO */
+.p-dj { width: 240px; height: 240px; transform: translate(-50%, -50%) rotate(6deg); border-radius: 8px; margin-top: -60px; margin-left: 320px; z-index: 5;}
+/* 4: Joy Run (Bottom Right) PHOTO */
+.p-run { width: 280px; height: 180px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 140px; margin-left: 280px; z-index: 7;}
+/* 5: David (Bottom Center/Right) GRAPHIC - Rotated 90 deg counter-clockwise and tucked behind portrait */
+.p-david { width: 360px; transform: translate(-50%, -50%) rotate(-86deg); margin-top: 260px; margin-left: 100px; z-index: 4;}
+/* 6: Leonard (Bottom Left) CUTOUT */
+.c-leonard { width: 200px; transform: translate(-50%, -50%) rotate(4deg); margin-top: 220px; margin-left: -220px; z-index: 10; }
+/* 7: Team (Middle Left) PHOTO */
+.p-team { width: 300px; height: 190px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 40px; margin-left: -320px; z-index: 5;}
 
-/* Hover States - specifically reapplying translate so it stays in place when scaling */
+/* Hover States */
 .floating-photo:hover, .floating-graphic:hover { opacity: 1; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
 .floating-cutout:hover { z-index: 50 !important; }
-
 .p-first:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
 .p-dj:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .p-run:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
-.p-david:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.p-david:hover { transform: translate(-50%, -50%) scale(1.08) rotate(-86deg) !important; z-index: 20 !important; } /* Maintains orientation */
 .c-leonard:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .p-team:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; cursor: pointer; }
-
-/* SPECIAL RULE: This keeps the solo shot safely tucked behind the center circle on hover so the crop line is never exposed! */
 .c-zach:hover { transform: translate(-50%, -50%) scale(1.04) rotate(0deg) !important; z-index: 20 !important; filter: drop-shadow(0 20px 35px rgba(0,0,0,0.3)); }
 
 /* =====================================================================
-   TESTIMONIALS & CTA
+   LINER NOTES / TESTIMONIAL CAROUSEL
    ===================================================================== */
-.testimonials-sec { padding-top: 4rem; padding-bottom: 5rem; background-color: var(--bg-color); position: relative; z-index: 10;}
-.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto;}
-.test-card { background: var(--surface); border: 1px solid rgba(0,0,0,0.05); border-top: 3px solid var(--teal-bright); padding: 3rem 2.5rem; border-radius: 12px; box-shadow: var(--shadow-soft); position: relative; transition: transform 0.3s ease;}
-.test-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-.quote-mark { font-family: 'Permanent Marker', cursive; font-size: 80px; color: rgba(50, 117, 140, 0.1); line-height: 0; position: absolute; top: 40px; left: 20px;}
-.test-quote { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.8; color: var(--body); font-weight: 400; margin-bottom: 2rem; position: relative; z-index: 2; font-style: italic;}
-.test-author { font-family: 'Inter', sans-serif; font-weight: 700; color: var(--dark); font-size: 16px; }
-.test-context { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--orange-pop); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-top: 4px; }
+.testimonials-sec { padding-top: 5rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10; overflow: hidden;}
+.liner-notes-wrapper { width: 100vw; margin-left: calc(50% - 50vw); position: relative; padding: 2rem 0;}
 
+.liner-notes-carousel { 
+  display: flex; 
+  overflow-x: auto; 
+  scroll-snap-type: x mandatory; 
+  scroll-behavior: smooth; 
+  gap: 2rem; 
+  padding: 1rem max(3.5rem, calc((100vw - 1200px) / 2)); 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+.liner-notes-carousel::-webkit-scrollbar { display: none; }
+
+.liner-sleeve {
+  flex: 0 0 clamp(320px, 80vw, 420px);
+  min-height: 450px;
+  background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal-dark) 100%);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 12px 12px 30px rgba(0,0,0,0.25), inset 0 0 0 4px rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 3.5rem 3rem;
+  position: relative;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: grab;
+}
+.liner-sleeve:hover { transform: translateY(-10px); box-shadow: 15px 20px 40px rgba(0,0,0,0.3), inset 0 0 0 4px rgba(255, 255, 255, 0.1); }
+.liner-sleeve:active { cursor: grabbing; }
+
+.liner-logo { position: absolute; top: 1.5rem; left: 1.5rem; width: 60px; opacity: 0.9; }
+.liner-track-num { position: absolute; top: 2rem; right: 2rem; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--orange-pop); letter-spacing: 0.2em; font-weight: 700; }
+.liner-quote { font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.7; color: #fff; font-style: italic; margin-bottom: 2.5rem; font-weight: 300; position: relative; z-index: 2;}
+.liner-quote::before { content: '"'; font-family: 'Permanent Marker', cursive; font-size: 60px; color: rgba(255, 107, 0, 0.2); position: absolute; top: -20px; left: -15px; line-height: 0; z-index: -1; }
+.liner-author { font-family: 'Reenie Beanie', cursive; font-size: 38px; color: var(--orange-pop); line-height: 1; margin-bottom: 0.25rem; }
+.liner-role { font-family: 'Space Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; }
+
+.scroll-hint { text-align: center; font-family: 'Space Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-top: 1rem; animation: pulseOp 2s infinite; }
+@keyframes pulseOp { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+/* =====================================================================
+   CTA
+   ===================================================================== */
 .cta-sec { padding-top: 4rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10;}
 .cta-container { max-width: 1200px; margin: 0 auto; background: var(--surface); border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; box-shadow: var(--shadow-soft); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;}
 .cta-info { padding: 4rem; background: linear-gradient(135deg, rgba(26, 95, 122, 0.05) 0%, rgba(255, 107, 0, 0.05) 100%); display: flex; flex-direction: column; justify-content: center;}
@@ -1023,15 +1051,14 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   
   .about-visuals { height: 650px; padding-top: 0px; }
   .coach-cutout { width: 300px; height: 300px; margin-top: -20px; }
-  .p-first { width: 220px; height: 280px; margin-top: -140px; margin-left: -220px; }
-  .c-zach { width: 220px; margin-top: -150px; margin-left: 120px; }
-  .p-dj { width: 200px; height: 200px; margin-top: -100px; margin-left: 260px; }
-  .p-run { width: 240px; height: 140px; margin-top: 60px; margin-left: 240px; }
-  .p-david { width: 220px; margin-top: 220px; margin-left: 140px; }
-  .c-leonard { width: 180px; margin-top: 200px; margin-left: -180px; }
-  .p-team { width: 240px; height: 150px; margin-top: 40px; margin-left: -240px; }
+  .p-first { width: 220px; height: auto; margin-top: -140px; margin-left: -200px; }
+  .c-zach { width: 200px; margin-top: -200px; margin-left: 80px; }
+  .p-dj { width: 200px; height: 200px; margin-top: -60px; margin-left: 240px; }
+  .p-run { width: 240px; height: auto; margin-top: 100px; margin-left: 220px; }
+  .p-david { width: 260px; margin-top: 220px; margin-left: 100px; transform: translate(-50%, -50%) rotate(-86deg); }
+  .c-leonard { width: 160px; margin-top: 180px; margin-left: -180px; }
+  .p-team { width: 240px; height: auto; margin-top: 60px; margin-left: -240px; }
   
-  .test-grid { grid-template-columns: 1fr 1fr; }
   .cta-container { grid-template-columns: 1fr; }
   .cta-info, .contact-form { padding: 3rem 2rem; }
 }
@@ -1063,17 +1090,19 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   
   .plural-full { flex-wrap:wrap; gap:20px; }
   .pf-item { flex: 0 0 40%; }
-  .test-grid { grid-template-columns: 1fr; }
+  
+  .liner-sleeve { padding: 2.5rem 2rem; }
+  .liner-quote { font-size: 15px; }
   
   .about-visuals { height: 600px; margin-top: 2rem; transform: scale(0.85); }
   .coach-cutout { width: 260px; height: 260px; margin-top: 0; }
-  .p-first { width: 180px; height: 240px; margin-top: -120px; margin-left: -160px; }
-  .c-zach { width: 180px; margin-top: -120px; margin-left: 100px; }
-  .p-dj { width: 160px; height: 160px; margin-top: -60px; margin-left: 180px; }
-  .p-run { width: 180px; height: 110px; margin-top: 60px; margin-left: 170px; }
-  .p-david { width: 160px; margin-top: 170px; margin-left: 100px; }
-  .c-leonard { width: 140px; margin-top: 160px; margin-left: -120px; }
-  .p-team { width: 180px; height: 110px; margin-top: 40px; margin-left: -180px; }
+  .p-first { width: 160px; margin-top: -100px; margin-left: -130px; }
+  .c-zach { width: 160px; margin-top: -140px; margin-left: 60px; }
+  .p-dj { width: 140px; height: 140px; margin-top: -40px; margin-left: 150px; }
+  .p-run { width: 180px; margin-top: 80px; margin-left: 140px; }
+  .p-david { width: 200px; margin-top: 160px; margin-left: 60px; transform: translate(-50%, -50%) rotate(-86deg); }
+  .c-leonard { width: 120px; margin-top: 140px; margin-left: -130px; }
+  .p-team { width: 180px; margin-top: 40px; margin-left: -160px; }
 }
 </style>
 </head>
@@ -1582,7 +1611,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
         <!-- 4: Joy Run (Middle Right) -->
         <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
-        <!-- 5: David Robinson Letter (Bottom Right) -->
+        <!-- 5: David Robinson Letter (Bottom Right - Tucked Behind) -->
         <img src="David.png" class="cluster-item floating-graphic p-david" alt="David Robinson Letter">
         <!-- 6: Leonard (Bottom Left) -->
         <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Joyful Connection">
@@ -1595,30 +1624,17 @@ textarea.form-control { resize: vertical; min-height: 120px; }
     </div>
   </section>
 
+  <!-- REDESIGNED TESTIMONIAL CAROUSEL (ALBUM SLEEVES) -->
   <section class="testimonials-sec fade-in">
-    <div style="text-align: center; margin-bottom: 4rem;">
+    <div style="text-align: center; margin-bottom: 2rem;">
       <span class="header-marker text-gradient-bronze">Liner Notes</span>
       <h2 class="scenario-intro-head">What People Are Saying</h2>
     </div>
+    <div class="scroll-hint">← Swipe through the tracks →</div>
     
-    <div class="test-grid">
-      <div class="test-card">
-        <span class="quote-mark">"</span>
-        <p class="test-quote">The R³ model gave me my peace back. I learned how to stop absorbing the stress of the room and start anchoring it instead. This is the support educators have actually been needing.</p>
-        <p class="test-author">Sarah J.</p>
-        <span class="test-context">Classroom Teacher</span>
-      </div>
-      <div class="test-card">
-        <span class="quote-mark">"</span>
-        <p class="test-quote">I was running entirely on fumes and guilt. This coaching didn't just give me strategies; it helped me find my own pulse again. It gave me permission to be a whole person outside of my role.</p>
-        <p class="test-author">Marcus T.</p>
-        <span class="test-context">Family Caregiver</span>
-      </div>
-      <div class="test-card">
-        <span class="quote-mark">"</span>
-        <p class="test-quote">We were stuck in a cycle of reacting to behavior instead of addressing the root. Bringing this framework to our staff didn't just reduce burnout—it completely transformed our campus culture.</p>
-        <p class="test-author">Elena R.</p>
-        <span class="test-context">School Principal</span>
+    <div class="liner-notes-wrapper">
+      <div class="liner-notes-carousel" id="liner-notes-container">
+        <!-- The 27 album sleeves will be generated here by JavaScript -->
       </div>
     </div>
   </section>
@@ -1704,10 +1720,68 @@ const initScrollEffects = () => {
     }
 };
 
+// --- TESTIMONIAL DATA ---
+const testimonials = [
+  { quote: "Marlitha is known around here as the 'whisperer'. She has this incredible ability to defuse tension and bring a calming presence to the most chaotic situations.", name: "Sarah J.", role: "Middle School Principal" },
+  { quote: "She is an exceptional listener and a brilliant planner. I felt completely supported every time we sat down to map out my classroom goals.", name: "Marcus T.", role: "3rd Grade Teacher" },
+  { quote: "Working with her helped me uncover strengths I didn’t even know I had. She has a gift for developing passions in educators.", name: "Elena R.", role: "High School English Teacher" },
+  { quote: "Her insight is unmatched. She helped me understand the varied perspectives of my most challenging students, completely shifting my approach.", name: "David K.", role: "8th Grade Science Teacher" },
+  { quote: "Whenever I felt overwhelmed, Marlitha was the light in that dark area. She brings clarity and peace just by being in the room.", name: "Alicia M.", role: "Special Education Teacher" },
+  { quote: "She doesn't just give advice; she truly listens. Her guidance helped me stay grounded during the toughest months of the school year.", name: "Jamal W.", role: "5th Grade Teacher" },
+  { quote: "Marlitha has a rare calming energy. Even when the campus felt frantic, stepping into a session with her was like hitting a reset button.", name: "Rachel S.", role: "Assistant Principal" },
+  { quote: "She taught me how to step back and look at the bigger picture. I'm a better educator because of her deep understanding of human behavior.", name: "Brian C.", role: "High School Math Teacher" },
+  { quote: "It’s like she reads between the lines of everything you say. She helped me organize my thoughts when everything felt scattered.", name: "Karen L.", role: "Kindergarten Teacher" },
+  { quote: "She was my anchor. Her ability to plan and strategize while keeping emotional well-being at the forefront is exactly what teachers need.", name: "Jessica H.", role: "Instructional Coach" },
+  { quote: "I call her the 'teacher whisperer' because she just gets it. She validates your experience while gently guiding you to a healthier perspective.", name: "Tom B.", role: "7th Grade History Teacher" },
+  { quote: "Before I met her, I was ready to leave the profession. Her empathetic listening and strategic planning gave me my confidence back.", name: "Maria G.", role: "2nd Grade Teacher" },
+  { quote: "Marlitha brings such light to the heavy work of education. She reminds you why you started teaching in the first place.", name: "Anthony D.", role: "Middle School Counselor" },
+  { quote: "Her coaching is transformative. She has this unique ability to help you see a situation from a completely different, more compassionate angle.", name: "Lauren P.", role: "High School Art Teacher" },
+  { quote: "A master at helping you find your own voice. She helped me develop a passion for leadership I never considered.", name: "Sam R.", role: "4th Grade Teacher" },
+  { quote: "She is a phenomenal listener who makes you feel seen. I always left our conversations with a clear head and a solid plan.", name: "Michelle F.", role: "1st Grade Teacher" },
+  { quote: "Marlitha's presence alone brings the temperature of a room down. She is exactly the kind of support system every school needs.", name: "Dr. Kevin T.", role: "School Principal" },
+  { quote: "She helped me translate my frustration into actionable plans. Her insight into adult and student dynamics is brilliant.", name: "Chloe M.", role: "6th Grade Teacher" },
+  { quote: "The way she helps you understand varied perspectives changed how I interact with both parents and students. Truly eye-opening.", name: "Ryan E.", role: "High School Special Ed" },
+  { quote: "I always felt like I had a true partner in my planning. She listens deeply and helps you build strategies that actually work.", name: "Olivia W.", role: "3rd Grade Bilingual Teacher" },
+  { quote: "She is a light worker in the school system. She helps educators tap into their hidden strengths and reignite their passion for teaching.", name: "Nathan L.", role: "Assistant Principal" },
+  { quote: "Marlitha doesn't just listen to respond; she listens to understand. That made all the difference in my professional growth.", name: "Sophia K.", role: "5th Grade Science Teacher" },
+  { quote: "Her calming presence is her superpower. She can take a highly stressed teacher and guide them back to a place of peace and purpose.", name: "Julian H.", role: "High School Coach" },
+  { quote: "She gave me the space to process my challenges and the insight to overcome them. I am far more resilient because of her.", name: "Emma V.", role: "8th Grade Math Teacher" },
+  { quote: "Marlitha is the ultimate planner. She takes the overwhelming aspects of teaching and breaks them down into manageable, purposeful steps.", name: "Carlos B.", role: "2nd Grade Teacher" },
+  { quote: "The 'whisperer' title is well-earned. She knows exactly what to say, and how to say it, to bring out the absolute best in you.", name: "Dr. Lisa C.", role: "District Administrator" },
+  { quote: "Her ability to foster understanding and shift perspectives is a gift. She didn't just coach me; she fundamentally changed how I view my students.", name: "Derek P.", role: "High School Social Studies" }
+];
+
+function renderTestimonials() {
+  const container = document.getElementById('liner-notes-container');
+  if(!container) return;
+  
+  let html = '';
+  testimonials.forEach((test, index) => {
+    // Formatting track number to always be two digits (e.g., 01, 02)
+    const trackNum = (index + 1).toString().padStart(2, '0');
+    
+    html += `
+      <div class="liner-sleeve">
+        <img src="ahha-logo.png" class="liner-logo" alt="AH-HA Logo">
+        <div class="liner-track-num">TRACK ${trackNum}</div>
+        <p class="liner-quote">${test.quote}</p>
+        <div class="liner-author">${test.name}</div>
+        <div class="liner-role">${test.role}</div>
+      </div>
+    `;
+  });
+  
+  container.innerHTML = html;
+}
+
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initScrollEffects);
+    document.addEventListener('DOMContentLoaded', () => {
+        initScrollEffects();
+        renderTestimonials();
+    });
 } else {
     initScrollEffects();
+    renderTestimonials();
 }
 
 let heroSlides = document.querySelectorAll('.hero-slide');
