@@ -246,7 +246,6 @@ body {
   top: 1.5rem;
   left: 2rem;
   width: 90px;
-  mix-blend-mode: screen; /* This removes the black background from the JPG! */
   opacity: 0.95;
 }
 
@@ -947,36 +946,44 @@ body {
 /* Main Portrait (Center) */
 .coach-cutout { z-index: 25; width: 380px; height: 380px; object-fit: cover; border-radius: 50%; border: 8px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); transform: translate(-50%, -50%); margin-top: -20px; }
 
-/* CUTOUTS (Transparent Backgrounds) */
+/* CUTOUTS (Transparent Backgrounds with Multiply for white bgs) */
 .floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); mix-blend-mode: multiply; z-index: 10; }
+
+/* GRAPHICS (True PNGs without white borders) */
+.floating-graphic { filter: drop-shadow(0 15px 35px rgba(0,0,0,0.2)); z-index: 10; }
 
 /* PHOTOS (Solid Framed Borders) */
 .floating-photo { border: 8px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.9; object-fit: cover; z-index: 5; }
 
-/* 1: Zach & Me (Shifted off-center behind left shoulder) CUTOUT */
-.c-zach { width: 400px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: -120px; margin-left: -140px; z-index: 15; }
-/* 2: DJ Mic (Top Right, SWAPPED) PHOTO */
-.p-dj { width: 300px; height: 200px; transform: translate(-50%, -50%) rotate(6deg); border-radius: 8px; margin-top: -220px; margin-left: 260px; z-index: 5;}
-/* 3: Joy Run (Middle Right, ENLARGED, MOVED LEFT) PHOTO */
-.p-run { width: 360px; height: 240px; transform: translate(-50%, -50%) rotate(-3deg); margin-top: 20px; margin-left: 240px; z-index: 8;}
-/* 4: Fiesta (Bottom Right, ZOOMED/LESS WHITE SPACE) PHOTO */
-.p-fiesta { width: 240px; height: 300px; object-fit: cover; object-position: center 20%; transform: translate(-50%, -50%) rotate(4deg); margin-top: 280px; margin-left: 180px; z-index: 12;}
-/* 5: Leonard (Bottom Left) CUTOUT */
-.c-leonard { width: 220px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 260px; margin-left: -220px; z-index: 10; }
-/* 6: Team (Middle Left, SWAPPED) PHOTO */
-.p-team { width: 320px; height: 190px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: 60px; margin-left: -320px; z-index: 5;}
+/* 1: First Class (Top Left, ~10 o'clock) PHOTO */
+.p-first { width: 260px; height: 340px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -160px; margin-left: -280px; z-index: 10; }
+/* 2: Zach Solo (Top Right, ~1 o'clock - Left edge tucked under center portrait!) GRAPHIC */
+.c-zach { width: 280px; transform: translate(-50%, -50%) rotate(4deg); margin-top: -180px; margin-left: 140px; z-index: 8; }
+/* 3: DJ Mic (Top Far Right, ~2 o'clock) PHOTO */
+.p-dj { width: 240px; height: 240px; transform: translate(-50%, -50%) rotate(8deg); border-radius: 8px; margin-top: -120px; margin-left: 320px; z-index: 5;}
+/* 4: Joy Run (Middle Right, ~4 o'clock) PHOTO */
+.p-run { width: 300px; height: 180px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 80px; margin-left: 320px; z-index: 7;}
+/* 5: David (Bottom Right, ~5 o'clock) GRAPHIC */
+.p-david { width: 280px; transform: translate(-50%, -50%) rotate(3deg); margin-top: 260px; margin-left: 180px; z-index: 12;}
+/* 6: Leonard (Bottom Left, ~7 o'clock) CUTOUT */
+.c-leonard { width: 220px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 240px; margin-left: -220px; z-index: 10; }
+/* 7: Team (Middle Left, ~9 o'clock) PHOTO */
+.p-team { width: 320px; height: 190px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: 40px; margin-left: -320px; z-index: 5;}
 
 /* Hover States - specifically reapplying translate so it stays in place when scaling */
-.floating-photo:hover { opacity: 1; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
+.floating-photo:hover, .floating-graphic:hover { opacity: 1; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
 .floating-cutout:hover { z-index: 50 !important; }
 
-.c-zach:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
+.p-first:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
 .p-dj:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
-.p-run:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
-.p-fiesta:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.p-run:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.p-david:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .c-leonard:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .p-team:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; cursor: pointer; }
+
+/* SPECIAL RULE: This keeps the solo shot safely tucked behind the center circle on hover so the crop line is never exposed! */
+.c-zach:hover { transform: translate(-50%, -50%) scale(1.04) rotate(0deg) !important; z-index: 20 !important; filter: drop-shadow(0 20px 35px rgba(0,0,0,0.3)); }
 
 /* =====================================================================
    TESTIMONIALS & CTA
@@ -1016,12 +1023,13 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   
   .about-visuals { height: 650px; padding-top: 0px; }
   .coach-cutout { width: 300px; height: 300px; margin-top: -20px; }
-  .c-zach { width: 300px; margin-top: -100px; margin-left: -100px; }
-  .p-dj { width: 240px; height: 160px; margin-top: -160px; margin-left: 200px; }
-  .p-run { width: 260px; height: 180px; margin-top: 20px; margin-left: 200px; }
-  .p-fiesta { width: 180px; height: 220px; margin-top: 220px; margin-left: 140px; }
-  .c-leonard { width: 180px; margin-top: 220px; margin-left: -160px; }
-  .p-team { width: 240px; height: 150px; margin-top: 80px; margin-left: -220px; }
+  .p-first { width: 220px; height: 280px; margin-top: -140px; margin-left: -220px; }
+  .c-zach { width: 220px; margin-top: -150px; margin-left: 120px; }
+  .p-dj { width: 200px; height: 200px; margin-top: -100px; margin-left: 260px; }
+  .p-run { width: 240px; height: 140px; margin-top: 60px; margin-left: 240px; }
+  .p-david { width: 220px; margin-top: 220px; margin-left: 140px; }
+  .c-leonard { width: 180px; margin-top: 200px; margin-left: -180px; }
+  .p-team { width: 240px; height: 150px; margin-top: 40px; margin-left: -240px; }
   
   .test-grid { grid-template-columns: 1fr 1fr; }
   .cta-container { grid-template-columns: 1fr; }
@@ -1059,12 +1067,13 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   
   .about-visuals { height: 600px; margin-top: 2rem; transform: scale(0.85); }
   .coach-cutout { width: 260px; height: 260px; margin-top: 0; }
-  .c-zach { width: 260px; margin-top: -80px; margin-left: -80px; }
-  .p-dj { width: 200px; height: 140px; margin-top: -140px; margin-left: 160px; }
-  .p-run { width: 220px; height: 150px; margin-top: 20px; margin-left: 160px; }
-  .p-fiesta { width: 160px; height: 200px; margin-top: 180px; margin-left: 100px; }
-  .c-leonard { width: 140px; margin-top: 180px; margin-left: -120px; }
-  .p-team { width: 200px; height: 130px; margin-top: 80px; margin-left: -180px; }
+  .p-first { width: 180px; height: 240px; margin-top: -120px; margin-left: -160px; }
+  .c-zach { width: 180px; margin-top: -120px; margin-left: 100px; }
+  .p-dj { width: 160px; height: 160px; margin-top: -60px; margin-left: 180px; }
+  .p-run { width: 180px; height: 110px; margin-top: 60px; margin-left: 170px; }
+  .p-david { width: 160px; margin-top: 170px; margin-left: 100px; }
+  .c-leonard { width: 140px; margin-top: 160px; margin-left: -120px; }
+  .p-team { width: 180px; height: 110px; margin-top: 40px; margin-left: -180px; }
 }
 </style>
 </head>
@@ -1125,7 +1134,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
             <div class="vinyl-hole"></div>
           </div>
           <div class="album-sleeve">
-            <img src="f732061bc3664fa69d1cde21f967fd8a (1).jpg" class="sleeve-actual-logo" alt="AH-HA Coaching Logo">
+            <img src="ahha-logo.png" class="sleeve-actual-logo" alt="AH-HA Coaching Logo">
             <div class="sleeve-text">
               MASTER YOUR <br>"FREESTYLE" ON <br><em class="purpose-spaced">purpose</em>.<br>NOT PERFECTLY &mdash;<br><em>purposefully</em>.
             </div>
@@ -1565,17 +1574,19 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         <p class="handwritten">Marlitha Williams</p>
       </div>
       <div class="about-visuals">
-        <!-- 1: Zach & Me (Top Left / Cutout) -->
-        <img src="Zach_and_me.png" class="cluster-item floating-cutout c-zach" alt="Professional Connection">
-        <!-- 2: DJ Mic (Top Right / Photo) -->
+        <!-- 1: First Class (Top Left) -->
+        <img src="first_class.png" class="cluster-item floating-photo p-first" alt="First Class">
+        <!-- 2: Zach Solo Shot (Top Right - Left edge hidden behind portrait) -->
+        <img src="Zach_and_me.png" class="cluster-item floating-graphic c-zach" alt="Professional Solo Shot">
+        <!-- 3: DJ Mic (Far Top Right) -->
         <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
-        <!-- 3: Joy Run (Middle Right / Photo) -->
+        <!-- 4: Joy Run (Middle Right) -->
         <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
-        <!-- 4: Fiesta (Bottom Right / Photo Cropped) -->
-        <img src="me and fiesta.png" class="cluster-item floating-photo p-fiesta" alt="Community Leader">
-        <!-- 5: Leonard (Bottom Left / Cutout) -->
+        <!-- 5: David Robinson Letter (Bottom Right) -->
+        <img src="David.png" class="cluster-item floating-graphic p-david" alt="David Robinson Letter">
+        <!-- 6: Leonard (Bottom Left) -->
         <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Joyful Connection">
-        <!-- 6: Team (Middle Left / Photo) -->
+        <!-- 7: Team (Middle Left) -->
         <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
         
         <!-- Main Portrait (Center) -->
