@@ -953,29 +953,29 @@ body {
 /* PHOTOS (Solid Framed Borders) */
 .floating-photo { border: 8px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.9; object-fit: cover; z-index: 5; }
 
-/* 1: Zach & Me (Top Left, ~11 o'clock) CUTOUT */
-.c-zach { width: 320px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -220px; margin-left: -280px; z-index: 10; }
-/* 2: Team (Top Right, ~1 o'clock) PHOTO */
-.p-team { width: 300px; height: 190px; transform: translate(-50%, -50%) rotate(8deg); margin-top: -220px; margin-left: 280px; z-index: 5;}
-/* 3: Fiesta (Middle Right, ~3 o'clock) CUTOUT */
-.c-fiesta { width: 240px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 40px; margin-left: 340px; z-index: 10;}
-/* 4: Joy Run (Bottom Right, ~5 o'clock) PHOTO */
-.p-run { width: 280px; height: 180px; transform: translate(-50%, -50%) rotate(5deg); margin-top: 260px; margin-left: 220px; z-index: 5;}
-/* 5: Leonard (Bottom Left, ~7 o'clock) CUTOUT */
+/* 1: Zach & Me (Shifted off-center behind left shoulder) CUTOUT */
+.c-zach { width: 400px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: -120px; margin-left: -140px; z-index: 15; }
+/* 2: DJ Mic (Top Right, SWAPPED) PHOTO */
+.p-dj { width: 300px; height: 200px; transform: translate(-50%, -50%) rotate(6deg); border-radius: 8px; margin-top: -220px; margin-left: 260px; z-index: 5;}
+/* 3: Joy Run (Middle Right, ENLARGED, MOVED LEFT) PHOTO */
+.p-run { width: 360px; height: 240px; transform: translate(-50%, -50%) rotate(-3deg); margin-top: 20px; margin-left: 240px; z-index: 8;}
+/* 4: Fiesta (Bottom Right, ZOOMED/LESS WHITE SPACE) PHOTO */
+.p-fiesta { width: 240px; height: 300px; object-fit: cover; object-position: center 20%; transform: translate(-50%, -50%) rotate(4deg); margin-top: 280px; margin-left: 180px; z-index: 12;}
+/* 5: Leonard (Bottom Left) CUTOUT */
 .c-leonard { width: 220px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 260px; margin-left: -220px; z-index: 10; }
-/* 6: DJ Mic (Middle Left, ~9 o'clock) PHOTO */
-.p-dj { width: 260px; height: 260px; transform: translate(-50%, -50%) rotate(-8deg); border-radius: 8px; margin-top: 20px; margin-left: -320px; z-index: 5;}
+/* 6: Team (Middle Left, SWAPPED) PHOTO */
+.p-team { width: 320px; height: 190px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: 60px; margin-left: -320px; z-index: 5;}
 
 /* Hover States - specifically reapplying translate so it stays in place when scaling */
 .floating-photo:hover { opacity: 1; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
 .floating-cutout:hover { z-index: 50 !important; }
 
-.c-zach:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
-.p-team:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
-.c-fiesta:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
-.p-run:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
-.c-leonard:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
-.p-dj:hover { transform: translate(-50%, -50%) scale(1.1) rotate(0deg) !important; }
+.c-zach:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
+.p-dj:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.p-run:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
+.p-fiesta:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.c-leonard:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
+.p-team:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; cursor: pointer; }
 
 /* =====================================================================
@@ -1014,14 +1014,14 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .about-container { grid-template-columns: 1fr; gap: 2rem; }
   .about-bio { padding: 2.5rem 1.5rem; }
   
-  .about-visuals { height: 600px; padding-top: 0px; }
+  .about-visuals { height: 650px; padding-top: 0px; }
   .coach-cutout { width: 300px; height: 300px; margin-top: -20px; }
-  .c-zach { width: 240px; margin-top: -180px; margin-left: -220px; }
-  .p-team { width: 240px; height: 150px; margin-top: -180px; margin-left: 220px; }
-  .c-fiesta { width: 180px; margin-top: 40px; margin-left: 260px; }
-  .p-run { width: 220px; height: 140px; margin-top: 200px; margin-left: 160px; }
-  .c-leonard { width: 180px; margin-top: 200px; margin-left: -160px; }
-  .p-dj { width: 200px; height: 200px; margin-top: 20px; margin-left: -240px; }
+  .c-zach { width: 300px; margin-top: -100px; margin-left: -100px; }
+  .p-dj { width: 240px; height: 160px; margin-top: -160px; margin-left: 200px; }
+  .p-run { width: 260px; height: 180px; margin-top: 20px; margin-left: 200px; }
+  .p-fiesta { width: 180px; height: 220px; margin-top: 220px; margin-left: 140px; }
+  .c-leonard { width: 180px; margin-top: 220px; margin-left: -160px; }
+  .p-team { width: 240px; height: 150px; margin-top: 80px; margin-left: -220px; }
   
   .test-grid { grid-template-columns: 1fr 1fr; }
   .cta-container { grid-template-columns: 1fr; }
@@ -1057,14 +1057,14 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .pf-item { flex: 0 0 40%; }
   .test-grid { grid-template-columns: 1fr; }
   
-  .about-visuals { height: 550px; margin-top: 2rem; transform: scale(0.85); }
-  .coach-cutout { width: 240px; height: 240px; margin-top: 0; }
-  .c-zach { width: 200px; margin-top: -140px; margin-left: -150px; }
-  .p-team { width: 180px; height: 110px; margin-top: -140px; margin-left: 150px; }
-  .c-fiesta { width: 140px; margin-top: 20px; margin-left: 180px; }
-  .p-run { width: 160px; height: 100px; margin-top: 150px; margin-left: 120px; }
-  .c-leonard { width: 140px; margin-top: 150px; margin-left: -120px; }
-  .p-dj { width: 160px; height: 160px; margin-top: 20px; margin-left: -180px; }
+  .about-visuals { height: 600px; margin-top: 2rem; transform: scale(0.85); }
+  .coach-cutout { width: 260px; height: 260px; margin-top: 0; }
+  .c-zach { width: 260px; margin-top: -80px; margin-left: -80px; }
+  .p-dj { width: 200px; height: 140px; margin-top: -140px; margin-left: 160px; }
+  .p-run { width: 220px; height: 150px; margin-top: 20px; margin-left: 160px; }
+  .p-fiesta { width: 160px; height: 200px; margin-top: 180px; margin-left: 100px; }
+  .c-leonard { width: 140px; margin-top: 180px; margin-left: -120px; }
+  .p-team { width: 200px; height: 130px; margin-top: 80px; margin-left: -180px; }
 }
 </style>
 </head>
@@ -1567,16 +1567,16 @@ textarea.form-control { resize: vertical; min-height: 120px; }
       <div class="about-visuals">
         <!-- 1: Zach & Me (Top Left / Cutout) -->
         <img src="Zach_and_me.png" class="cluster-item floating-cutout c-zach" alt="Professional Connection">
-        <!-- 2: Team (Top Right / Photo) -->
-        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
-        <!-- 3: Fiesta (Middle Right / Cutout) -->
-        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Community Leader">
-        <!-- 4: Joy Run (Bottom Right / Photo) -->
+        <!-- 2: DJ Mic (Top Right / Photo) -->
+        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
+        <!-- 3: Joy Run (Middle Right / Photo) -->
         <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
+        <!-- 4: Fiesta (Bottom Right / Photo Cropped) -->
+        <img src="me and fiesta.png" class="cluster-item floating-photo p-fiesta" alt="Community Leader">
         <!-- 5: Leonard (Bottom Left / Cutout) -->
         <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Joyful Connection">
-        <!-- 6: DJ Mic (Middle Left / Photo) -->
-        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
+        <!-- 6: Team (Middle Left / Photo) -->
+        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
         
         <!-- Main Portrait (Center) -->
         <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
