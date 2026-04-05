@@ -948,20 +948,23 @@ body {
 .floating-photo { border: 8px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); opacity: 0.9; object-fit: cover; z-index: 5; }
 
 /* Cluster Placements Matched to Mockup */
-/* 1: First Class (Top Left) PHOTO */
-.p-first { width: 280px; height: 260px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -160px; margin-left: -280px; z-index: 10; }
-/* 2: Zach Solo (Top Center-Right) GRAPHIC */
-.c-zach { width: 240px; transform: translate(-50%, -50%) rotate(4deg); margin-top: -240px; margin-left: 100px; z-index: 8; }
-/* 3: DJ Mic (Middle/Top Right) PHOTO */
-.p-dj { width: 240px; height: 240px; transform: translate(-50%, -50%) rotate(6deg); border-radius: 8px; margin-top: -60px; margin-left: 320px; z-index: 5;}
-/* 4: Joy Run (Bottom Right) PHOTO */
-.p-run { width: 280px; height: 180px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 140px; margin-left: 280px; z-index: 7;}
-/* 5: David (Bottom Center/Right) GRAPHIC - Rotated 90 deg counter-clockwise and tucked behind portrait */
-.p-david { width: 360px; transform: translate(-50%, -50%) rotate(-86deg); margin-top: 260px; margin-left: 100px; z-index: 4;}
-/* 6: Leonard (Bottom Left) CUTOUT */
-.c-leonard { width: 200px; transform: translate(-50%, -50%) rotate(4deg); margin-top: 220px; margin-left: -220px; z-index: 10; }
-/* 7: Team (Middle Left) PHOTO */
-.p-team { width: 300px; height: 190px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 40px; margin-left: -320px; z-index: 5;}
+/* 1: Solo Shot (Top Right) GRAPHIC - Back layer, legs tucked behind David Letter */
+.c-zach { width: 280px; transform: translate(-50%, -50%) rotate(4deg); margin-top: -240px; margin-left: 120px; z-index: 8; }
+/* 2: David (Top Left) GRAPHIC - Middle layer, rotated counter-clockwise, hiding Solo legs, catching Center shadow */
+.p-david { width: 380px; transform: translate(-50%, -50%) rotate(-85deg); margin-top: -160px; margin-left: -150px; z-index: 18;}
+/* 3: First Class (Middle Far Left) PHOTO */
+.p-first { width: 280px; height: 260px; transform: translate(-50%, -50%) rotate(-6deg); margin-top: -20px; margin-left: -320px; z-index: 10; }
+/* 4: DJ Mic (Top Far Right) PHOTO */
+.p-dj { width: 260px; height: 260px; transform: translate(-50%, -50%) rotate(8deg); border-radius: 8px; margin-top: -80px; margin-left: 320px; z-index: 5;}
+/* 5: Joy Run (Middle Right) PHOTO */
+.p-run { width: 300px; height: 190px; transform: translate(-50%, -50%) rotate(-4deg); margin-top: 100px; margin-left: 320px; z-index: 12;}
+/* 6: Fiesta (Bottom Right) CUTOUT */
+.c-fiesta { width: 240px; transform: translate(-50%, -50%) rotate(5deg); margin-top: 260px; margin-left: 180px; z-index: 15;}
+/* 7: Leonard (Bottom Left) CUTOUT */
+.c-leonard { width: 220px; transform: translate(-50%, -50%) rotate(-5deg); margin-top: 260px; margin-left: -200px; z-index: 14; }
+/* 8: Team (Bottom Center/Left) PHOTO */
+.p-team { width: 280px; height: 180px; transform: translate(-50%, -50%) rotate(-2deg); margin-top: 220px; margin-left: 0px; z-index: 6;}
+
 
 /* Hover States */
 .floating-photo:hover, .floating-graphic:hover { opacity: 1; z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); cursor: pointer; }
@@ -969,11 +972,11 @@ body {
 .p-first:hover { transform: translate(-50%, -50%) scale(1.05) rotate(0deg) !important; }
 .p-dj:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .p-run:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
-.p-david:hover { transform: translate(-50%, -50%) scale(1.08) rotate(-86deg) !important; z-index: 20 !important; } /* Maintains orientation */
+.p-david:hover { transform: translate(-50%, -50%) scale(1.08) rotate(-85deg) !important; z-index: 20 !important; } /* Maintains rotation */
 .c-leonard:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .p-team:hover { transform: translate(-50%, -50%) scale(1.08) rotate(0deg) !important; }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; cursor: pointer; }
-.c-zach:hover { transform: translate(-50%, -50%) scale(1.04) rotate(0deg) !important; z-index: 20 !important; filter: drop-shadow(0 20px 35px rgba(0,0,0,0.3)); }
+.c-zach:hover { transform: translate(-50%, -50%) scale(1.04) rotate(0deg) !important; z-index: 12 !important; filter: drop-shadow(0 20px 35px rgba(0,0,0,0.3)); }
 
 /* =====================================================================
    LINER NOTES / TESTIMONIAL CAROUSEL
@@ -1051,13 +1054,14 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   
   .about-visuals { height: 650px; padding-top: 0px; }
   .coach-cutout { width: 300px; height: 300px; margin-top: -20px; }
-  .p-first { width: 220px; height: auto; margin-top: -140px; margin-left: -200px; }
-  .c-zach { width: 200px; margin-top: -200px; margin-left: 80px; }
+  .c-zach { width: 220px; margin-top: -180px; margin-left: 100px; }
+  .p-david { width: 300px; margin-top: -120px; margin-left: -120px; transform: translate(-50%, -50%) rotate(-85deg); }
+  .p-first { width: 220px; height: auto; margin-top: -20px; margin-left: -240px; }
   .p-dj { width: 200px; height: 200px; margin-top: -60px; margin-left: 240px; }
-  .p-run { width: 240px; height: auto; margin-top: 100px; margin-left: 220px; }
-  .p-david { width: 260px; margin-top: 220px; margin-left: 100px; transform: translate(-50%, -50%) rotate(-86deg); }
-  .c-leonard { width: 160px; margin-top: 180px; margin-left: -180px; }
-  .p-team { width: 240px; height: auto; margin-top: 60px; margin-left: -240px; }
+  .p-run { width: 240px; height: auto; margin-top: 80px; margin-left: 240px; }
+  .c-fiesta { width: 180px; margin-top: 200px; margin-left: 140px; }
+  .c-leonard { width: 160px; margin-top: 200px; margin-left: -160px; }
+  .p-team { width: 220px; height: auto; margin-top: 180px; margin-left: 0px; }
   
   .cta-container { grid-template-columns: 1fr; }
   .cta-info, .contact-form { padding: 3rem 2rem; }
@@ -1094,15 +1098,7 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .liner-sleeve { padding: 2.5rem 2rem; }
   .liner-quote { font-size: 15px; }
   
-  .about-visuals { height: 600px; margin-top: 2rem; transform: scale(0.85); }
-  .coach-cutout { width: 260px; height: 260px; margin-top: 0; }
-  .p-first { width: 160px; margin-top: -100px; margin-left: -130px; }
-  .c-zach { width: 160px; margin-top: -140px; margin-left: 60px; }
-  .p-dj { width: 140px; height: 140px; margin-top: -40px; margin-left: 150px; }
-  .p-run { width: 180px; margin-top: 80px; margin-left: 140px; }
-  .p-david { width: 200px; margin-top: 160px; margin-left: 60px; transform: translate(-50%, -50%) rotate(-86deg); }
-  .c-leonard { width: 120px; margin-top: 140px; margin-left: -130px; }
-  .p-team { width: 180px; margin-top: 40px; margin-left: -160px; }
+  .about-visuals { height: 500px; margin-top: 2rem; transform: scale(0.7); }
 }
 </style>
 </head>
@@ -1603,19 +1599,21 @@ textarea.form-control { resize: vertical; min-height: 120px; }
         <p class="handwritten">Marlitha Williams</p>
       </div>
       <div class="about-visuals">
-        <!-- 1: First Class (Top Left) -->
+        <!-- 1: First Class (Middle Far Left) -->
         <img src="first_class.png" class="cluster-item floating-photo p-first" alt="First Class">
-        <!-- 2: Zach Solo Shot (Top Right - Left edge hidden behind portrait) -->
+        <!-- 2: Solo Shot (Top Right - Left edge hidden behind David Letter) -->
         <img src="Zach_and_me.png" class="cluster-item floating-graphic c-zach" alt="Professional Solo Shot">
         <!-- 3: DJ Mic (Far Top Right) -->
         <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
         <!-- 4: Joy Run (Middle Right) -->
         <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
-        <!-- 5: David Robinson Letter (Bottom Right - Tucked Behind) -->
+        <!-- 5: David Robinson Letter (Top Left - Tucked Behind Portrait, Over Solo Shot) -->
         <img src="David.png" class="cluster-item floating-graphic p-david" alt="David Robinson Letter">
         <!-- 6: Leonard (Bottom Left) -->
         <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Joyful Connection">
-        <!-- 7: Team (Middle Left) -->
+        <!-- 7: Fiesta (Bottom Right) -->
+        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Community Leader">
+        <!-- 8: Team (Bottom Center/Left) -->
         <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
         
         <!-- Main Portrait (Center) -->
