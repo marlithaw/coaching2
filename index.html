@@ -315,21 +315,35 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .about-visuals { position: relative; width: 100%; max-width: 600px; aspect-ratio: 1; margin: 0 auto; display: block; }
 .about-visuals::before { content: ''; position: absolute; inset: -20%; background: radial-gradient(circle at center, #ffffff 60%, rgba(255,255,255,0) 85%); z-index: 1; pointer-events: none; }
 .cluster-item { position: absolute; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; cursor: pointer;}
-.coach-cutout { width: 55%; height: 55%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-.floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)) contrast(1.05) brightness(1.02); mix-blend-mode: multiply; z-index: 10; }
+.coach-cutout { width: 50%; height: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+
+/* Cutouts: NO background, pure transparency with drop-shadow */
+.floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)) contrast(1.05) brightness(1.02); z-index: 10; }
+/* Photos: White border and background */
 .floating-photo { border: 6px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); object-fit: cover; z-index: 5; }
 
-.p-team { width: 45%; top: 5%; left: -5%; transform: rotate(-6deg); z-index: 5;}
-.p-david { width: 38%; top: 5%; right: -2%; transform: rotate(8deg); z-index: 4;}
-.p-dj { width: 42%; bottom: 8%; left: -5%; transform: rotate(4deg); z-index: 6;}
-.p-run { width: 40%; bottom: 5%; right: -2%; transform: rotate(-4deg); z-index: 8;}
-.c-fiesta { width: 40%; top: 15%; right: 5%; transform: rotate(3deg); z-index: 25;} 
-.c-zach { width: 45%; top: 40%; left: -8%; transform: rotate(-2deg); z-index: 15; }
-.c-leonard { width: 35%; bottom: 35%; right: -5%; transform: rotate(5deg); z-index: 12; }
+/* Layout Mapping to Sketch */
+.p-firstclass { width: 32%; top: 5%; left: 0%; transform: rotate(-8deg); z-index: 5;}
+.p-david      { width: 30%; top: -5%; left: 35%; transform: rotate(-90deg); z-index: 4;}
+.c-zach       { width: 32%; top: 5%; right: 0%; transform: rotate(5deg); z-index: 15;}
+.c-leonard    { width: 25%; top: 40%; left: -5%; transform: rotate(-5deg); z-index: 12;}
+.p-dj         { width: 32%; top: 40%; right: -5%; transform: rotate(6deg); z-index: 7;}
+.p-team       { width: 35%; bottom: 5%; left: 0%; transform: rotate(-4deg); z-index: 8;}
+.c-fiesta     { width: 28%; bottom: -5%; left: 36%; transform: rotate(2deg); z-index: 25;} 
+.p-run        { width: 35%; bottom: 5%; right: 0%; transform: rotate(-6deg); z-index: 8;}
 
-.floating-photo:hover, .floating-cutout:hover { z-index: 50 !important; transform: scale(1.08) rotate(0deg) !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
+/* Hover States - explicitly maintain base rotation */
+.floating-photo:hover, .floating-cutout:hover { z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; }
-.p-team:hover { transform: scale(1.1) rotate(0deg) !important; }
+
+.p-firstclass:hover { transform: scale(1.08) rotate(-8deg) !important; }
+.p-david:hover      { transform: scale(1.08) rotate(-90deg) !important; }
+.c-zach:hover       { transform: scale(1.08) rotate(5deg) !important; }
+.c-leonard:hover    { transform: scale(1.08) rotate(-5deg) !important; }
+.p-dj:hover         { transform: scale(1.08) rotate(6deg) !important; }
+.p-team:hover       { transform: scale(1.08) rotate(-4deg) !important; }
+.c-fiesta:hover     { transform: scale(1.08) rotate(2deg) !important; }
+.p-run:hover        { transform: scale(1.08) rotate(-6deg) !important; }
 
 /* ALBUM SLEEVE TESTIMONIALS (MATCHING MOCKUP DESIGN) */
 .testimonials-sec { padding-top: 5rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10; overflow: hidden; }
@@ -472,16 +486,17 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .pf-meaning { max-width: 100%; text-align: center; }
   .rap-grid { grid-template-columns: 1fr; }
   
-  /* About / Scrapbook - Keep in bounds and expand height */
-  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: auto; height: 500px; }
-  .coach-cutout { width: 170px; height: 170px; }
-  .p-team { width: 130px; top: 0; left: 0; }
-  .p-david { width: 140px; top: 5%; right: 0; z-index: 4; }
-  .p-dj { width: 130px; bottom: 0; left: 0; }
-  .p-run { width: 130px; bottom: 2%; right: 0; }
-  .c-fiesta { width: 120px; top: 12%; right: 5%; z-index: 25; }
-  .c-zach { width: 130px; top: 45%; left: 0; }
-  .c-leonard { width: 100px; bottom: 30%; right: 5%; }
+  /* About / Scrapbook - Match layout on mobile */
+  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: auto; height: 450px; }
+  .coach-cutout { width: 160px; height: 160px; }
+  .p-firstclass { width: 110px; top: 5%; left: 0; }
+  .p-david      { width: 110px; top: 0%; left: 32%; }
+  .c-zach       { width: 110px; top: 5%; right: 0; }
+  .c-leonard    { width: 90px; top: 40%; left: -5%; }
+  .p-dj         { width: 110px; top: 40%; right: -5%; }
+  .p-team       { width: 120px; bottom: 5%; left: 0; }
+  .c-fiesta     { width: 100px; bottom: 0; left: 35%; }
+  .p-run        { width: 120px; bottom: 5%; right: 0; }
   
   /* Testimonials (Liner Notes) */
   .liner-notes-wrapper { padding: 1rem 0 2rem; }
@@ -882,14 +897,15 @@ textarea.form-control { resize: vertical; min-height: 100px; }
       
       <!-- Re-engineered with responsive % alignment to solve proportionality and visual layout issues -->
       <div class="about-visuals">
-        <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
-        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
+        <img src="first_class.jpg" class="cluster-item floating-photo p-firstclass" alt="My First Class" onerror="this.src='first_class.png'">
         <img src="David.png" class="cluster-item floating-photo p-david" alt="David Letter">
+        <img src="Zach_and_me.png" class="cluster-item floating-cutout c-zach" alt="Blue Dress Cutout">
+        <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Leonard Connection">
+        <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
         <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
+        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
+        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Fiesta Leader">
         <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
-        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Community Leader">
-        <img src="Zach_and_me.png" class="cluster-item floating-cutout c-zach" alt="Professional Connection">
-        <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Joyful Connection">
       </div>
     </div>
   </section>
