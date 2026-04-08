@@ -317,7 +317,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .coach-cutout { width: 50%; height: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 
 /* Cutouts: Pure transparency without any white backing, just soft drop-shadow */
-.floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); z-index: 10; }
+.floating-cutout { mix-blend-mode: darken; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); z-index: 10; background: transparent; border: none; }
 /* Photos: White polaroid border and background */
 .floating-photo { border: 6px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); object-fit: cover; z-index: 5; }
 /* Letters/Docs: No border, just a shadow */
@@ -901,8 +901,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <img src="first_class.jpg" class="cluster-item floating-photo p-firstclass" alt="My First Class" onerror="this.src='first_class.png'">
         <img src="David.png" class="cluster-item floating-letter p-david" alt="David Letter">
         <img src="Zach_and_me.png" class="cluster-item floating-cutout c-bluedress" alt="Blue Dress Cutout">
-        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
-        <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
+        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-cutout p-dj" alt="DJ In the Booth">
+        <img src="joy_run.png" class="cluster-item floating-cutout p-run" alt="Joyful Run">
         <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Fiesta Leader">
         <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
         <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Leonard Connection">
