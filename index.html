@@ -313,18 +313,19 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 
 /* SCRAPBOOK CLUSTER */
 .about-visuals { position: relative; width: 100%; max-width: 600px; aspect-ratio: 1; margin: 0 auto; display: block; }
-.about-visuals::before { content: ''; position: absolute; inset: -15%; background: radial-gradient(circle at center, #ffffff 50%, rgba(255,255,255,0) 75%); z-index: 1; pointer-events: none; }
+.about-visuals::before { content: ''; position: absolute; inset: -20%; background: radial-gradient(circle at center, #ffffff 60%, rgba(255,255,255,0) 85%); z-index: 1; pointer-events: none; }
 .cluster-item { position: absolute; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; cursor: pointer;}
 .coach-cutout { width: 55%; height: 55%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 .floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)) contrast(1.05) brightness(1.02); mix-blend-mode: multiply; z-index: 10; }
 .floating-photo { border: 6px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); object-fit: cover; z-index: 5; }
 
-.p-team { width: 45%; top: 5%; left: 0%; transform: rotate(-6deg); z-index: 5;}
-.p-dj { width: 35%; top: 8%; right: 0%; transform: rotate(8deg); z-index: 4;}
-.p-run { width: 40%; bottom: 8%; left: 5%; transform: rotate(-4deg); z-index: 8;}
-.c-fiesta { width: 40%; bottom: 0%; right: 5%; transform: rotate(3deg); z-index: 25;} 
-.c-zach { width: 45%; top: 35%; left: -8%; transform: rotate(-2deg); z-index: 15; }
-.c-leonard { width: 35%; top: 45%; right: -5%; transform: rotate(5deg); z-index: 12; }
+.p-team { width: 45%; top: 5%; left: -5%; transform: rotate(-6deg); z-index: 5;}
+.p-david { width: 38%; top: 5%; right: -2%; transform: rotate(8deg); z-index: 4;}
+.p-dj { width: 42%; bottom: 8%; left: -5%; transform: rotate(4deg); z-index: 6;}
+.p-run { width: 40%; bottom: 5%; right: -2%; transform: rotate(-4deg); z-index: 8;}
+.c-fiesta { width: 40%; top: 15%; right: 5%; transform: rotate(3deg); z-index: 25;} 
+.c-zach { width: 45%; top: 40%; left: -8%; transform: rotate(-2deg); z-index: 15; }
+.c-leonard { width: 35%; bottom: 35%; right: -5%; transform: rotate(5deg); z-index: 12; }
 
 .floating-photo:hover, .floating-cutout:hover { z-index: 50 !important; transform: scale(1.08) rotate(0deg) !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; z-index: 50 !important; }
@@ -471,15 +472,16 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .pf-meaning { max-width: 100%; text-align: center; }
   .rap-grid { grid-template-columns: 1fr; }
   
-  /* About / Scrapbook - Keep in bounds */
-  .about-visuals { margin-top: 2rem; max-width: 320px; aspect-ratio: auto; height: 350px; }
-  .coach-cutout { width: 160px; height: 160px; }
-  .p-team { width: 120px; top: 0; left: 0; }
-  .p-dj { width: 100px; top: 5%; right: 0; }
-  .p-run { width: 120px; bottom: 5%; left: 0; }
-  .c-fiesta { width: 120px; bottom: 0; right: 0; }
-  .c-zach { width: 130px; top: 40%; left: 0; }
-  .c-leonard { width: 110px; top: 50%; right: 0; }
+  /* About / Scrapbook - Keep in bounds and expand height */
+  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: auto; height: 500px; }
+  .coach-cutout { width: 170px; height: 170px; }
+  .p-team { width: 130px; top: 0; left: 0; }
+  .p-david { width: 140px; top: 5%; right: 0; z-index: 4; }
+  .p-dj { width: 130px; bottom: 0; left: 0; }
+  .p-run { width: 130px; bottom: 2%; right: 0; }
+  .c-fiesta { width: 120px; top: 12%; right: 5%; z-index: 25; }
+  .c-zach { width: 130px; top: 45%; left: 0; }
+  .c-leonard { width: 100px; bottom: 30%; right: 5%; }
   
   /* Testimonials (Liner Notes) */
   .liner-notes-wrapper { padding: 1rem 0 2rem; }
@@ -882,6 +884,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
       <div class="about-visuals">
         <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
         <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
+        <img src="David.png" class="cluster-item floating-photo p-david" alt="David Letter">
         <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
         <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
         <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Community Leader">
