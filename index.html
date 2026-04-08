@@ -313,12 +313,11 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 
 /* SCRAPBOOK CLUSTER */
 .about-visuals { position: relative; width: 100%; max-width: 600px; aspect-ratio: 1; margin: 0 auto; display: block; }
-.about-visuals::before { content: ''; position: absolute; inset: -20%; background: radial-gradient(circle at center, #ffffff 60%, rgba(255,255,255,0) 85%); z-index: 1; pointer-events: none; }
 .cluster-item { position: absolute; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; cursor: pointer;}
 .coach-cutout { width: 50%; height: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 
-/* Cutouts: Pure transparency to hide any white backing, with soft drop-shadow */
-.floating-cutout { mix-blend-mode: multiply; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); z-index: 10; }
+/* Cutouts: Pure transparency without any white backing, just soft drop-shadow */
+.floating-cutout { filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); z-index: 10; }
 /* Photos: White polaroid border and background */
 .floating-photo { border: 6px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); object-fit: cover; z-index: 5; }
 /* Letters/Docs: No border, just a shadow */
