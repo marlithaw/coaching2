@@ -330,6 +330,9 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .p-dj         { width: 32%; top: 40%; right: -8%; transform: rotate(6deg); z-index: 7;}
 .p-run        { width: 35%; bottom: 5%; right: -2%; transform: rotate(-6deg); z-index: 8;}
 .p-team       { width: 35%; bottom: 5%; left: -5%; transform: rotate(-4deg); z-index: 8;}
+.p-hallway    { width: 30%; top: 40%; left: -8%; transform: rotate(-5deg); z-index: 12;}
+.p-hug        { width: 28%; bottom: -5%; left: 35%; transform: rotate(2deg); z-index: 26;}
+.p-stage      { width: 34%; top: -5%; right: 15%; transform: rotate(4deg); z-index: 3;}
 
 /* Hover States - explicitly maintain base rotation so they don't snap awkwardly */
 .cluster-item:hover { z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
@@ -340,6 +343,9 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .p-dj:hover         { transform: scale(1.08) rotate(6deg) !important; }
 .p-team:hover       { transform: scale(1.08) rotate(-4deg) !important; }
 .p-run:hover        { transform: scale(1.08) rotate(-6deg) !important; }
+.p-hallway:hover    { transform: scale(1.08) rotate(-5deg) !important; }
+.p-hug:hover        { transform: scale(1.08) rotate(2deg) !important; }
+.p-stage:hover      { transform: scale(1.08) rotate(4deg) !important; }
 
 /* ALBUM SLEEVE TESTIMONIALS (MATCHING MOCKUP DESIGN) */
 .testimonials-sec { padding-top: 5rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10; overflow: hidden; }
@@ -491,6 +497,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .p-dj         { width: 100px; top: 40%; right: -5%; }
   .p-run        { width: 120px; bottom: 5%; right: -2%; }
   .p-team       { width: 120px; bottom: 5%; left: -2%; }
+  .p-hallway    { width: 100px; top: 40%; left: -5%; }
+  .p-hug        { width: 90px; bottom: 0%; left: 35%; z-index: 26; }
+  .p-stage      { width: 110px; top: -5%; right: 15%; z-index: 3; }
   
   /* Testimonials (Liner Notes) */
   .liner-notes-wrapper { padding: 1rem 0 2rem; }
@@ -898,6 +907,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-cutout p-dj" alt="DJ In the Booth">
         <img src="joy_run.png" class="cluster-item floating-cutout p-run" alt="Joyful Run">
         <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
+        <img src="20211001_080115.jpg" class="cluster-item floating-photo p-hallway" alt="Speaking in the Hallway">
+        <img src="20210524_075715.jpg" class="cluster-item floating-photo p-hug" alt="Hugging Student">
+        <img src="Joy.jpg" class="cluster-item floating-photo p-stage" alt="Fiesta Stage Celebration">
       </div>
     </div>
   </section>
