@@ -323,29 +323,29 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 /* Letters/Docs: No border, just a shadow */
 .floating-letter { filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); z-index: 4; }
 
-/* Layout Mapping Exactly to Sketch */
-.p-firstclass { width: 32%; top: 5%; left: -2%; transform: rotate(-8deg); z-index: 5;}
-.p-david      { width: 35%; top: -5%; left: 32%; transform: rotate(-90deg); z-index: 4;} /* tucked under blue dress */
-.c-bluedress  { width: 35%; top: 0%; right: -2%; transform: rotate(5deg); z-index: 25;} /* blue dress */
-.p-dj         { width: 32%; top: 40%; right: -8%; transform: rotate(6deg); z-index: 7;}
-.p-run        { width: 35%; bottom: 5%; right: -2%; transform: rotate(-6deg); z-index: 8;}
-.p-team       { width: 35%; bottom: 5%; left: -5%; transform: rotate(-4deg); z-index: 8;}
-.p-hallway    { width: 30%; top: 40%; left: -8%; transform: rotate(-5deg); z-index: 12;}
-.p-hug        { width: 28%; bottom: -5%; left: 35%; transform: rotate(2deg); z-index: 26;}
-.p-stage      { width: 34%; top: -5%; right: 15%; transform: rotate(4deg); z-index: 3;}
+/* Layout Mapping - Clustered Tightly Around Center */
+.p-firstclass { width: 32%; top: 12%; left: 8%; transform: rotate(-8deg); z-index: 5;}
+.p-david      { width: 32%; top: 2%; left: 35%; transform: rotate(-90deg); z-index: 4;} /* Sideways Album Note */
+.c-bluedress  { width: 28%; top: 5%; right: 12%; left: auto; transform: rotate(2deg); z-index: 25;} /* Clean transparency, pulled inward */
+.p-stage      { width: 30%; top: 22%; right: 2%; left: auto; transform: rotate(8deg); z-index: 3;}
+.p-hallway    { width: 32%; top: 40%; left: 2%; transform: rotate(-5deg); z-index: 12;}
+.p-dj         { width: 28%; top: 48%; right: 2%; left: auto; transform: rotate(4deg); z-index: 7;}
+.p-team       { width: 34%; bottom: 8%; left: 5%; transform: rotate(-4deg); z-index: 8;}
+.p-hug        { width: 28%; bottom: -2%; left: 40%; transform: rotate(3deg); z-index: 26;}
+.p-run        { width: 30%; bottom: 10%; right: 5%; left: auto; transform: rotate(-6deg); z-index: 9;}
 
 /* Hover States - explicitly maintain base rotation so they don't snap awkwardly */
 .cluster-item:hover { z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; }
 .p-firstclass:hover { transform: scale(1.08) rotate(-8deg) !important; }
 .p-david:hover      { transform: scale(1.08) rotate(-90deg) !important; }
-.c-bluedress:hover  { transform: scale(1.08) rotate(5deg) !important; }
-.p-dj:hover         { transform: scale(1.08) rotate(6deg) !important; }
-.p-team:hover       { transform: scale(1.08) rotate(-4deg) !important; }
-.p-run:hover        { transform: scale(1.08) rotate(-6deg) !important; }
+.c-bluedress:hover  { transform: scale(1.08) rotate(2deg) !important; }
+.p-stage:hover      { transform: scale(1.08) rotate(8deg) !important; }
 .p-hallway:hover    { transform: scale(1.08) rotate(-5deg) !important; }
-.p-hug:hover        { transform: scale(1.08) rotate(2deg) !important; }
-.p-stage:hover      { transform: scale(1.08) rotate(4deg) !important; }
+.p-dj:hover         { transform: scale(1.08) rotate(4deg) !important; }
+.p-team:hover       { transform: scale(1.08) rotate(-4deg) !important; }
+.p-hug:hover        { transform: scale(1.08) rotate(3deg) !important; }
+.p-run:hover        { transform: scale(1.08) rotate(-6deg) !important; }
 
 /* ALBUM SLEEVE TESTIMONIALS (MATCHING MOCKUP DESIGN) */
 .testimonials-sec { padding-top: 5rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10; overflow: hidden; }
@@ -489,17 +489,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .rap-grid { grid-template-columns: 1fr; }
   
   /* About / Scrapbook - Match layout exactly on mobile */
-  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: auto; height: 450px; }
-  .coach-cutout { width: 160px; height: 160px; }
-  .p-firstclass { width: 110px; top: 5%; left: -2%; }
-  .p-david      { width: 110px; top: 0%; left: 30%; }
-  .c-bluedress  { width: 120px; top: 5%; right: -2%; z-index: 25; }
-  .p-dj         { width: 100px; top: 40%; right: -5%; }
-  .p-run        { width: 120px; bottom: 5%; right: -2%; }
-  .p-team       { width: 120px; bottom: 5%; left: -2%; }
-  .p-hallway    { width: 100px; top: 40%; left: -5%; }
-  .p-hug        { width: 90px; bottom: 0%; left: 35%; z-index: 26; }
-  .p-stage      { width: 110px; top: -5%; right: 15%; z-index: 3; }
+  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: 1; height: auto; }
+  /* (Removed pixel overrides so the cluster perfectly scales down on mobile keeping the exact same overlap) */
   
   /* Testimonials (Liner Notes) */
   .liner-notes-wrapper { padding: 1rem 0 2rem; }
