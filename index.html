@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- FIXED: Removed maximum-scale=1.0 and user-scalable=no for accessibility -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="description" content="The R³ Model by AH-HA Coaching — a sequenced framework for emotional regulation through Reflection, Resistance, and Revelation. Move from automatic reaction to conscious choice.">
 <title>R³ Agency Practice (R.A.P.) — AH-HA Coaching, LLC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,8 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Permanent+Marker&family=Reenie+Beanie&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 * {box-sizing:border-box; margin:0; padding:0;}
-/* FIXED: Added scroll-padding-top so anchor links don't hide behind the sticky header */
-html {scroll-behavior:smooth; scroll-padding-top: 80px;}
+html {scroll-behavior:smooth;}
 
 :root {
   --primary: #8B2C2D; --secondary: #D4AF37; --tertiary: #9CAB88; 
@@ -71,8 +69,8 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 /* ALBUM RECORD */
 .album-wrapper { position: relative; width: 100%; max-width: 400px; aspect-ratio: 1; display: flex; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)); transform: translateX(-5%); }
 .album-sleeve { position: absolute; inset: 0; z-index: 3; border-radius: 4px; overflow: hidden; background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal-dark) 100%); border: 1px solid rgba(255,255,255,0.1); box-shadow: 8px 0 25px rgba(0,0,0,0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; padding: 2rem; }
-.sleeve-actual-logo { position: absolute; top: 1.5rem; left: 1.5rem; width: 20%; max-width: 80px; opacity: 0.95; }
-.sleeve-text { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(18px, 4vw, 30px); color: #fff; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.02em; text-align: left; width: 100%; margin-top: 10%;}
+.sleeve-actual-logo { position: absolute; top: 1.5rem; left: 1.5rem; width: 40%; max-width: 140px; opacity: 0.95; }
+.sleeve-text { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(18px, 4vw, 30px); color: #fff; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.02em; text-align: left; width: 100%; margin-top: 25%;}
 .sleeve-text em { font-family: 'Reenie Beanie', cursive; font-size: 2.2em; text-transform: none; color: var(--orange-pop); line-height: 0.6; display: inline-block; margin: 10px 0 5px 0; }
 .purpose-spaced { letter-spacing: 0.1em; }
 .vinyl-record { position: absolute; top: 2%; bottom: 2%; right: -65%; aspect-ratio: 1; border-radius: 50%; background: #111; z-index: 2; box-shadow: inset 0 0 15px rgba(255,255,255,0.2), 0 0 0 2px #333; }
@@ -126,7 +124,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .fog-card { background: #94C5CC; border: 1px solid rgba(0,0,0,0.1); border-top: 3px solid var(--teal-dark); padding: 2rem 1.5rem; border-radius: 8px; text-align: left; transition: all 0.3s ease; display: flex; flex-direction: column; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
 .fog-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); border-top-color: var(--orange-pop); }
 .fog-card h4 { font-family: 'Inter', sans-serif; color: var(--teal-dark); font-size: 18px; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -0.02em; }
-.fog-card .fc-tag { font-family: 'Space Mono', monospace; color: var(--dark); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 1rem; font-weight: 700;}
+.fog-card .fc-tag { font-family: 'Space Mono', monospace; color: var(--dark); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; display: block; margin-bottom: 1rem; font-weight: 700;}
 .fog-card p { font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.6; color: var(--dark); font-weight: 500; margin-bottom: 1.5rem; flex: 1; }
 .arena-btn { background: var(--teal-dark); color: #fff; border: none; padding: 10px 18px; font-weight: 700; font-size: 13px; border-radius: 4px; cursor: pointer; transition: all 0.3s; align-self: flex-start; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);}
 .arena-btn:hover { background: var(--orange-pop); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255,107,0,0.3); }
@@ -153,7 +151,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .sc-content.conscious { border-left: 4px solid var(--orange-pop); padding-left: 1.5rem; }
 .sc-content p + p { margin-top: 1rem; }
 .sc-content strong { color: var(--teal-dark); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; display: block; margin-bottom: 4px; }
-.r3-label { color: var(--orange-pop); font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255, 107, 0, 0.1); padding: 4px 8px; border-radius: 2px; display: inline-block; margin-bottom: 8px; font-weight: 700; }
+.r3-label { color: var(--orange-pop); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255, 107, 0, 0.1); padding: 4px 8px; border-radius: 2px; display: inline-block; margin-bottom: 8px; font-weight: 700; }
 
 @media(min-width: 900px) {
   .scenario-card { padding: 3rem; flex-direction: row; align-items: stretch; gap: 3rem; }
@@ -167,7 +165,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .assessment-intro { text-align: center; max-width: 900px; margin: 0 auto 3rem; }
 .assessment-card { padding: clamp(2rem, 4vw, 4rem); border-top: 3px solid var(--bronze); max-width: 900px; margin: 0 auto; }
 .mixer-container { margin-bottom: 3rem; background: rgba(0, 0, 0, 0.5); padding: 24px 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
-.mixer-labels { display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;}
+.mixer-labels { display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;}
 .mixer-track { width: 100%; height: 8px; background: rgba(255,255,255,0.2); border-radius: 4px; position: relative; }
 .mixer-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, var(--bronze), var(--secondary)); width: 0%; transition: width 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); }
 .mixer-knob { width: 22px; height: 22px; background: #fff; border: 3px solid var(--bronze); border-radius: 50%; position: absolute; top: -7px; left: 0%; transform: translateX(-50%); transition: left 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 4px 8px rgba(0,0,0,0.5); cursor: pointer;}
@@ -204,7 +202,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .tonearm-rod { width: 6px; height: 100%; background: linear-gradient(90deg, #eee, #ffffff, #ccc); border: 1px solid rgba(0,0,0,0.1); position: absolute; top: 20px; left: 17px; border-radius: 4px;}
 .tonearm-head { width: 16px; height: 32px; background: #444; border: 1px solid rgba(0,0,0,0.2); position: absolute; bottom: -12px; left: 12px; border-radius: 4px; transform-origin: top center; transform: rotate(-25deg);}
 .console-pads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; width: 100%;}
-.pad-btn { aspect-ratio: 1; padding: 12px 6px; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: var(--teal-dark); background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.2s; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;}
+.pad-btn { aspect-ratio: 1; padding: 12px 6px; font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; color: var(--teal-dark); background: rgba(255,255,255,0.5); border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.2s; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;}
 .pad-btn span { font-size: 18px; color: var(--teal-light); line-height: 1;}
 .pad-btn:hover { transform: translateY(-2px); border-color: var(--teal-light);}
 .pad-btn.active { background: var(--teal-light); color: #fff; box-shadow: 0 5px 15px rgba(26, 95, 122, 0.4); transform: translateY(2px); border-color: var(--teal-dark);}
@@ -213,7 +211,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .readout-content { animation: aFadeUp 0.4s ease forwards;}
 .readout-title { font-family: 'Inter', sans-serif; font-size: clamp(24px, 3vw, 34px); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 1rem; line-height: 1.1; transition: color 0.3s ease;}
 .readout-desc { font-size: 16px; line-height: 1.7; color: var(--body); font-weight: 400;}
-.readout-tag { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--orange-pop); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 700; }
+.readout-tag { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--orange-pop); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 700; }
 
 /* MODALITY BRIDGE */
 .modality-bridge { text-align: center; margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(0,0,0,0.05); max-width: 1100px; margin-inline: auto; }
@@ -237,7 +235,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .rap-row{display:flex;align-items:center;gap:12px}
 .rap-letter{font-family:'Permanent Marker', cursive; font-size:28px;font-weight:400;color:var(--amber);min-width:24px;flex-shrink:0;}
 .rap-term{font-family:'Space Mono',monospace; font-size:13px;color:var(--dark);flex:1;font-weight:700; text-transform:uppercase; letter-spacing:0.05em;}
-.rap-wtag{font-size:12px;color:var(--muted);text-transform:uppercase; letter-spacing:0.1em;}
+.rap-wtag{font-size:11px;color:var(--muted);text-transform:uppercase; letter-spacing:0.1em;}
 .expand-caret{font-size:12px;color:var(--dark);transition:transform 0.3s ease;margin-left:4px}
 .rap-item.active .expand-caret{transform:rotate(180deg);color:var(--amber)}
 .rap-detail{font-size: 14.5px; color:var(--body);line-height:1.7;margin-top:0;padding:0 16px;background:transparent;border-left:4px solid transparent;max-height:0;overflow:hidden;opacity:0;transition:max-height 0.4s ease,opacity 0.3s ease,padding 0.4s ease,margin 0.4s ease}
@@ -291,7 +289,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .pf-item.show{opacity:1;transform:translateY(0)}
 .pf-letter{font-family:'Inter',sans-serif;font-size:clamp(32px,5vw,60px);font-weight:800; letter-spacing:-0.02em; color:var(--surface);line-height:1;display:block; margin-bottom:4px; }
 .pf-word{font-family:'Space Mono',monospace; font-size: 11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange-pop);font-weight:700;display:block;opacity:0;transition:opacity 0.5s ease, text-shadow 0.5s ease;margin-bottom:8px;}
-.pf-meaning{font-family:'Space Mono',monospace; font-size: 11px;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.7);font-weight:700;display:block;opacity:0;transition:opacity 0.5s ease 0.1s;line-height:1.5;max-width:120px}
+.pf-meaning{font-family:'Space Mono',monospace; font-size: 9px;letter-spacing:0.05em;text-transform:uppercase;color:rgba(255,255,255,0.7);font-weight:700;display:block;opacity:0;transition:opacity 0.5s ease 0.1s;line-height:1.5;max-width:120px}
 .pf-item.show-text .pf-word, .pf-item.show-text .pf-meaning{opacity:1}
 .pf-item.full-glow .pf-word { color: #fff; text-shadow: 0 0 10px rgba(255, 107, 0, 0.8); }
 .p2-bottom-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -302,7 +300,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .rs-w.show { opacity: 1; transform: translateY(0); }
 .rs-glow-text { color: var(--orange-pop); display: inline-block;}
 .rs-glow-text.full-glow { color: #fff; text-shadow: 0 0 20px rgba(255,107,0,0.8); }
-.rtb-btn{background:transparent;color:var(--surface);border:2px solid var(--surface); border-radius: 4px; padding:0.8rem 2rem;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;opacity:0;transition:all 0.4s; display:inline-flex; align-items:center; gap:8px; margin-top: 1.5rem;}
+.rtb-btn{background:transparent;color:var(--surface);border:2px solid var(--surface); border-radius: 4px; padding:0.8rem 2rem;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;opacity:0;transition:all 0.4s; display:inline-flex; align-items:center; gap:8px; margin-top: 1.5rem;}
 .rtb-btn.show{opacity:1}
 .rtb-btn:hover{background:var(--surface);color:var(--teal-dark);}
 
@@ -315,38 +313,46 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 
 /* SCRAPBOOK CLUSTER */
 .about-visuals { position: relative; width: 100%; max-width: 600px; aspect-ratio: 1; margin: 0 auto; display: block; }
-.about-visuals::before { content: ''; position: absolute; inset: -20%; background: radial-gradient(circle at center, #ffffff 60%, rgba(255,255,255,0) 85%); z-index: 1; pointer-events: none; }
 .cluster-item { position: absolute; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; cursor: pointer;}
 .coach-cutout { width: 50%; height: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 
-/* Cutouts: Pure transparency to hide any white backing, with soft drop-shadow */
-.floating-cutout { mix-blend-mode: multiply; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); z-index: 10; }
+/* Cutouts: Pure transparency without any white backing, just soft drop-shadow */
+.floating-cutout { 
+    background: transparent !important; 
+    border: none !important; 
+    box-shadow: none !important; 
+    filter: none !important; /* Removes Safari bug that turns PNG shadows into white boxes */
+    mix-blend-mode: multiply !important; /* Forces any stray white pixels to vanish against the background */
+    z-index: 10; 
+}
 /* Photos: White polaroid border and background */
 .floating-photo { border: 6px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); object-fit: cover; z-index: 5; }
 /* Letters/Docs: No border, just a shadow */
 .floating-letter { filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); z-index: 4; }
 
-/* Layout Mapping Exactly to Sketch */
-.p-firstclass { width: 32%; top: 5%; left: -2%; transform: rotate(-8deg); z-index: 5;}
-.p-david      { width: 35%; top: -5%; left: 32%; transform: rotate(-90deg); z-index: 4;} /* tucked under blue dress */
-.c-bluedress  { width: 35%; top: 0%; right: -2%; transform: rotate(5deg); z-index: 25;} /* blue dress */
-.p-dj         { width: 32%; top: 40%; right: -8%; transform: rotate(6deg); z-index: 7;}
-.p-run        { width: 35%; bottom: 5%; right: -2%; transform: rotate(-6deg); z-index: 8;}
-.c-fiesta     { width: 32%; bottom: -5%; left: 35%; transform: rotate(2deg); z-index: 25;} 
-.p-team       { width: 35%; bottom: 5%; left: -5%; transform: rotate(-4deg); z-index: 8;}
-.c-leonard    { width: 28%; top: 40%; left: -8%; transform: rotate(-5deg); z-index: 12;}
+/* Layout Mapping - Clustered Tightly Around Center */
+.p-firstclass { width: 32%; top: 12%; left: 8%; transform: rotate(-8deg); z-index: 5;}
+.p-david      { width: 32%; top: 2%; left: 35%; transform: rotate(-90deg); z-index: 4;} /* Sideways Album Note */
+.c-bluedress  { width: 28%; top: 5%; right: 12%; left: auto; transform: rotate(2deg); z-index: 25; background: transparent !important;} /* Clean transparency, pulled inward */
+.p-stage      { width: 30%; top: 22%; right: 2%; left: auto; transform: rotate(8deg); z-index: 3;}
+.p-hallway    { width: 32%; top: 40%; left: 2%; transform: rotate(-5deg); z-index: 12;}
+.p-dj         { width: 28%; top: 48%; right: 2%; left: auto; transform: rotate(4deg); z-index: 7;}
+.p-team       { width: 34%; bottom: 8%; left: 5%; transform: rotate(-4deg); z-index: 8;}
+.p-hug        { width: 28%; bottom: -2%; left: 40%; transform: rotate(3deg); z-index: 26;}
+.p-run        { width: 30%; bottom: 10%; right: 5%; left: auto; transform: rotate(-6deg); z-index: 9;}
 
 /* Hover States - explicitly maintain base rotation so they don't snap awkwardly */
 .cluster-item:hover { z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; }
 .p-firstclass:hover { transform: scale(1.08) rotate(-8deg) !important; }
 .p-david:hover      { transform: scale(1.08) rotate(-90deg) !important; }
-.c-bluedress:hover  { transform: scale(1.08) rotate(5deg) !important; }
-.p-dj:hover         { transform: scale(1.08) rotate(6deg) !important; }
+.c-bluedress:hover  { transform: scale(1.08) rotate(2deg) !important; }
+.p-stage:hover      { transform: scale(1.08) rotate(8deg) !important; }
+.p-hallway:hover    { transform: scale(1.08) rotate(-5deg) !important; }
+.p-dj:hover         { transform: scale(1.08) rotate(4deg) !important; }
 .p-team:hover       { transform: scale(1.08) rotate(-4deg) !important; }
-.c-fiesta:hover     { transform: scale(1.08) rotate(2deg) !important; }
+.p-hug:hover        { transform: scale(1.08) rotate(3deg) !important; }
 .p-run:hover        { transform: scale(1.08) rotate(-6deg) !important; }
-.c-leonard:hover    { transform: scale(1.08) rotate(-5deg) !important; }
 
 /* ALBUM SLEEVE TESTIMONIALS (MATCHING MOCKUP DESIGN) */
 .testimonials-sec { padding-top: 5rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10; overflow: hidden; }
@@ -355,8 +361,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .liner-notes-wrapper { width: 100%; overflow-x: auto; overflow-y: hidden; scroll-behavior: smooth; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 2rem 0 4rem; }
 .liner-notes-wrapper::-webkit-scrollbar { display: none; }
 .liner-notes-wrapper { -ms-overflow-style: none; scrollbar-width: none; }
-/* Added padding-right to allow the final element to not sit flush against the screen on mobile */
-.liner-notes-carousel { display: flex; padding: 0 max(2rem, calc((100% - 1100px)/2)); width: max-content; padding-right: 5rem;}
+.liner-notes-carousel { display: flex; padding: 0 max(2rem, calc((100% - 1100px)/2)); width: max-content; }
 
 /* Vinyl now slides out of the LEFT to match rotated mockup */
 .liner-item-wrapper { position: relative; flex: 0 0 320px; width: 320px; scroll-snap-align: center; margin-left: 70px; margin-right: 20px; display: flex; align-items: center; }
@@ -375,7 +380,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .liner-quote { font-family: 'Reenie Beanie', cursive; font-size: clamp(24px, 3vw, 28px); line-height: 1.15; color: #1a1a1a; margin-bottom: auto; transform: rotate(-2deg); letter-spacing: 0.02em; display: -webkit-box; -webkit-line-clamp: 8; -webkit-box-orient: vertical; overflow: hidden; }
 .liner-author-role { transform: rotate(-2deg); text-align: right; margin-top: 1.5rem; }
 .liner-author { font-family: 'Reenie Beanie', cursive; font-weight: 700; color: #1a1a1a; font-size: 26px; line-height: 1;}
-.liner-role { font-family: 'Space Mono', monospace; font-size: 10px; color: rgba(0,0,0,0.6); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-top: 4px; }
+.liner-role { font-family: 'Space Mono', monospace; font-size: 9px; color: rgba(0,0,0,0.5); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-top: 4px; }
 
 /* CTA & FOOTER */
 .cta-sec { padding-top: 4rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10;}
@@ -384,7 +389,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .cta-info p { font-size: 15.5px; color: var(--body); margin-bottom: 2rem; }
 .contact-form { padding: 3.5rem; display: flex; flex-direction: column; gap: 1.5rem; position: relative; }
 .form-group { display: flex; flex-direction: column; gap: 8px; }
-.form-group label { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); }
+.form-group label { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--dark); }
 .form-control { width: 100%; padding: 12px 14px; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; background: #fff; font-family: 'Inter', sans-serif; font-size: 15px; color: var(--dark); transition: all 0.3s;}
 .form-control:focus { outline: none; border-color: var(--orange-pop); box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);}
 textarea.form-control { resize: vertical; min-height: 100px; }
@@ -392,7 +397,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 
 .footer{padding-top:2.5rem;padding-bottom:2.5rem;border-top:1px solid rgba(0,0,0,0.05);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px;background:var(--bg-color); position:relative; z-index:10;}
 .footer-name{font-family:'Inter',sans-serif;font-size:20px;font-weight:700; letter-spacing: -0.02em; color:var(--dark);}
-.footer-sub{font-family:'Space Mono',monospace; font-size:12px;color:var(--muted);letter-spacing:0.2em; text-transform:uppercase;}
+.footer-sub{font-family:'Space Mono',monospace; font-size:11px;color:var(--muted);letter-spacing:0.2em; text-transform:uppercase;}
 
 /* MEDIA MODAL */
 .media-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
@@ -445,8 +450,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .hero-catchphrase { text-align: center !important; }
   .album-wrapper { transform: none; margin: 0 auto; max-width: 220px; }
   .vinyl-record { right: -40%; } /* Prevents overflow */
-  .sleeve-text { font-size: 16px; margin-top: 15%; }
-  .sleeve-actual-logo { width: 40px; }
+  .sleeve-text { font-size: 16px; margin-top: 30%; }
+  .sleeve-actual-logo { width: 35%; max-width: 100px; top: 1.2rem; left: 1.2rem; }
 
   /* Fix Fog */
   .fog-quote { font-size: 20px; }
@@ -470,7 +475,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .turntable-wrapper { max-width: 220px; }
   .deck-panel { padding: 2rem 1rem; }
   .console-pads { gap: 8px; }
-  .pad-btn { font-size: 11px; padding: 8px 4px; }
+  .pad-btn { font-size: 9px; padding: 8px 4px; }
   
   /* Remix */
   .remix-glass-stage { padding: 2rem 1rem; border-radius: 12px;}
@@ -490,9 +495,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .pf-meaning { max-width: 100%; text-align: center; }
   .rap-grid { grid-template-columns: 1fr; }
   
-  /* About / Scrapbook FIXED: Dynamic scaling instead of hardcoded pixels */
-  .about-visuals { margin-top: 2rem; max-width: 400px; aspect-ratio: 1; height: auto; margin-inline: auto; }
-  .coach-cutout { width: 50%; height: 50%; }
+  /* About / Scrapbook - Match layout exactly on mobile */
+  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: 1; height: auto; }
+  /* (Removed pixel overrides so the cluster perfectly scales down on mobile keeping the exact same overlap) */
   
   /* Testimonials (Liner Notes) */
   .liner-notes-wrapper { padding: 1rem 0 2rem; }
@@ -534,9 +539,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     <div class="hero-slideshow">
       <div class="hero-slide active" style="background-image: url('PEACE (2).jpg');"></div>
       <div class="hero-slide" style="background-image: url('8_A_Black_woman_sits_cross_legge_1_20260327_123619.png');"></div>
-      <div class="hero-slide" style="background-image: url('Joy.png');"></div>
+      <div class="hero-slide" style="background-image: url('Boombox Love.png');"></div>
       <div class="hero-slide" style="background-image: url('13_A_Black_woman_stands_behind_a_1_20260328_182847.png');"></div>
-      <div class="hero-slide" style="background-image: url('teacher cypher.png');"></div>
+      <div class="hero-slide" style="background-image: url('header_reveal.png');"></div>
     </div>
     <div class="hero-overlay" id="hero-overlay"></div>
 
@@ -571,19 +576,19 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     <div class="fog-animals-grid fade-in d1">
       <div class="fog-animal-wrap">
         <div class="fog-overlay delay-1"></div>
-        <img src="snake.png" alt="Snake" class="fog-animal delay-1">
+        <img src="snake.png" alt="Snake" class="fog-animal delay-1" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%230C3645%22/%3E%3Ctext x=%2250%22 y=%2255%22 font-size=%2240%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E🐍%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="fog-animal-wrap">
         <div class="fog-overlay delay-2"></div>
-        <img src="rat.png" alt="Rat" class="fog-animal delay-2">
+        <img src="rat.png" alt="Rat" class="fog-animal delay-2" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%230C3645%22/%3E%3Ctext x=%2250%22 y=%2255%22 font-size=%2240%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E🐀%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="fog-animal-wrap">
         <div class="fog-overlay delay-3"></div>
-        <img src="cat.png" alt="Cat" class="fog-animal delay-3">
+        <img src="cat.png" alt="Cat" class="fog-animal delay-3" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%230C3645%22/%3E%3Ctext x=%2250%22 y=%2255%22 font-size=%2240%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E🐈%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="fog-animal-wrap">
         <div class="fog-overlay delay-4"></div>
-        <img src="dog.png" alt="Dog" class="fog-animal delay-4">
+        <img src="dog.png" alt="Dog" class="fog-animal delay-4" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%230C3645%22/%3E%3Ctext x=%2250%22 y=%2255%22 font-size=%2240%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3E🐕%3C/text%3E%3C/svg%3E'">
       </div>
     </div>
     <div class="fog-quote fade-in d2">
@@ -724,7 +729,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
       <div class="deck-panel">
         <div class="turntable-wrapper">
           <div class="turntable-platter">
-            <div class="record spinning" id="vinyl-record"><div class="record-label" id="record-label"><span class="record-label-text">01</span></div></div>
+            <div class="record" id="vinyl-record"><div class="record-label" id="record-label"><span class="record-label-text">01</span></div></div>
             <div class="tonearm-container" id="tonearm"><div class="tonearm-base"></div><div class="tonearm-rod"></div><div class="tonearm-head"></div></div>
           </div>
         </div>
@@ -736,11 +741,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
       </div>
       <div class="readout-panel">
         <div class="readout-tag">Track Info</div>
-        <div id="readout-content" class="readout-content">
-          <!-- Default loaded content -->
-          <h3 class="readout-title" style="color: var(--tertiary)">Reflection</h3>
-          <p class="readout-desc">The objective examination of what is actually happening. Like a producer isolating an audio track, it’s about separating the raw truth from the emotional noise—listening past the noise to hear the underlying beat.</p>
-        </div>
+        <div id="readout-content" class="readout-content"></div>
       </div>
     </div>
   </section>
@@ -754,18 +755,18 @@ textarea.form-control { resize: vertical; min-height: 100px; }
       <h3 class="modality-title">Choose Your Frequency</h3>
       <p class="modality-desc">Everyone processes differently. How do you want to learn the method?</p>
       <div class="modality-grid">
-        <button class="mod-card" onclick="document.getElementById('rap-text-grid').scrollIntoView({behavior: 'smooth'});" style="font: inherit; outline: inherit; background-color: #fff;">
+        <a href="#rap-text-grid" class="mod-card" onclick="document.getElementById('rap-text-grid').scrollIntoView({behavior: 'smooth'}); return false;">
           <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
           <span class="mod-label">Read The Manual</span><span class="mod-desc-text">Dive into the detailed liner notes of each phase below.</span>
-        </button>
-        <button class="mod-card" onclick="openMediaModal('audio');" style="font: inherit; outline: inherit; background-color: #fff;">
+        </a>
+        <a href="#" class="mod-card" onclick="openMediaModal('audio'); return false;">
           <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div>
           <span class="mod-label">Hear The Track</span><span class="mod-desc-text">Experience the original music video breaking down the framework.</span>
-        </button>
-        <button class="mod-card" onclick="openMediaModal('video');" style="font: inherit; outline: inherit; background-color: #fff;">
+        </a>
+        <a href="#" class="mod-card" onclick="openMediaModal('video'); return false;">
           <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg></div>
           <span class="mod-label">Watch The Studio</span><span class="mod-desc-text">Watch a visual deep-dive into the framework's core concepts.</span>
-        </button>
+        </a>
         <a href="The_Mind_Remix.pdf" class="mod-card" target="_blank" download="The_Mind_Remix.pdf">
           <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></div>
           <span class="mod-label">Grab The Freebie</span><span class="mod-desc-text">Download the complete R³ Mind Remix PDF guide.</span>
@@ -788,7 +789,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <div class="rap-detail" id="r4"><img src="4_A_chrome_cassette_tape_lies_on_1_20260327_123546.png" class="rap-detail-img" alt="Resist Cassette Tape"><span style="color: var(--teal-dark); font-weight: 700; font-style: italic; display: block; margin-bottom: 12px; border-left: 2px solid var(--amber); padding-left: 10px;">"Sleep is the cousin of death." — Nas</span>The intentional interruption of the conditioned response (inhibitory control)—like catching the needle before it drops. Resistance is hitting pause long enough to wake up and choose your direction.</div>
         <div class="rap-item" role="button" tabindex="0" onclick="toggleRap(this,'r5')"><div class="rap-row"><span class="rap-letter">A</span><span class="rap-term">Act</span><span class="rap-wtag">How</span><span class="expand-caret">▾</span></div></div>
         <div class="rap-detail" id="r5">Remaining present creates conditions for intentional action. Act moves through three layers:<br><br><strong>Pattern Recognition</strong> — Default track or making a choice?<br><strong>Alignment Check</strong> — Does this align with my values?<br><strong>Consequence Awareness</strong> — What is the cost of this action?</div>
-        <div class="rap-item" role="button" tabindex="0" onclick="toggleRap(this,'r6')"><div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Press/Pivot</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div></div>
+        <div class="rap-item" role="button" tabindex="0" onclick="toggleRap(this,'r6')"><div class="rap-row"><span class="rap-letter">P</span><span class="rap-term">Purposeful Press or Pivot</span><span class="rap-wtag">Why</span><span class="expand-caret">▾</span></div></div>
         <div class="rap-detail" id="r6"><span style="color: var(--teal-dark); font-weight: 700; font-style: italic; display: block; margin-bottom: 12px; border-left: 2px solid var(--amber); padding-left: 10px;">"Stay far from timid, only make moves when your heart's in it." — The Notorious B.I.G.</span>When direction is informed by concrete actions rather than habit, choice becomes the new evidence the nervous system needs.</div>
       </div>
       <div class="rap-col rc3">
@@ -829,10 +830,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         </button>
       </div>
       <div class="ctx-card ctx3">
-        <div class="ctx-img-wrap">
-            <!-- Ensure video has a reliable background/fallback visually -->
-            <video src="IMG_4240.MP4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(1.1); background:#333;"></video>
-        </div>
+        <div class="ctx-img-wrap"><video src="IMG_4240.MP4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(1.1);"></video></div>
         <p class="ctx-label">The Group Cypher</p>
         <p class="ctx-punch">Workshops, PD &amp; Keynotes</p>
         <p class="ctx-body">Interactive training and high-energy live events for schools, caregiving teams, and organizations. We equip your people with the tools to interrupt their own conditioned responses, shifting culture from the inside out.</p>
@@ -898,16 +896,18 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <p class="handwritten">Marlitha Williams</p>
       </div>
       
+      <!-- Re-engineered with responsive % alignment to solve proportionality and visual layout issues -->
       <div class="about-visuals">
         <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
-        <img src="first_class.jpg" class="cluster-item floating-photo p-firstclass" alt="My First Class">
+        <img src="first_class.jpg" class="cluster-item floating-photo p-firstclass" alt="My First Class" onerror="this.src='first_class.png'">
         <img src="David.png" class="cluster-item floating-letter p-david" alt="David Letter">
         <img src="Zach_and_me.png" class="cluster-item floating-cutout c-bluedress" alt="Blue Dress Cutout">
-        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
-        <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
-        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Fiesta Leader">
+        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-cutout p-dj" alt="DJ In the Booth">
+        <img src="joy_run.png" class="cluster-item floating-cutout p-run" alt="Joyful Run">
         <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
-        <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Leonard Connection">
+        <img src="20211001_080115.jpg" class="cluster-item floating-photo p-hallway" alt="Speaking in the Hallway">
+        <img src="20210524_075715.jpg" class="cluster-item floating-photo p-hug" alt="Hugging Student">
+        <img src="Joy.jpg" class="cluster-item floating-photo p-stage" alt="Fiesta Stage Celebration">
       </div>
     </div>
   </section>
@@ -935,7 +935,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <p>Whether you are a caregiver seeking support, an educator navigating classroom stress, or an organization looking to shift its culture, the R³ framework offers a path forward.</p>
         <p><strong>Reach out today to discuss coaching, workshops, or speaking engagements.</strong></p>
       </div>
-      <!-- Clean inline message logic -->
+      <!-- Removed intrusive alert(), replaced with clean inline message logic -->
       <form class="contact-form" onsubmit="event.preventDefault(); document.getElementById('form-success').style.display='block'; this.style.display='none';">
         <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" class="form-control" placeholder="Jane Doe" required></div>
         <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" class="form-control" placeholder="jane@example.com" required></div>
@@ -1185,7 +1185,7 @@ const arenaTitles = {
 
 const arenaImages = {
   'classroom': 'Frustration Tape.png',
-  'caregiving': 'image_b2313c.jpg',
+  'caregiving': 'Caregiving.Track.jpg',
   'workplace': 'Frustration Tape.png',
   'relationships': 'Frustration Tape.png'
 };
@@ -1199,7 +1199,7 @@ const arenaAltText = {
 
 function scrollToScenarioTop() { 
   const card = document.getElementById('scenario-card'); 
-  window.scrollTo({ top: card.getBoundingClientRect().top + window.pageYOffset - 90, behavior: "smooth" }); 
+  window.scrollTo({ top: card.getBoundingClientRect().top + window.pageYOffset - 80, behavior: "smooth" }); 
 }
 
 function openArena(cat, shouldScroll = true) {
@@ -1332,12 +1332,7 @@ function playTrack(trackId) {
     const record = document.getElementById('vinyl-record');
     const label = document.getElementById('record-label');
     
-    // Quick re-trigger for the animation
-    if (record) {
-        record.classList.remove('spinning');
-        void record.offsetWidth;
-        record.classList.add('spinning');
-    }
+    if (record && !record.classList.contains('spinning')) { record.classList.add('spinning'); }
     
     if (label) {
         label.style.background = tracks[trackId].color;
@@ -1357,12 +1352,7 @@ function playTrack(trackId) {
     }
 }
 
-// FIXED: Manage asynchronous animations nicely to avoid overlaps/race conditions
-let remixTimeouts = [];
-
 function startRemix() {
-  resetRemix(); // Safely clear any existing timeouts
-  
   const btn  = document.getElementById('remix-btn');
   const desc = document.getElementById('p0-desc');
   const bigI = document.getElementById('p0-i');
@@ -1371,35 +1361,36 @@ function startRemix() {
   if(btn) { btn.style.pointerEvents = 'none'; btn.style.opacity = '0.3'; }
   if(desc) desc.style.opacity = '0';
 
-  remixTimeouts.push(setTimeout(() => { if(bigI) bigI.classList.add('to-teal'); }, 500));
-  remixTimeouts.push(setTimeout(() => { if(bigT) bigT.classList.add('show'); }, 1500)); 
-  remixTimeouts.push(setTimeout(() => { if(bigI) bigI.classList.add('fade-out'); }, 2500)); 
+  setTimeout(() => { if(bigI) bigI.classList.add('to-teal'); }, 500);
+  setTimeout(() => { if(bigT) bigT.classList.add('show'); }, 1500); 
+  setTimeout(() => { if(bigI) bigI.classList.add('fade-out'); }, 2500); 
   
-  remixTimeouts.push(setTimeout(() => { 
+  setTimeout(() => { 
       const sh = document.getElementById('p0-sh');
       const er = document.getElementById('p0-er');
       if(sh) sh.classList.add('fade-out'); 
       if(er) er.classList.add('show'); 
-  }, 3200)); 
+  }, 3200); 
   
-  remixTimeouts.push(setTimeout(() => { 
+  setTimeout(() => { 
       const cen = document.getElementById('p0-cen');
       if(cen) cen.classList.add('show'); 
-  }, 4000)); 
+  }, 4000); 
 
-  remixTimeouts.push(setTimeout(() => {
+  setTimeout(() => {
     if(desc) {
         desc.innerHTML = '<p style="font-family:\'Inter\',sans-serif; font-size:clamp(16px,2vw,20px); font-style:italic; color:var(--orange-pop); font-weight:600;">Hitting pause. Becoming a <span style="text-decoration:underline;">centered self</span>.</p>';
         desc.style.opacity = '1';
     }
-  }, 5200));
+  }, 5200);
   
-  remixTimeouts.push(setTimeout(() => { if(desc) desc.style.opacity = '0'; }, 8200)); 
+  setTimeout(() => { if(desc) desc.style.opacity = '0'; }, 8200); 
   
-  remixTimeouts.push(setTimeout(() => { 
+  setTimeout(() => { 
       const lw = document.getElementById('p0-left-wrap');
       const rw = document.getElementById('p0-right-wrap');
       if(lw) {
+          // Responsive translation check
           lw.style.transform = window.innerWidth < 768 ? 'translateX(-20vw)' : 'translateX(-30vw)';
           lw.style.opacity = '0.15'; 
       }
@@ -1409,73 +1400,73 @@ function startRemix() {
       }
       const bigT_el = document.getElementById('p0-t');
       if(bigT_el) bigT_el.classList.add('fade-out'); 
-  }, 8500));
+  }, 8500);
   
-  remixTimeouts.push(setTimeout(() => { 
+  setTimeout(() => { 
       const pr = document.getElementById('p0-plural-row');
       if(pr) pr.classList.add('show'); 
-  }, 9200));
+  }, 9200);
 
-  remixTimeouts.push(setTimeout(() => {
+  setTimeout(() => {
     if(desc) {
         desc.innerHTML = '<p style="font-family:\'Inter\',sans-serif; font-size:clamp(16px,2vw,20px); font-style:italic; color:var(--orange-pop); font-weight:600;">The foundation for a Plural life.</p>';
         desc.style.opacity = '1';
     }
-  }, 9700));
+  }, 9700);
   
-  remixTimeouts.push(setTimeout(() => { if(desc) desc.style.opacity = '0'; }, 12700));
+  setTimeout(() => { if(desc) desc.style.opacity = '0'; }, 12700);
   
-  remixTimeouts.push(setTimeout(() => { 
+  setTimeout(() => { 
       const pr = document.getElementById('p0-plural-row');
       if(pr) pr.style.opacity = '0'; 
       const wrapper = document.getElementById('p0-word-wrapper');
       if(wrapper) wrapper.style.opacity = '0';
-  }, 13000));
+  }, 13000);
 
-  remixTimeouts.push(setTimeout(() => {
+  setTimeout(() => {
     const p0 = document.getElementById('remix-p0');
     const p2 = document.getElementById('remix-p2');
     if(p0) p0.classList.remove('active');
     if(p2) p2.classList.add('active');
     
-    remixTimeouts.push(setTimeout(() => { 
+    setTimeout(() => { 
         const eLine = document.getElementById('plural-eyebrow-line');
         if(eLine) eLine.classList.add('show'); 
-    }, 150));
+    }, 150);
     
-    remixTimeouts.push(setTimeout(() => {
+    setTimeout(() => {
       ['pf-P','pf-L','pf-U','pf-R','pf-A','pf-L2'].forEach(id => {
         const el = document.getElementById(id);
         if(el) el.classList.add('show');
       });
-    }, 500));
+    }, 500);
 
-    remixTimeouts.push(setTimeout(() => {
+    setTimeout(() => {
       const line1 = document.getElementById('rs-line-1');
       if(line1) line1.classList.add('show');
-    }, 1500));
+    }, 1500);
 
-    remixTimeouts.push(setTimeout(() => {
+    setTimeout(() => {
       const line2 = document.getElementById('rs-line-2');
       if(line2) line2.classList.add('show');
-    }, 2500));
+    }, 2500);
 
-    remixTimeouts.push(setTimeout(() => {
+    setTimeout(() => {
       const words = document.querySelectorAll('.rs-w');
       const pluralItems = ['pf-P','pf-L','pf-U','pf-R','pf-A','pf-L2'];
       
       words.forEach((w, idx) => {
-        remixTimeouts.push(setTimeout(() => { 
+        setTimeout(() => { 
             w.classList.add('show'); 
             if (idx < pluralItems.length) {
                 const el = document.getElementById(pluralItems[idx]);
                 if (el) el.classList.add('show-text');
             }
-        }, idx * 250)); 
+        }, idx * 250); 
       });
-    }, 3200));
+    }, 3200);
 
-    remixTimeouts.push(setTimeout(() => { 
+    setTimeout(() => { 
         const glow = document.getElementById('rs-glow-container');
         if(glow) glow.classList.add('full-glow'); 
         
@@ -1483,21 +1474,17 @@ function startRemix() {
             const el = document.getElementById(id);
             if(el) el.classList.add('full-glow');
         });
-    }, 5500));
+    }, 5500);
 
-    remixTimeouts.push(setTimeout(() => { 
+    setTimeout(() => { 
         const rtb = document.getElementById('rtb-btn');
         if(rtb) rtb.classList.add('show'); 
-    }, 7000));
+    }, 7000);
 
-  }, 13700));
+  }, 13700);
 }
 
 function resetRemix() {
-  // Clear all pending timeouts to prevent overlap
-  remixTimeouts.forEach(clearTimeout);
-  remixTimeouts = [];
-
   ['pf-P','pf-L','pf-U','pf-R','pf-A','pf-L2'].forEach(id => { 
       const el = document.getElementById(id);
       if(el) {
