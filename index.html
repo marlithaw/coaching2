@@ -69,8 +69,8 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 /* ALBUM RECORD */
 .album-wrapper { position: relative; width: 100%; max-width: 400px; aspect-ratio: 1; display: flex; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5)); transform: translateX(-5%); }
 .album-sleeve { position: absolute; inset: 0; z-index: 3; border-radius: 4px; overflow: hidden; background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal-dark) 100%); border: 1px solid rgba(255,255,255,0.1); box-shadow: 8px 0 25px rgba(0,0,0,0.5), inset 0 0 0 4px rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; padding: 2rem; }
-.sleeve-actual-logo { position: absolute; top: 1.5rem; left: 1.5rem; width: 40%; max-width: 140px; opacity: 0.95; }
-.sleeve-text { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(18px, 4vw, 30px); color: #fff; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.02em; text-align: left; width: 100%; margin-top: 25%;}
+.sleeve-actual-logo { position: absolute; top: 1.5rem; left: 1.5rem; width: 20%; max-width: 80px; opacity: 0.95; }
+.sleeve-text { font-family: 'Inter', sans-serif; font-weight: 800; font-size: clamp(18px, 4vw, 30px); color: #fff; line-height: 1.2; text-transform: uppercase; letter-spacing: -0.02em; text-align: left; width: 100%; margin-top: 10%;}
 .sleeve-text em { font-family: 'Reenie Beanie', cursive; font-size: 2.2em; text-transform: none; color: var(--orange-pop); line-height: 0.6; display: inline-block; margin: 10px 0 5px 0; }
 .purpose-spaced { letter-spacing: 0.1em; }
 .vinyl-record { position: absolute; top: 2%; bottom: 2%; right: -65%; aspect-ratio: 1; border-radius: 50%; background: #111; z-index: 2; box-shadow: inset 0 0 15px rgba(255,255,255,0.2), 0 0 0 2px #333; }
@@ -313,46 +313,38 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 
 /* SCRAPBOOK CLUSTER */
 .about-visuals { position: relative; width: 100%; max-width: 600px; aspect-ratio: 1; margin: 0 auto; display: block; }
+.about-visuals::before { content: ''; position: absolute; inset: -20%; background: radial-gradient(circle at center, #ffffff 60%, rgba(255,255,255,0) 85%); z-index: 1; pointer-events: none; }
 .cluster-item { position: absolute; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; cursor: pointer;}
 .coach-cutout { width: 50%; height: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 
-/* Cutouts: Pure transparency without any white backing, just soft drop-shadow */
-.floating-cutout { 
-    background: transparent !important; 
-    border: none !important; 
-    box-shadow: none !important; 
-    filter: none !important; /* Removes Safari bug that turns PNG shadows into white boxes */
-    mix-blend-mode: multiply !important; /* Forces any stray white pixels to vanish against the background */
-    z-index: 10; 
-}
+/* Cutouts: Pure transparency to hide any white backing, with soft drop-shadow */
+.floating-cutout { mix-blend-mode: multiply; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.15)); z-index: 10; }
 /* Photos: White polaroid border and background */
 .floating-photo { border: 6px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); object-fit: cover; z-index: 5; }
 /* Letters/Docs: No border, just a shadow */
 .floating-letter { filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); z-index: 4; }
 
-/* Layout Mapping - Clustered Tightly Around Center */
-.p-firstclass { width: 32%; top: 12%; left: 8%; transform: rotate(-8deg); z-index: 5;}
-.p-david      { width: 32%; top: 2%; left: 35%; transform: rotate(-90deg); z-index: 4;} /* Sideways Album Note */
-.c-bluedress  { width: 28%; top: 5%; right: 12%; left: auto; transform: rotate(2deg); z-index: 25; background: transparent !important;} /* Clean transparency, pulled inward */
-.p-stage      { width: 30%; top: 22%; right: 2%; left: auto; transform: rotate(8deg); z-index: 3;}
-.p-hallway    { width: 32%; top: 40%; left: 2%; transform: rotate(-5deg); z-index: 12;}
-.p-dj         { width: 28%; top: 48%; right: 2%; left: auto; transform: rotate(4deg); z-index: 7;}
-.p-team       { width: 34%; bottom: 8%; left: 5%; transform: rotate(-4deg); z-index: 8;}
-.p-hug        { width: 28%; bottom: -2%; left: 40%; transform: rotate(3deg); z-index: 26;}
-.p-run        { width: 30%; bottom: 10%; right: 5%; left: auto; transform: rotate(-6deg); z-index: 9;}
+/* Layout Mapping Exactly to Sketch */
+.p-firstclass { width: 32%; top: 5%; left: -2%; transform: rotate(-8deg); z-index: 5;}
+.p-david      { width: 35%; top: -5%; left: 32%; transform: rotate(-90deg); z-index: 4;} /* tucked under blue dress */
+.c-bluedress  { width: 35%; top: 0%; right: -2%; transform: rotate(5deg); z-index: 25;} /* blue dress */
+.p-dj         { width: 32%; top: 40%; right: -8%; transform: rotate(6deg); z-index: 7;}
+.p-run        { width: 35%; bottom: 5%; right: -2%; transform: rotate(-6deg); z-index: 8;}
+.c-fiesta     { width: 32%; bottom: -5%; left: 35%; transform: rotate(2deg); z-index: 25;} 
+.p-team       { width: 35%; bottom: 5%; left: -5%; transform: rotate(-4deg); z-index: 8;}
+.c-leonard    { width: 28%; top: 40%; left: -8%; transform: rotate(-5deg); z-index: 12;}
 
 /* Hover States - explicitly maintain base rotation so they don't snap awkwardly */
 .cluster-item:hover { z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
 .coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; }
 .p-firstclass:hover { transform: scale(1.08) rotate(-8deg) !important; }
 .p-david:hover      { transform: scale(1.08) rotate(-90deg) !important; }
-.c-bluedress:hover  { transform: scale(1.08) rotate(2deg) !important; }
-.p-stage:hover      { transform: scale(1.08) rotate(8deg) !important; }
-.p-hallway:hover    { transform: scale(1.08) rotate(-5deg) !important; }
-.p-dj:hover         { transform: scale(1.08) rotate(4deg) !important; }
+.c-bluedress:hover  { transform: scale(1.08) rotate(5deg) !important; }
+.p-dj:hover         { transform: scale(1.08) rotate(6deg) !important; }
 .p-team:hover       { transform: scale(1.08) rotate(-4deg) !important; }
-.p-hug:hover        { transform: scale(1.08) rotate(3deg) !important; }
+.c-fiesta:hover     { transform: scale(1.08) rotate(2deg) !important; }
 .p-run:hover        { transform: scale(1.08) rotate(-6deg) !important; }
+.c-leonard:hover    { transform: scale(1.08) rotate(-5deg) !important; }
 
 /* ALBUM SLEEVE TESTIMONIALS (MATCHING MOCKUP DESIGN) */
 .testimonials-sec { padding-top: 5rem; padding-bottom: 6rem; background-color: var(--bg-color); position: relative; z-index: 10; overflow: hidden; }
@@ -450,8 +442,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .hero-catchphrase { text-align: center !important; }
   .album-wrapper { transform: none; margin: 0 auto; max-width: 220px; }
   .vinyl-record { right: -40%; } /* Prevents overflow */
-  .sleeve-text { font-size: 16px; margin-top: 30%; }
-  .sleeve-actual-logo { width: 35%; max-width: 100px; top: 1.2rem; left: 1.2rem; }
+  .sleeve-text { font-size: 16px; margin-top: 15%; }
+  .sleeve-actual-logo { width: 40px; }
 
   /* Fix Fog */
   .fog-quote { font-size: 20px; }
@@ -496,8 +488,16 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .rap-grid { grid-template-columns: 1fr; }
   
   /* About / Scrapbook - Match layout exactly on mobile */
-  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: 1; height: auto; }
-  /* (Removed pixel overrides so the cluster perfectly scales down on mobile keeping the exact same overlap) */
+  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: auto; height: 450px; }
+  .coach-cutout { width: 160px; height: 160px; }
+  .p-firstclass { width: 110px; top: 5%; left: -2%; }
+  .p-david      { width: 110px; top: 0%; left: 30%; }
+  .c-bluedress  { width: 120px; top: 5%; right: -2%; z-index: 25; }
+  .p-dj         { width: 100px; top: 40%; right: -5%; }
+  .p-run        { width: 120px; bottom: 5%; right: -2%; }
+  .c-fiesta     { width: 100px; bottom: 0%; left: 35%; }
+  .p-team       { width: 120px; bottom: 5%; left: -2%; }
+  .c-leonard    { width: 90px; top: 40%; left: -5%; }
   
   /* Testimonials (Liner Notes) */
   .liner-notes-wrapper { padding: 1rem 0 2rem; }
@@ -539,9 +539,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     <div class="hero-slideshow">
       <div class="hero-slide active" style="background-image: url('PEACE (2).jpg');"></div>
       <div class="hero-slide" style="background-image: url('8_A_Black_woman_sits_cross_legge_1_20260327_123619.png');"></div>
-      <div class="hero-slide" style="background-image: url('Boombox Love.png');"></div>
+      <div class="hero-slide" style="background-image: url('Joy.png');"></div>
       <div class="hero-slide" style="background-image: url('13_A_Black_woman_stands_behind_a_1_20260328_182847.png');"></div>
-      <div class="hero-slide" style="background-image: url('header_reveal.png');"></div>
+      <div class="hero-slide" style="background-image: url('teacher cypher.png');"></div>
     </div>
     <div class="hero-overlay" id="hero-overlay"></div>
 
@@ -902,12 +902,11 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <img src="first_class.jpg" class="cluster-item floating-photo p-firstclass" alt="My First Class" onerror="this.src='first_class.png'">
         <img src="David.png" class="cluster-item floating-letter p-david" alt="David Letter">
         <img src="Zach_and_me.png" class="cluster-item floating-cutout c-bluedress" alt="Blue Dress Cutout">
-        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-cutout p-dj" alt="DJ In the Booth">
-        <img src="joy_run.png" class="cluster-item floating-cutout p-run" alt="Joyful Run">
+        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-photo p-dj" alt="DJ In the Booth">
+        <img src="joy_run.png" class="cluster-item floating-photo p-run" alt="Joyful Run">
+        <img src="me and fiesta.png" class="cluster-item floating-cutout c-fiesta" alt="Fiesta Leader">
         <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
-        <img src="20211001_080115.jpg" class="cluster-item floating-photo p-hallway" alt="Speaking in the Hallway">
-        <img src="20210524_075715.jpg" class="cluster-item floating-photo p-hug" alt="Hugging Student">
-        <img src="Joy.jpg" class="cluster-item floating-photo p-stage" alt="Fiesta Stage Celebration">
+        <img src="me and leonard.png" class="cluster-item floating-cutout c-leonard" alt="Leonard Connection">
       </div>
     </div>
   </section>
@@ -1185,7 +1184,7 @@ const arenaTitles = {
 
 const arenaImages = {
   'classroom': 'Frustration Tape.png',
-  'caregiving': 'Caregiving.Track.jpg',
+  'caregiving': 'image_b2313c.jpg',
   'workplace': 'Frustration Tape.png',
   'relationships': 'Frustration Tape.png'
 };
@@ -1581,10 +1580,12 @@ function openMediaModal(type) {
   } else if (type === 'video') {
     container.innerHTML = `
       <h3 class="media-title">The Studio Deep Dive (Video)</h3>
-      <video controls autoplay>
-        <source src="R3.mp4" type="video/mp4">
-        Your browser does not support the video element.
-      </video>
+      <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAHF8UUuUIs/6g-4i9pTAYWYEoTOTIi-gA/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+      </div>
+      <div style="text-align: center; font-size: 14px; font-family: 'Inter', sans-serif;">
+        <a href="https://www.canva.com/design/DAHF8UUuUIs/6g-4i9pTAYWYEoTOTIi-gA/watch?utm_content=DAHF8UUuUIs&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" style="color: var(--teal-light); text-decoration: underline; font-weight: 600;">Welcome to the R3</a> by marlitha williams
+      </div>
     `;
   }
   
