@@ -334,51 +334,31 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .about-sec { padding-top: 5rem; padding-bottom: 5rem; background-color: #ffffff; background-image: url('PLURAL_Mural.jpg'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; z-index: 10; overflow: hidden; }
 .about-sec::before { content: ''; position: absolute; inset: 0; background: rgba(244, 247, 248, 0.85); z-index: 1; }
 .about-container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 1200px; margin: 0 auto;}
-.about-bio { padding: 3rem; }
+
+/* BIO CARD & EDITORIAL CUTOUT */
+.about-bio { position: relative; padding: 3rem; overflow: hidden; }
+.about-bio-text { position: relative; z-index: 5; }
 .about-bio p { font-size: 17px; color: var(--body); margin-bottom: 1.5rem; line-height: 1.8; font-weight: 400;}
+.bio-wrap-target { margin-right: 190px; } /* Creates safe space for the cutout */
+.bio-anchor-img { position: absolute; bottom: -5px; right: -10px; width: 230px; height: auto; z-index: 0; filter: drop-shadow(-8px 5px 15px rgba(0,0,0,0.15)); mix-blend-mode: multiply; }
 
-/* SCRAPBOOK CLUSTER */
-.about-visuals { position: relative; width: 100%; max-width: 600px; aspect-ratio: 1; margin: 0 auto; display: block; }
-.cluster-item { position: absolute; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-origin: center; cursor: pointer;}
-.coach-cutout { width: 50%; height: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 20; object-fit: cover; border-radius: 50%; border: 6px solid #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+/* PLATINUM ALBUM ORBIT */
+.platinum-mount { position: relative; width: 100%; max-width: 550px; aspect-ratio: 1; margin: 0 auto; border-radius: 50%; background: conic-gradient(from 90deg, #d8dce6, #f4f6f9, #b8c0ca, #f4f6f9, #d8dce6); box-shadow: 0 25px 50px rgba(0,0,0,0.15), inset 0 0 0 2px #fff, inset 0 0 15px rgba(0,0,0,0.2); padding: 3%; display: flex; align-items: center; justify-content: center; border: 1px solid #a0aab5; }
+.platinum-record { width: 100%; height: 100%; border-radius: 50%; background: repeating-radial-gradient(#d0d4dc 0px, #e8ebf0 2px, #b8c0c8 5px, #d0d4dc 7px); box-shadow: inset 0 0 30px rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.15); position: relative; display: flex; align-items: center; justify-content: center; border: 2px solid #e0e5eb; }
+.platinum-record::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 15deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 15%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.8) 65%, rgba(255,255,255,0) 80%); pointer-events: none; mix-blend-mode: overlay; }
+.platinum-label-center { width: 38%; height: 38%; border-radius: 50%; border: 4px solid #fff; background: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 0 0 4px var(--secondary); position: relative; z-index: 10; overflow: hidden; }
+.platinum-label-center img { width: 100%; height: 100%; object-fit: cover; }
+.platinum-spindle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 12px; height: 12px; border-radius: 50%; background: #e8ebf0; box-shadow: inset 0 3px 6px rgba(0,0,0,0.6), 0 0 0 2px rgba(255,255,255,0.5); z-index: 15; }
 
-/* Cutouts: Pure transparency without any white backing, just soft drop-shadow */
-.floating-cutout { 
-    background: transparent !important; 
-    border: none !important; 
-    box-shadow: none !important; 
-    filter: none !important; /* Removes Safari bug that turns PNG shadows into white boxes */
-    mix-blend-mode: multiply !important; /* Forces any stray white pixels to vanish against the background */
-    z-index: 10; 
-}
-/* Photos: White polaroid border and background */
-.floating-photo { border: 6px solid #fff; background: #fff; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); object-fit: cover; z-index: 5; }
-/* Letters/Docs: No border, just a shadow */
-.floating-letter { filter: drop-shadow(0 10px 20px rgba(0,0,0,0.15)); z-index: 4; }
+/* ORBITING MEMORIES */
+.orbit-item { position: absolute; width: 23%; aspect-ratio: 1; top: 50%; left: 50%; margin-top: -11.5%; margin-left: -11.5%; border-radius: 4px; border: 4px solid #fff; background: #fff; object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.15); transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); z-index: 20; cursor: pointer; transform: rotate(var(--rot)) translateY(-165%) rotate(calc(var(--rot) * -1 + var(--tilt))); }
+.orbit-item:hover { transform: rotate(var(--rot)) translateY(-165%) rotate(calc(var(--rot) * -1 + var(--tilt))) scale(1.6); z-index: 50; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-/* Layout Mapping - Clustered Tightly Around Center */
-.p-firstclass { width: 32%; top: 12%; left: 8%; transform: rotate(-8deg); z-index: 5;}
-.p-david      { width: 32%; top: 2%; left: 35%; transform: rotate(-90deg); z-index: 4;} /* Sideways Album Note */
-.c-bluedress  { width: 28%; top: 5%; right: 12%; left: auto; transform: rotate(2deg); z-index: 25; background: transparent !important;} /* Clean transparency, pulled inward */
-.p-stage      { width: 30%; top: 22%; right: 2%; left: auto; transform: rotate(8deg); z-index: 3;}
-.p-hallway    { width: 32%; top: 40%; left: 2%; transform: rotate(-5deg); z-index: 12;}
-.p-dj         { width: 28%; top: 48%; right: 2%; left: auto; transform: rotate(4deg); z-index: 7;}
-.p-team       { width: 34%; bottom: 8%; left: 5%; transform: rotate(-4deg); z-index: 8;}
-.p-hug        { width: 28%; bottom: -2%; left: 40%; transform: rotate(3deg); z-index: 26;}
-.p-run        { width: 30%; bottom: 10%; right: 5%; left: auto; transform: rotate(-6deg); z-index: 9;}
-
-/* Hover States - explicitly maintain base rotation so they don't snap awkwardly */
-.cluster-item:hover { z-index: 50 !important; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-.coach-cutout:hover { transform: translate(-50%, -50%) scale(1.05) !important; }
-.p-firstclass:hover { transform: scale(1.08) rotate(-8deg) !important; }
-.p-david:hover      { transform: scale(1.08) rotate(-90deg) !important; }
-.c-bluedress:hover  { transform: scale(1.08) rotate(2deg) !important; }
-.p-stage:hover      { transform: scale(1.08) rotate(8deg) !important; }
-.p-hallway:hover    { transform: scale(1.08) rotate(-5deg) !important; }
-.p-dj:hover         { transform: scale(1.08) rotate(4deg) !important; }
-.p-team:hover       { transform: scale(1.08) rotate(-4deg) !important; }
-.p-hug:hover        { transform: scale(1.08) rotate(3deg) !important; }
-.p-run:hover        { transform: scale(1.08) rotate(-6deg) !important; }
+/* Mathematical Placements */
+.o1 { --rot: 0deg; --tilt: -5deg; }   .o2 { --rot: 45deg; --tilt: 12deg; }
+.o3 { --rot: 90deg; --tilt: -8deg; }  .o4 { --rot: 135deg; --tilt: 10deg; }
+.o5 { --rot: 180deg; --tilt: -6deg; } .o6 { --rot: 225deg; --tilt: 8deg; }
+.o7 { --rot: 270deg; --tilt: -12deg;} .o8 { --rot: 315deg; --tilt: 5deg; }
 
 /* ALBUM SLEEVE TESTIMONIALS (MATCHING MOCKUP DESIGN) */
 .testimonials-sec { padding-top: 5rem; padding-bottom: 6rem; background: linear-gradient(to bottom, var(--bg-color), #ffffff); position: relative; z-index: 10; overflow: hidden; }
@@ -443,8 +423,9 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .deck-panel { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 3rem 2rem; }
   .readout-panel { padding: 3rem 2rem; }
   .mod-card { width: calc(50% - 10px); }
-  .about-container { grid-template-columns: 1fr; gap: 2rem; }
-  .about-bio { padding: 2rem; }
+  .about-container { grid-template-columns: 1fr; gap: 4rem; }
+  .bio-wrap-target { margin-right: 150px; }
+  .bio-anchor-img { width: 190px; }
   .cta-container { grid-template-columns: 1fr; }
   .cta-info, .contact-form { padding: 2.5rem; }
 }
@@ -523,9 +504,13 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .pf-meaning { max-width: 100%; text-align: center; }
   .rap-grid { grid-template-columns: 1fr; }
   
-  /* About / Scrapbook - Match layout exactly on mobile */
-  .about-visuals { margin-top: 2rem; max-width: 100%; aspect-ratio: 1; height: auto; }
-  /* (Removed pixel overrides so the cluster perfectly scales down on mobile keeping the exact same overlap) */
+  /* About / Album - Match layout exactly on mobile */
+  .about-bio { padding: 2rem; }
+  .bio-wrap-target { margin-right: 110px; }
+  .bio-anchor-img { width: 140px; }
+  .platinum-mount { max-width: 90vw; padding: 4%; margin-top: 1rem; }
+  .orbit-item { width: 22%; margin-top: -11%; margin-left: -11%; transform: rotate(var(--rot)) translateY(-170%) rotate(calc(var(--rot) * -1 + var(--tilt))); }
+  .orbit-item:hover { transform: rotate(var(--rot)) translateY(-170%) rotate(calc(var(--rot) * -1 + var(--tilt))) scale(1.4); }
   
   /* Testimonials (Liner Notes) */
   .liner-notes-wrapper { padding: 1rem 0 2rem; }
@@ -578,7 +563,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <h1 class="hero-main-title">The R<span class="sup-3">3</span>.A.P. Method</h1>
         <h2 class="hero-sub-title">R³ Agency Practice</h2>
         <p class="hero-catchphrase" style="text-align: left;">Stop Reacting. Start Remixing.</p>
-        <button type="button" class="btn-primary" onclick="document.getElementById('scenarios').scrollIntoView();">Enter The Cypher →</button>
+        <button type="button" class="btn-primary" onclick="document.getElementById('fog-section').scrollIntoView({behavior: 'smooth'});">Enter The Cypher →</button>
       </div>
       <div class="hero-video-side fade-in d2">
         <div class="album-wrapper">
@@ -600,7 +585,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     </div>
   </section>
 
-  <section class="fog-sec fade-in">
+  <section class="fog-sec fade-in" id="fog-section">
     <div class="fog-animals-grid fade-in d1">
       <div class="fog-animal-wrap">
         <div class="fog-overlay delay-1"></div>
@@ -915,31 +900,41 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 
   <section class="about-sec curve-flow fade-in" id="about">
     <div class="about-container">
+      
       <div class="about-bio glass-panel-light">
-        <span class="header-marker text-gradient-orange">The Producer</span>
-        <h2 class="scenario-intro-head">Meet Marlitha Williams</h2>
-        <p style="font-weight: 600; color: var(--teal-dark);">The greatest lyricists in hip-hop aren't just delivering highly skilled performances—they use rhythm and language to process reality, organize their thinking, and tell the truth about their environment. That same ability to look at a heavy situation, find clarity, and shift the narrative is the foundation of the R³ Framework.</p>
-        <p>As the founder of AH-HA Coaching, LLC, I specialize in helping educators, caregivers, and professionals shift from chronic exhaustion to intentionality. My approach is rooted in over 15 years of deep, systemic experience at the intersection of education and trauma-informed practice.</p>
-        <p>Before developing the R³ Model and the Lee and Tee Learning Series, my foundation was built through years of work in addictions counseling, domestic violence advocacy, and restorative practices. This background profoundly shaped my tenure as a school principal. I understand that burnout and behavioral challenges aren't solved by quick tips—they require true psychological safety and emotional regulation.</p>
-        <p>By implementing these exact coaching frameworks on a campus facing relentless demands, we transformed the culture. We achieved an 87% teacher growth rate, significantly improved staff retention, and created an environment where adults and students could actually thrive.</p>
-        <p>I built this practice because I believe joy and balance shouldn't be luxuries. Together, we can locate your conditioned patterns, hit pause, and write a healthier track.</p>
-        <br>
-        <p class="handwritten">Marlitha Williams</p>
+        <div class="about-bio-text">
+          <span class="header-marker text-gradient-orange">The Producer</span>
+          <h2 class="scenario-intro-head">Meet Marlitha Williams</h2>
+          <p style="font-weight: 600; color: var(--teal-dark);">The greatest lyricists in hip-hop aren't just delivering highly skilled performances—they use rhythm and language to process reality, organize their thinking, and tell the truth about their environment. That same ability to look at a heavy situation, find clarity, and shift the narrative is the foundation of the R³ Framework.</p>
+          <p>As the founder of AH-HA Coaching, LLC, I specialize in helping educators, caregivers, and professionals shift from chronic exhaustion to intentionality. My approach is rooted in over 15 years of deep, systemic experience at the intersection of education and trauma-informed practice.</p>
+          <p>Before developing the R³ Model and the Lee and Tee Learning Series, my foundation was built through years of work in addictions counseling, domestic violence advocacy, and restorative practices. This background profoundly shaped my tenure as a school principal. I understand that burnout and behavioral challenges aren't solved by quick tips—they require true psychological safety and emotional regulation.</p>
+          <p class="bio-wrap-target">By implementing these exact coaching frameworks on a campus facing relentless demands, we transformed the culture. We achieved an 87% teacher growth rate, significantly improved staff retention, and created an environment where adults and students could actually thrive.</p>
+          <p class="bio-wrap-target">I built this practice because I believe joy and balance shouldn't be luxuries. Together, we can locate your conditioned patterns, hit pause, and write a healthier track.</p>
+          <br>
+          <p class="handwritten bio-wrap-target">Marlitha Williams</p>
+        </div>
+        <img src="Zach_and_me.png" class="bio-anchor-img" alt="Coach Marlitha">
       </div>
       
-      <!-- Re-engineered with responsive % alignment to solve proportionality and visual layout issues -->
-      <div class="about-visuals">
-        <img src="marlitha.r3.jpeg" class="cluster-item coach-cutout" alt="Coach Marlitha Williams Portrait">
-        <img src="first_class.jpg" class="cluster-item floating-photo p-firstclass" alt="My First Class" onerror="this.src='first_class.png'">
-        <img src="David.png" class="cluster-item floating-letter p-david" alt="David Letter">
-        <img src="Zach_and_me.png" class="cluster-item floating-cutout c-bluedress" alt="Blue Dress Cutout">
-        <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="cluster-item floating-cutout p-dj" alt="DJ In the Booth">
-        <img src="joy_run.png" class="cluster-item floating-cutout p-run" alt="Joyful Run">
-        <img src="Team.png" class="cluster-item floating-photo p-team" alt="AH-HA Coaching Team">
-        <img src="20211001_080115.jpg" class="cluster-item floating-photo p-hallway" alt="Speaking in the Hallway">
-        <img src="20210524_075715.jpg" class="cluster-item floating-photo p-hug" alt="Hugging Student">
-        <img src="Joy.jpg" class="cluster-item floating-photo p-stage" alt="Fiesta Stage Celebration">
+      <div class="platinum-mount">
+        <div class="platinum-record">
+          <div class="platinum-label-center">
+            <img src="marlitha.r3.jpeg" alt="Coach Marlitha Williams Portrait">
+          </div>
+          <div class="platinum-spindle"></div>
+          
+          <!-- Orbiting Memories -->
+          <img src="first_class.jpg" class="orbit-item o1" alt="Memory 1" onerror="this.src='first_class.png'">
+          <img src="David.png" class="orbit-item o2" alt="Memory 2">
+          <img src="13_A_Black_woman_stands_behind_a_1_20260328_182847.png" class="orbit-item o3" alt="Memory 3">
+          <img src="joy_run.png" class="orbit-item o4" alt="Memory 4">
+          <img src="Team.png" class="orbit-item o5" alt="Memory 5">
+          <img src="20211001_080115.jpg" class="orbit-item o6" alt="Memory 6">
+          <img src="20210524_075715.jpg" class="orbit-item o7" alt="Memory 7">
+          <img src="Joy.jpg" class="orbit-item o8" alt="Memory 8">
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -1275,6 +1270,7 @@ function nextScenario() {
   scIndex = (scIndex + 1) % scenes.length;
   renderScenario();
   switchSc('conditioned');
+  scrollToScenarioTop();
 }
 
 function prevScenario() {
@@ -1283,6 +1279,7 @@ function prevScenario() {
   scIndex = (scIndex - 1 + scenes.length) % scenes.length;
   renderScenario();
   switchSc('conditioned');
+  scrollToScenarioTop();
 }
 
 function switchSc(type) {
