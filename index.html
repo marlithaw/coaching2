@@ -336,11 +336,11 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .about-container { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: flex-start; max-width: 1200px; margin: 0 auto;}
 
 /* BIO CARD & EDITORIAL CUTOUT */
-.about-bio { position: relative; padding: 3rem; overflow: hidden; }
+.about-bio { position: relative; padding: 3rem; /* removed overflow: hidden to prevent clipping the cutout */ }
 .about-bio-text { position: relative; z-index: 5; }
 .about-bio p { font-size: 17px; color: var(--body); margin-bottom: 1.5rem; line-height: 1.8; font-weight: 400; position: relative; z-index: 5; text-shadow: 0 0 15px rgba(255,255,255,0.95), 0 0 5px rgba(255,255,255,0.8); }
 .bio-wrap-target { margin-right: 0px; } /* Removed restriction so text overlays the image */
-.bio-anchor-img { position: absolute; top: -2rem; right: -80px; width: 480px; height: auto; z-index: 0; filter: drop-shadow(-15px 15px 25px rgba(0,0,0,0.25)); }
+.bio-anchor-img { position: absolute; top: -2rem; right: -80px; width: 480px; height: auto; z-index: 2; filter: drop-shadow(-15px 15px 25px rgba(0,0,0,0.25)); pointer-events: none; }
 
 /* PLATINUM ALBUM ORBIT */
 .platinum-mount { position: relative; width: 100%; max-width: 550px; aspect-ratio: 1; margin: 2rem auto 0; border-radius: 50%; background: conic-gradient(from 90deg, #d8dce6, #f4f6f9, #b8c0ca, #f4f6f9, #d8dce6); box-shadow: 0 25px 50px rgba(0,0,0,0.15), inset 0 0 0 2px #fff, inset 0 0 15px rgba(0,0,0,0.2); padding: 3%; display: flex; align-items: center; justify-content: center; border: 1px solid #a0aab5; }
