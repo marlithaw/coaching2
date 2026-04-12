@@ -132,12 +132,12 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 /* SCENARIOS (IN THE BOOTH) */
 .scenario-sec { padding-top: 3rem; padding-bottom: 5rem; background-image: linear-gradient(135deg, rgba(244,247,248,0.95) 0%, rgba(244,247,248,0.98) 100%), url("Boombox Love.png"); background-attachment: fixed; background-size: cover; background-position: center; }
 .sc-prompt { text-align: center; padding: 2rem 1rem; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 17px; }
-.scenario-card { padding: 2rem; border-top: 3px solid var(--orange-pop); position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
-.boombox-anchor { width: 100%; max-width: 200px; aspect-ratio: 1; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); flex-shrink: 0; margin: 0 auto; transition: box-shadow 0.4s ease; }
+.scenario-card { padding: 2rem; border-top: 3px solid var(--orange-pop); position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; transition: all 0.4s ease; }
+.boombox-anchor { width: 100%; max-width: 200px; aspect-ratio: 1; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); flex-shrink: 0; margin: 0 auto; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
 .boombox-anchor img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.4s ease; border: 2px solid rgba(255,255,255,0.8); }
 .boombox-anchor.conscious-mode { box-shadow: 0 20px 40px rgba(255,107,0,0.15); }
 .boombox-anchor.conscious-mode img { transform: scale(1.05); border-color: var(--orange-pop); }
-.scenario-content-area { display: flex; flex-direction: column; flex: 1; justify-content: center;}
+.scenario-content-area { display: flex; flex-direction: column; flex: 1; justify-content: center; transition: all 0.4s ease;}
 .scenario-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(0,0,0,0.05); }
 .scenario-nav button { background: var(--bg-color); border: 1px solid rgba(0,0,0,0.05); color: var(--teal-dark); width: 44px; height: 44px; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease; position: relative; z-index: 20; }
 .scenario-nav button:hover { background: var(--orange-pop); color: #fff; transform: translateY(-2px); }
@@ -156,8 +156,21 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .r3-label { color: var(--orange-pop); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(255, 107, 0, 0.1); padding: 4px 8px; border-radius: 2px; display: inline-block; margin-bottom: 8px; font-weight: 700; }
 
 @media(min-width: 900px) {
-  .scenario-card { padding: 3rem; flex-direction: row; align-items: stretch; gap: 3rem; }
+  .scenario-card { padding: 3rem; flex-direction: row; align-items: flex-start; gap: 3rem; }
   .boombox-anchor { max-width: 220px; align-self: flex-start; margin: 0; position: sticky; top: 120px; }
+  
+  /* NEW: Expanded Full-Width Layout for Conscious Mode */
+  .scenario-card.expanded-mode { flex-direction: column; position: relative; gap: 1.5rem; }
+  .scenario-card.expanded-mode .boombox-anchor { 
+    position: absolute; 
+    top: 3rem; 
+    right: 3rem; 
+    max-width: 140px; 
+    margin: 0; 
+    z-index: 10; 
+  }
+  .scenario-card.expanded-mode .scenario-content-area { width: 100%; }
+  .scenario-card.expanded-mode .sc-header-row { padding-right: 160px; }
 }
 
 /* ASSESSMENT / EQUALIZER */
@@ -213,7 +226,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .readout-content { animation: aFadeUp 0.4s ease forwards;}
 .readout-title { font-family: 'Inter', sans-serif; font-size: clamp(24px, 3vw, 34px); font-weight: 800; letter-spacing: -0.04em; margin-bottom: 1rem; line-height: 1.1; transition: color 0.3s ease;}
 .readout-desc { font-size: 17px; line-height: 1.7; color: var(--body); font-weight: 400;}
-.readout-tag { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--orange-pop); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 700; }
+.readout-tag { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--teal-light); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; font-weight: 700; }
 
 /* MODALITY BRIDGE */
 .modality-bridge { text-align: center; margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(0,0,0,0.05); max-width: 1100px; margin-inline: auto; }
@@ -247,7 +260,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 
 /* SESSIONS */
 .contexts-sec { padding-top: 4rem; padding-bottom: 4rem; background: linear-gradient(to bottom, var(--bg-color), rgba(156, 171, 136, 0.15), var(--bg-color)); }
-.ctx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:3rem; max-width: 1100px; margin-inline: auto;}
+.ctx-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:3rem; max-width: 1100px; margin-inline: auto;}
 .ctx-card { padding: 1.5rem; background: #fff; border: none; border-top: 3px solid var(--teal-bright); transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.05); position: relative; border-radius: 8px; display: flex; flex-direction: column; }
 .ctx-card.ctx1 { transform: rotate(-1deg); } .ctx-card.ctx3 { transform: rotate(1deg); }
 .ctx-card:hover { transform: translateY(-0.5rem) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.12); z-index: 5; border-top-color: var(--orange-pop);}
@@ -256,6 +269,14 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .ctx-label { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; color: var(--teal-light); }
 .ctx-punch { font-family: 'Inter', sans-serif; font-size: clamp(16px, 2vw, 20px); font-weight: 700; letter-spacing: -0.02em; color: var(--dark); line-height: 1.2; margin-bottom: 12px; }
 .ctx-body { font-size: 16px; color: var(--body); line-height: 1.7; font-weight: 400; }
+
+/* PLURAL BANNER */
+.plural-banner { margin-top: 3rem; max-width: 1100px; margin-inline: auto; background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(156, 171, 136, 0.3); border-top: 4px solid var(--tertiary); border-radius: 12px; padding: 3rem; display: flex; gap: 3rem; align-items: center; box-shadow: 0 15px 35px rgba(0,0,0,0.05); transition: transform 0.4s ease, box-shadow 0.4s ease; position: relative; z-index: 5; }
+.plural-banner:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); border-top-color: var(--orange-pop); }
+.plural-banner-img { flex: 0 0 45%; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); aspect-ratio: 16/9; }
+.plural-banner-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.plural-banner:hover .plural-banner-img img { transform: scale(1.05); }
+.plural-banner-content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 
 /* REMIX SECTION */
 .remix-sec { padding-top: 4rem; padding-bottom: 4rem; background-image: linear-gradient(135deg, rgba(12, 54, 69, 0.95) 0%, rgba(26, 95, 122, 0.9) 100%), url("10_A_wide_shot_of_a_recording_stu_1_20260327_123637.png"); background-size: cover; background-position: center; background-attachment: fixed; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10; overflow: hidden;}
@@ -488,6 +509,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   /* Sessions / Modalities */
   .ctx-grid { grid-template-columns: 1fr; }
   .ctx-card:nth-child(1), .ctx-card:nth-child(2), .ctx-card:nth-child(3) { transform: none; }
+  .plural-banner { flex-direction: column; padding: 2rem 1.25rem; gap: 1.5rem; }
+  .plural-banner-img { flex: 0 0 auto; width: 100%; }
   .mod-card { width: 100%; }
   
   /* The Playbook Full */
@@ -631,7 +654,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
       <div class="boombox-anchor"><img id="scenario-image" src="Frustration Tape.png" alt="Cassette tape representing a stuck point in this arena"></div>
       <div class="scenario-content-area">
         
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem;">
+        <div class="sc-header-row" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; transition: padding 0.4s ease;">
           <div>
             <span class="r3-label" style="font-size: 11px; margin-bottom: 4px; display: inline-block; background: var(--teal-light); color: #fff;">Active Arena</span>
             <h3 id="active-arena-title" style="font-family: 'Inter', sans-serif; font-size: clamp(18px, 2.5vw, 24px); font-weight: 800; color: var(--teal-dark); margin: 0; letter-spacing: -0.02em;">In The Classroom</h3>
@@ -818,24 +841,27 @@ textarea.form-control { resize: vertical; min-height: 100px; }
         <p class="ctx-punch">1-on-1 &amp; Culture Coaching</p>
         <p class="ctx-body">Deep, individualized work to identify specific conditioned tracks and build a custom R³ playbook. For leaders and educators ready to fundamentally change their baseline from reaction to intentionality.</p>
       </div>
-      <div class="ctx-card ctx-bridge" style="border-top-color: var(--orange-pop); transform: translateY(-0.5rem); box-shadow: 0 15px 35px rgba(0,0,0,0.1); z-index: 10;">
-        <div class="ctx-img-wrap" style="height: 160px; margin-bottom: 1.5rem; border: 1px solid rgba(0,0,0,0.05);">
-          <img src="PLURAL_Mural.jpg" alt="PLURAL State Mural" style="transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-        </div>
-        <p class="ctx-label" style="color: var(--orange-pop);">The Destination</p>
-        <p class="ctx-punch" style="font-size: clamp(16px, 2vw, 20px);">The PLURAL State</p>
-        <div class="ctx-body" style="font-size: 13.5px; line-height: 1.6; margin-bottom: 1.5rem;">
-          <strong style="color: var(--teal-dark);">PLURAL is the mastered flow.</strong> R³ clears the static—shifting the heavy weight of a <em>selfish</em> reaction into the clarity of a <em>selfcenter</em> presence. You stop surviving the beat and start choosing your rhythm on purpose. 
-        </div>
-        <button type="button" class="btn-primary" style="padding: 0.8rem; font-size: 13px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: auto; box-shadow: none;" onclick="document.getElementById('remix').scrollIntoView({behavior: 'smooth'});">
-          See The Master Flow <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/></svg>
-        </button>
-      </div>
       <div class="ctx-card ctx3">
         <div class="ctx-img-wrap"><video src="IMG_4240.MP4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(1.1);"></video></div>
         <p class="ctx-label">The Group Cypher</p>
         <p class="ctx-punch">Workshops, PD &amp; Keynotes</p>
         <p class="ctx-body">Interactive training and high-energy live events for schools, caregiving teams, and organizations. We equip your people with the tools to interrupt their own conditioned responses, shifting culture from the inside out.</p>
+      </div>
+    </div>
+
+    <div class="plural-banner fade-in d3">
+      <div class="plural-banner-img">
+        <img src="PLURAL_Mural.jpg" alt="PLURAL State Mural">
+      </div>
+      <div class="plural-banner-content">
+        <p class="ctx-label" style="color: var(--orange-pop);">The Destination</p>
+        <p class="ctx-punch" style="font-size: clamp(22px, 3vw, 28px); margin-bottom: 1rem;">The PLURAL State</p>
+        <div class="ctx-body" style="margin-bottom: 2rem;">
+          <strong style="color: var(--teal-dark);">PLURAL is the mastered flow.</strong> R³ clears the static—shifting the heavy weight of a <em>selfish</em> reaction into the clarity of a <em>selfcenter</em> presence. You stop surviving the beat and start choosing your rhythm on purpose. 
+        </div>
+        <button type="button" class="btn-primary" style="align-self: flex-start; display: flex; align-items: center; gap: 8px;" onclick="document.getElementById('remix').scrollIntoView({behavior: 'smooth'});">
+          See The Master Flow <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"/></svg>
+        </button>
       </div>
     </div>
   </section>
@@ -1266,15 +1292,18 @@ function switchSc(type) {
   
   const img = document.getElementById('scenario-image');
   const anchor = img.closest('.boombox-anchor');
+  const card = document.getElementById('scenario-card');
   
   img.style.opacity = 0;
   setTimeout(() => {
       if (type === 'conscious') {
           img.src = 'Boombox Love.png';
           anchor.classList.add('conscious-mode');
+          card.classList.add('expanded-mode');
       } else {
           img.src = arenaImages[currentCategory] || 'Frustration Tape.png';
           anchor.classList.remove('conscious-mode');
+          card.classList.remove('expanded-mode');
       }
       img.style.opacity = 1;
   }, 150);
