@@ -337,11 +337,11 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 
 /* BIO CARD & EDITORIAL CUTOUT */
 .about-bio-wrap { position: relative; z-index: 5; }
-.about-bio { position: relative; padding: 3.5rem 3rem; z-index: 2; box-shadow: 15px 15px 40px rgba(0,0,0,0.12), var(--shadow-soft); }
+.about-bio { position: relative; padding: 3.5rem 3rem; z-index: 2; box-shadow: 15px 15px 40px rgba(0,0,0,0.12), var(--shadow-soft); border-radius: 12px 140px 12px 12px; }
 .about-bio-text { position: relative; z-index: 5; }
 .about-bio p { font-size: 17px; color: var(--body); margin-bottom: 1.5rem; line-height: 1.8; font-weight: 400; position: relative; z-index: 5; text-shadow: 0 0 15px rgba(255,255,255,0.95), 0 0 5px rgba(255,255,255,0.8); }
 .bio-wrap-target { margin-right: 0px; } 
-.bio-anchor-img { position: absolute; top: -1rem; left: 100%; margin-left: -250px; width: 440px; height: auto; z-index: 1; filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.25)); pointer-events: none; }
+.bio-anchor-img { position: absolute; top: -1rem; left: 100%; margin-left: -200px; width: 440px; height: auto; z-index: 1; filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.25)); pointer-events: none; }
 
 /* PLATINUM ALBUM ORBIT */
 .platinum-mount { position: relative; width: 100%; max-width: 520px; aspect-ratio: 1; margin: 0 0 0 auto; border-radius: 50%; background: conic-gradient(from 90deg, #d8dce6, #f4f6f9, #b8c0ca, #f4f6f9, #d8dce6); box-shadow: 0 25px 50px rgba(0,0,0,0.15), inset 0 0 0 2px #fff, inset 0 0 15px rgba(0,0,0,0.2); padding: 3%; display: flex; align-items: center; justify-content: center; border: 1px solid #a0aab5; }
@@ -506,7 +506,7 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .rap-grid { grid-template-columns: 1fr; }
   
   /* About / Album - Match layout exactly on mobile */
-  .about-bio { padding: 2rem; }
+  .about-bio { padding: 2rem; border-radius: 12px; }
   .bio-wrap-target { margin-right: 0px; }
   .bio-anchor-img { width: 320px; opacity: 0.12; top: 1rem; left: auto; right: -50px; margin-left: 0; z-index: 1; }
   .platinum-mount { max-width: 90vw; padding: 4%; margin-top: 1rem; margin-inline: auto; transform: none; }
