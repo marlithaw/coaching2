@@ -359,10 +359,11 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .bio-anchor-img { 
   position: relative; 
   z-index: 1; 
-  flex: 0 0 480px; /* Locks the image width proportionally */
-  width: 480px; 
+  flex: 0 0 540px; 
+  width: 540px; 
   height: auto; 
-  margin-left: -220px; /* Pulls the image to the left, firmly underneath the glass card */
+  margin-left: -270px; 
+  top: -3rem;
   filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.25)); 
   pointer-events: none; 
 }
@@ -450,19 +451,25 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .about-container { grid-template-columns: 1fr; gap: 4rem; }
   .about-sec { padding-top: 6rem; }
   
-  /* Robust Flexbox layout for tablets */
+  /* Robust Absolute layout for tablets */
   .about-bio-wrap { 
-    flex-direction: row; 
-    justify-content: center; 
-    max-width: 850px; 
+    display: block; 
+    position: relative;
+    max-width: 650px; 
     margin: 0 auto; 
   }
-  .about-bio { border-radius: 12px 100px 12px 12px; width: auto; }
+  .about-bio { border-radius: 12px 100px 12px 12px; width: 85%; }
   .bio-anchor-img { 
-    flex: 0 0 380px; 
-    width: 380px; 
-    margin-left: -160px; 
-    top: 0; left: auto; right: auto; margin-bottom: 0; opacity: 1; z-index: 1; pointer-events: none; 
+    position: absolute;
+    top: -3rem;
+    right: -40px;
+    left: auto;
+    width: 400px;
+    margin: 0;
+    max-width: none;
+    opacity: 1; 
+    z-index: 1; 
+    pointer-events: none; 
   } 
   
   .mobile-bio-extra { display: none; }
@@ -548,27 +555,29 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   .pf-meaning { max-width: 100%; text-align: center; }
   .rap-grid { grid-template-columns: 1fr; }
   
-  /* Mobile Flexbox Scale (Keeps the side-by-side overlap perfectly intact!) */
+  /* Mobile Absolute Scale (Perfect Scrapbook Wrap) */
   .about-sec { padding-top: 5rem; }
   
   .about-bio-wrap { 
-    flex-direction: row; 
-    align-items: center; 
+    display: block; 
+    position: relative;
     width: 100%; 
-    padding-right: 0; 
   }
   .about-bio { 
-    flex: 0 0 72%; /* Card takes 72% of screen */
-    width: 72%; 
+    width: 86%; 
     padding: 2rem 1.25rem; 
-    border-radius: 12px 60px 12px 12px; 
+    padding-right: 2rem; /* Keep text from hitting the right edge */
+    border-radius: 12px 80px 12px 12px; 
   }
   .bio-anchor-img { 
-    flex: 0 0 48%; /* Image takes 48% of screen */
-    width: 48%; 
-    margin-left: -20%; /* Subtract 20% to overlap them exactly into 100% screen width */
-    margin-bottom: 0;
-    top: 0;
+    position: absolute;
+    top: -2rem;
+    right: -30px; /* Pulls image flush to the right edge of screen */
+    left: auto;
+    width: 320px; /* Explicit size to prevent snipping */
+    max-width: none;
+    margin: 0;
+    z-index: 1;
   }
   
   .platinum-mount { max-width: none; width: 140vw; margin-left: -20vw; padding: 5%; margin-top: 2rem; transform: none; }
