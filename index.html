@@ -434,6 +434,68 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .platinum-label-center { width: 42%; height: 42%; border-radius: 50%; border: 4px solid #fff; background: #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.5), inset 0 0 0 4px var(--secondary); position: relative; z-index: 10; overflow: hidden; }
 .platinum-label-center img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
+/* REUSABLE MEDIA MODAL CSS (MISSING STYLES ADDED) */
+.media-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.media-modal.active {
+  display: flex;
+  opacity: 1;
+}
+.media-modal-content {
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+.media-modal.active .media-modal-content {
+  transform: scale(1);
+}
+.media-close {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 40px;
+  height: 40px;
+  background: var(--orange-pop);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+.media-close:hover {
+  background: var(--amber);
+  transform: scale(1.1);
+}
+.media-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--teal-dark);
+  margin-bottom: 1rem;
+}
+
 /* RESPONSIVE FIXES */
 @media(max-width:1000px){
   .fog-grid { grid-template-columns: 1fr 1fr; }
@@ -634,7 +696,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
         <h1 class="hero-main-title">The R<span class="sup-3">3</span>.A.P. Method</h1>
         <h2 class="hero-sub-title">R³ Agency Practice</h2>
         <p class="hero-catchphrase" style="text-align: left;">Stop Reacting. Start Remixing.</p>
-        <button type="button" class="btn-primary" onclick="document.getElementById('fog-section').scrollIntoView({behavior: 'smooth'});">Enter The Cypher →</button>
+        <button type="button" class="btn-primary" onclick="document.getElementById('fog-section').scrollIntoView({behavior: 'smooth'});">Let's RAP About It →</button>
       </div>
       <div class="hero-video-side fade-in d2">
         <div class="album-wrapper">
@@ -680,8 +742,13 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
       <span class="fog-quote-author">— DMX</span>
     </div>
     <div class="fog-body fade-in d3">
-      <p style="color: var(--amber); font-weight: 600; margin-bottom: 1rem;">The snake, the rat, the cat, and the dog represent the objective reality of a situation—the actual behaviors, conflicts, and challenges standing in front of you. You cannot distinguish truth from perception when your vision is skewed by the fog.</p>
-      <p>The <strong>"fog"</strong> is your conditioned response. It’s the exhaustion, the burnout, and the automatic reactions that take over when the pressure builds. You cannot sustain a healthy relationship if you are blinded by your own triggered state. R³.A.P. is the operating system you use to clear the room.</p>
+      <p style="font-size: clamp(18px, 3vw, 24px); font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 900px; margin: 0 auto;">
+        <span style="color: var(--amber); font-weight: 600;">The snake, the rat, the cat, and the dog</span> are the real thing in front of you — the behaviors, the conflicts, the weight.
+        <br><br>
+        <span style="color: var(--orange-pop); font-weight: 600;">The fog</span> is what keeps you from seeing them clearly: your exhaustion, your burnout, your automatic reactions running the room before you do.
+        <br><br>
+        <strong style="color: #fff; font-weight: 700; letter-spacing: 0.05em; font-size: 1.1em;">R³.A.P. is the operating system that clears it.</strong>
+      </p>
     </div>
     <div class="fog-grid fade-in d4" id="fog-arenas">
       <div class="fog-card">
@@ -898,7 +965,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
         <div class="ctx-img-wrap"><img src="IMG_1094.jpg" alt="1:1 Coaching Session"></div>
         <p class="ctx-label">The Solo Track</p>
         <p class="ctx-punch">1-on-1 &amp; Culture Coaching</p>
-        <p class="ctx-body">Deep, individualized work to identify specific conditioned tracks and build a custom R³ playbook. For leaders and educators ready to fundamentally change their baseline from reaction to intentionality.</p>
+        <p class="ctx-body">Individualized work to identify your specific conditioned patterns and build a custom R³ playbook. For leaders and educators who are done reacting on autopilot and are ready to choose something different.</p>
       </div>
       <div class="ctx-card ctx3">
         <div class="ctx-img-wrap"><img src="Team.png" alt="AH-HA Coaching Team Workshop"></div>
