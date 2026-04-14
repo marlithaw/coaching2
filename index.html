@@ -229,7 +229,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .readout-tag { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--teal-light); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; font-weight: 700; }
 
 /* MODALITY BRIDGE */
-.modality-bridge { text-align: center; margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(0,0,0,0.05); max-width: 1100px; margin-inline: auto; }
+.modality-bridge { text-align: center; margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(0,0,0,0.05); max-width: 1100px; margin-inline: auto; position: relative; z-index: 20; }
 .modality-title { font-family: 'Inter', sans-serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--teal-dark); margin-bottom: 1rem; }
 .modality-desc { font-size: 16px; color: var(--body); margin-bottom: 2.5rem; }
 .modality-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -586,9 +586,12 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   /* Contact Form */
   .cta-info, .contact-form { padding: 2rem 1.25rem; }
 
-  /* FIX: Disable hover effects that cause iOS double-tap bug, fix modal sizing */
-  .mod-card:hover { transform: none; box-shadow: var(--shadow-soft); }
+  /* FIX: Completely disable hover effects that cause iOS double-tap bug, fix modal sizing */
+  .mod-card:hover { transform: none; box-shadow: var(--shadow-soft); border-color: transparent; }
+  .mod-card:hover .mod-icon-wrap { background: rgba(26, 95, 122, 0.05); color: var(--teal-light); transform: none; }
   .mod-card:active { transform: scale(0.98); border-color: var(--orange-pop); }
+  .mod-card:active .mod-icon-wrap { background: var(--orange-pop); color: #fff; transform: scale(1.05); }
+  
   .media-modal-content { padding: 1.5rem; width: 95%; max-height: 95vh; overflow-y: auto; }
   .media-close { top: -10px; right: -10px; width: 36px; height: 36px; font-size: 20px; }
   .media-title { font-size: 1.1rem; }
@@ -631,7 +634,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
         <h1 class="hero-main-title">The R<span class="sup-3">3</span>.A.P. Method</h1>
         <h2 class="hero-sub-title">R³ Agency Practice</h2>
         <p class="hero-catchphrase" style="text-align: left;">Stop Reacting. Start Remixing.</p>
-        <button type="button" class="btn-primary" onclick="document.getElementById('fog-section').scrollIntoView({behavior: 'smooth'});">Let's RAP About It... →</button>
+        <button type="button" class="btn-primary" onclick="document.getElementById('fog-section').scrollIntoView({behavior: 'smooth'});">Enter The Cypher →</button>
       </div>
       <div class="hero-video-side fade-in d2">
         <div class="album-wrapper">
@@ -1709,7 +1712,7 @@ function openMediaModal(type) {
     container.innerHTML = `
       <h3 class="media-title">The R.A.P. Breakdown (Music Video)</h3>
       <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAHF8UUuUIs/6g-4i9pTAYWYEoTOTIi-gA/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAHF8UUuUIs/6g-4i9pTAYWYEoTOTIi-gA/watch?embed&autoplay=1" allowfullscreen="allowfullscreen" allow="fullscreen; autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
       </div>
       <div style="text-align: center; font-size: 14px; font-family: 'Inter', sans-serif;">
         <a href="https://www.canva.com/design/DAHF8UUuUIs/6g-4i9pTAYWYEoTOTIi-gA/watch?utm_content=DAHF8UUuUIs&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" style="color: var(--teal-light); text-decoration: underline; font-weight: 600;">Welcome to the R3</a> by marlitha williams
@@ -1718,7 +1721,7 @@ function openMediaModal(type) {
   } else if (type === 'video') {
     container.innerHTML = `
       <h3 class="media-title">The Studio Deep Dive (Video)</h3>
-      <video controls playsinline webkit-playsinline>
+      <video controls autoplay playsinline webkit-playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
         <source src="R3.mp4" type="video/mp4">
         Your browser does not support the video element.
       </video>
