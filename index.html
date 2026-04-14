@@ -1788,7 +1788,7 @@ function openMediaModal(type) {
   } else if (type === 'video') {
     container.innerHTML = `
       <h3 class="media-title">The Studio Deep Dive (Video)</h3>
-      <video controls autoplay playsinline webkit-playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+      <video controls playsinline webkit-playsinline preload="metadata" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
         <source src="R3.mp4" type="video/mp4">
         Your browser does not support the video element.
       </video>
