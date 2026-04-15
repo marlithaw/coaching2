@@ -339,7 +339,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .about-bio-wrap { 
   display: flex; 
   flex-direction: row; 
-  align-items: center; 
+  align-items: flex-start; /* FIX: Forces the image to stay pinned to the top edge! */
   position: relative; 
   z-index: 5; 
 }
@@ -363,7 +363,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   width: 540px; 
   height: auto; 
   margin-left: -270px; 
-  top: -3rem;
+  top: -1rem; /* Nudged to perfectly frame your face inside the top curve */
   filter: drop-shadow(10px 10px 20px rgba(0,0,0,0.25)); 
   pointer-events: none; 
 }
@@ -638,7 +638,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   .rap-grid { grid-template-columns: 1fr; }
   
   /* Mobile Absolute Scale (Perfect Scrapbook Wrap) */
-  .about-sec { padding-top: 6rem; } /* Added top padding to let your head pop out */
+  .about-sec { padding-top: 5rem; }
   
   .about-bio-wrap { 
     display: block; 
@@ -646,20 +646,18 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
     width: 100%; 
   }
   .about-bio { 
-    width: 78%; /* Narrowed slightly so you are much more visible on the right */
+    width: 86%; 
     padding: 2rem 1.25rem; 
-    padding-right: 1.5rem; 
-    border-radius: 12px 60px 12px 12px; 
+    padding-right: 2rem; /* Keep text from hitting the right edge */
+    border-radius: 12px 80px 12px 12px; 
   }
   .bio-anchor-img { 
-    position: absolute;
-    top: -4.5rem; /* Pulls you up significantly above the text card */
-    right: -10px; /* Pins you perfectly to the right edge */
-    left: auto;
-    width: 250px; 
-    max-width: 55vw; 
-    margin: 0; 
-    z-index: 1;
+    flex: 0 0 110%; /* Image takes 110% of screen to preserve scale */
+    width: 110%; 
+    margin-left: -55%; /* FIX: Changed from -88% to pull you out to the right so you aren't hidden! */
+    margin-top: -3rem; /* Tucks the top of your photo slightly under the bottom of the text card */
+    margin-bottom: 0;
+    top: 0;
   }
   
   /* Fits the entire picture disc visually onto the phone screen */
