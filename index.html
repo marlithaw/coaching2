@@ -94,6 +94,8 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .header-marker { font-size: clamp(28px, 4vw, 48px); margin-bottom: 0.5rem; letter-spacing: 0.05em;}
 .btn-primary { background: linear-gradient(90deg, var(--orange-pop), var(--amber)); color: #fff; border: none; padding: 0.8rem 2rem; font-weight: 700; font-size: clamp(0.9rem, 1.5vw, 1rem); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.02em; display: inline-block; text-decoration: none; box-shadow: 0 10px 20px -5px rgba(255, 107, 0, 0.4); }
 .btn-primary:hover { transform: translateY(-3px); background: linear-gradient(90deg, var(--amber), var(--orange-pop)); box-shadow: 0 15px 25px -5px rgba(255, 107, 0, 0.6); }
+.btn-outline-light { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 0.8rem 2rem; font-weight: 700; font-size: clamp(0.9rem, 1.5vw, 1rem); border-radius: 6px; cursor: pointer; transition: all 0.3s ease; font-family: 'Inter', sans-serif; letter-spacing: 0.02em; display: inline-flex; justify-content: center; align-items: center; text-decoration: none; }
+.btn-outline-light:hover { border-color: #fff; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 
 /* GLASS PANELS */
 .glass-panel-light { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.6); border-radius: 12px; box-shadow: var(--shadow-soft); }
@@ -130,7 +132,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .arena-btn:hover { background: var(--orange-pop); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(255,107,0,0.3); }
 
 /* SCENARIOS (IN THE BOOTH) */
-.scenario-sec { padding-top: 3rem; padding-bottom: 5rem; background-image: linear-gradient(135deg, rgba(244,247,248,0.95) 0%, rgba(244,247,248,0.98) 100%), url("Boombox Love.png"); background-attachment: fixed; background-size: cover; background-position: center; }
+.scenario-sec { padding-top: 3rem; padding-bottom: 5rem; background-image: linear-gradient(135deg, rgba(244,247,248,0.95) 0%, rgba(244,247,248,0.98) 100%), url("Boombox Love.png"); background-attachment: scroll; background-size: cover; background-position: center; }
 .sc-prompt { text-align: center; padding: 2rem 1rem; color: var(--muted); font-family: 'Inter', sans-serif; font-size: 17px; }
 .scenario-card { padding: 2rem; border-top: 3px solid var(--orange-pop); position: relative; z-index: 2; max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; transition: all 0.4s ease; }
 .boombox-anchor { width: 100%; max-width: 200px; aspect-ratio: 1; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-soft); flex-shrink: 0; margin: 0 auto; transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); }
@@ -159,7 +161,6 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   .scenario-card { padding: 3rem; flex-direction: row; align-items: flex-start; gap: 3rem; }
   .boombox-anchor { max-width: 220px; align-self: flex-start; margin: 0; position: sticky; top: 120px; }
   
-  /* NEW: Expanded Full-Width Layout for Conscious Mode */
   .scenario-card.expanded-mode { flex-direction: column; position: relative; gap: 1.5rem; }
   .scenario-card.expanded-mode .boombox-anchor { 
     position: absolute; 
@@ -174,7 +175,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 }
 
 /* ASSESSMENT / EQUALIZER */
-.assessment-sec { padding-top: 5rem; padding-bottom: 5rem; background-image: linear-gradient(rgba(12, 54, 69, 0.9), rgba(12, 54, 69, 0.95)), url("Reflextion Mix.png"); background-size: cover; background-position: center; background-attachment: fixed; }
+.assessment-sec { padding-top: 5rem; padding-bottom: 5rem; background-image: linear-gradient(rgba(12, 54, 69, 0.9), rgba(12, 54, 69, 0.95)), url("Reflextion Mix.png"); background-size: cover; background-position: center; background-attachment: scroll; }
 .assessment-intro-head { font-family: 'Inter', sans-serif; font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: -0.04em; color: #fff; line-height: 1.2; margin-bottom: 1.5rem; text-align: center;}
 .assessment-intro-body { font-family: 'Inter', sans-serif; font-size: clamp(16px, 2.5vw, 20px); color: rgba(255,255,255,0.9); line-height: 1.7; margin-bottom: 3rem; max-width: 650px; font-weight: 300; margin-inline: auto; text-align: center;}
 .assessment-intro { text-align: center; max-width: 900px; margin: 0 auto 3rem; }
@@ -194,14 +195,15 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .a-result { display: none; }
 .a-result.active { display: block; animation: aFadeUp 0.5s ease forwards; }
 .result-head{font-family: 'Inter', sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing: -0.04em;color:#fff;line-height:1.2;margin-bottom:1rem;}
-.result-body{font-family: 'Inter', sans-serif;font-size:17px;color: rgba(255,255,255,0.9);line-height:1.7;margin-bottom:2.5rem;font-weight: 400;}
-.result-actions { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;}
+.result-body{font-family: 'Inter', sans-serif;font-size:17px;color: rgba(255,255,255,0.9);line-height:1.7;margin-bottom:1.5rem;font-weight: 400;}
+.result-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;}
 .restart-btn { background: transparent; border: none; color: rgba(255,255,255,0.6); font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; text-decoration: underline; cursor: pointer; transition: all 0.2s;}
 .restart-btn:hover { color: #fff;}
 .result-badge { display: inline-block; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: var(--secondary); margin-bottom: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.next-step-prompt { font-size: 15px; color: var(--secondary); margin-bottom: 1.5rem; font-weight: 600; background: rgba(212,175,55,0.1); padding: 12px 16px; border-left: 3px solid var(--secondary); border-radius: 0 8px 8px 0; }
 
 /* THE STUDIO DESK */
-.sec { padding-top: 4rem; padding-bottom: 4rem; background-image: linear-gradient(rgba(244, 247, 248, 0.9), rgba(244, 247, 248, 0.95)), url("teacher cypher.png"); background-size: cover; background-position: center; background-attachment: fixed; }
+.sec { padding-top: 4rem; padding-bottom: 4rem; background-image: linear-gradient(rgba(244, 247, 248, 0.9), rgba(244, 247, 248, 0.95)), url("teacher cypher.png"); background-size: cover; background-position: center; background-attachment: scroll; }
 .agency-console { padding: 0; border-top: 3px solid var(--teal-light); display: grid; grid-template-columns: 1fr 1fr; gap: 0; overflow: hidden; max-width: 1100px; margin: 0 auto; background: var(--surface); border-radius: 12px; box-shadow: var(--shadow-soft);}
 .deck-panel { padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 3vw, 3rem); background: transparent; border-right: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;}
 .turntable-wrapper { position: relative; width: 100%; max-width: 280px; aspect-ratio: 1; background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 12px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 2.5rem;}
@@ -228,17 +230,14 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .readout-desc { font-size: 17px; line-height: 1.7; color: var(--body); font-weight: 400;}
 .readout-tag { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--teal-light); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; font-weight: 700; }
 
-/* MODALITY BRIDGE */
-.modality-bridge { text-align: center; margin-bottom: 4rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(0,0,0,0.05); max-width: 1100px; margin-inline: auto; position: relative; z-index: 20; }
-.modality-title { font-family: 'Inter', sans-serif; font-size: clamp(20px, 2.5vw, 26px); font-weight: 800; letter-spacing: -0.02em; color: var(--teal-dark); margin-bottom: 1rem; }
-.modality-desc { font-size: 16px; color: var(--body); margin-bottom: 2.5rem; }
-.modality-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.mod-card { background: #fff; border: 2px solid transparent; border-top: 3px solid var(--teal-light); border-radius: 12px; padding: 2rem 1.5rem; width: calc(25% - 15px); min-width: 200px; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-soft); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.mod-card:hover { transform: translateY(-5px); border-color: var(--orange-pop); box-shadow: var(--shadow-hover); }
-.mod-icon-wrap { width: 56px; height: 56px; border-radius: 50%; background: rgba(26, 95, 122, 0.05); display: flex; align-items: center; justify-content: center; color: var(--teal-light); transition: all 0.3s ease; }
-.mod-card:hover .mod-icon-wrap { background: var(--orange-pop); color: #fff; transform: scale(1.1); }
-.mod-label { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: var(--dark); text-transform: uppercase; letter-spacing: 0.1em; }
-.mod-desc-text { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--muted); line-height: 1.6; margin-top: 0.5rem; }
+/* DESK MODALITIES (Replaces the standalone Modality Bridge) */
+.desk-modality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 2rem; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 1.5rem; }
+.desk-mod-btn { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; background: rgba(244, 247, 248, 0.5); border: 1px solid rgba(0,0,0,0.05); padding: 16px; border-radius: 8px; text-decoration: none; transition: all 0.3s; }
+.desk-mod-btn:hover { background: #fff; border-color: var(--orange-pop); box-shadow: 0 8px 20px rgba(0,0,0,0.06); transform: translateY(-3px); }
+.desk-mod-icon { width: 32px; height: 32px; border-radius: 6px; background: rgba(26, 95, 122, 0.1); color: var(--teal-light); display: flex; align-items: center; justify-content: center; margin-bottom: 4px; transition: all 0.3s; }
+.desk-mod-btn:hover .desk-mod-icon { background: var(--orange-pop); color: #fff; }
+.desk-mod-title { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; color: var(--dark); text-transform: uppercase; letter-spacing: 0.05em; }
+.desk-mod-desc { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--muted); line-height: 1.4; }
 
 /* PLAYBOOK DETAILS */
 .sec-alt { padding-top: 4rem; padding-bottom: 4rem; background: var(--bg-color); position: relative; z-index: 10;}
@@ -282,7 +281,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 .plural-banner-content .ctx-body strong { color: var(--secondary); }
 
 /* REMIX SECTION */
-.remix-sec { padding-top: 4rem; padding-bottom: 4rem; background-image: linear-gradient(135deg, rgba(12, 54, 69, 0.95) 0%, rgba(26, 95, 122, 0.9) 100%), url("10_A_wide_shot_of_a_recording_stu_1_20260327_123637.png"); background-size: cover; background-position: center; background-attachment: fixed; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10; overflow: hidden;}
+.remix-sec { padding-top: 4rem; padding-bottom: 4rem; background-image: linear-gradient(135deg, rgba(12, 54, 69, 0.95) 0%, rgba(26, 95, 122, 0.9) 100%), url("10_A_wide_shot_of_a_recording_stu_1_20260327_123637.png"); background-size: cover; background-position: center; background-attachment: scroll; display: flex; align-items: center; justify-content: center; position: relative; z-index: 10; overflow: hidden;}
 .remix-glass-stage { width: 100%; max-width: 1000px; margin: 0 auto; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--orange-pop); border-radius: 12px; padding: 4rem 2rem; box-shadow: 0 30px 60px rgba(0,0,0,0.4); position: relative; z-index: 2; text-align: center; backdrop-filter: blur(8px); }
 .remix-phase{display:none;width:100%} .remix-phase.active{display:block}
 .p0-plural-space{height:clamp(30px,6vw,60px);display:flex;align-items:flex-end;justify-content:center;margin-bottom:0}
@@ -531,7 +530,6 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   .agency-console { grid-template-columns: 1fr; }
   .deck-panel { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 3rem 2rem; }
   .readout-panel { padding: 3rem 2rem; }
-  .mod-card { width: calc(50% - 10px); }
   .about-container { flex-direction: column; gap: 4rem; }
   .about-sec { padding-top: 6rem; }
   
@@ -623,18 +621,22 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   .pad-btn { font-size: 11px; padding: 12px 6px; min-height: 48px;}
   .pad-btn span { font-size: 16px;}
   
+  /* Studio Desk Modalities Mobile Fix */
+  .desk-modality-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .desk-mod-btn { padding: 12px 8px; align-items: center; text-align: center; }
+  .desk-mod-desc { display: none; }
+  
   /* Remix */
   .remix-glass-stage { padding: 2rem 1rem; border-radius: 12px;}
   .p0-i, .p0-t-overlay, .p0-t-beam { font-size: clamp(48px, 15vw, 80px); }
   .p0-pl { font-size: clamp(20px, 5vw, 32px); }
   .p0-self-txt, .p0-cen-txt, .p0-sh-txt, .p0-er-txt { font-size: clamp(20px, 5vw, 32px); }
   
-  /* Sessions / Modalities */
+  /* Sessions */
   .ctx-grid { grid-template-columns: 1fr; }
   .ctx-card:nth-child(1), .ctx-card:nth-child(2), .ctx-card:nth-child(3) { transform: none; }
   .plural-banner { flex-direction: column; padding: 2rem 1.25rem; gap: 1.5rem; }
   .plural-banner-img { flex: 0 0 auto; width: 100%; }
-  .mod-card { width: 100%; }
   
   /* The Playbook Full */
   .plural-full { flex-wrap:wrap; gap:15px; }
@@ -671,7 +673,7 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   /* Fits the entire picture disc visually onto the phone screen */
   .platinum-mount { max-width: 400px; width: 100%; margin: 3rem auto 1rem; padding: 2%; transform: none; }
   
-  /* MASSIVE HOVER FIX FOR iOS: Prevents image from exploding and covering the screen on a simple tap */
+  /* MASSIVE HOVER FIX FOR iOS */
   .collage-cell:hover .collage-img { transform: scale(1.05); z-index: 10; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
   .collage-cell:nth-child(2):hover .collage-img.rotate-ccw { transform: scale(1.05) rotate(-90deg); }
 
@@ -681,20 +683,13 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
   .liner-item-wrapper { flex: 0 0 240px; width: 240px; margin-left: 25px; margin-right: 15px; }
   .liner-sleeve { padding: 1.5rem; }
   .liner-quote { font-size: 20px; -webkit-line-clamp: 7; }
-  /* Force the vinyl to peek slightly on mobile since there is no hover */
   .liner-vinyl-bg { left: -25px; transform: translateX(-10px) rotate(-15deg); }
   .liner-item-wrapper:hover .liner-vinyl-bg { transform: translateX(-15px) rotate(-25deg); }
 
   /* Contact Form */
   .cta-info, .contact-form { padding: 2rem 1.25rem; }
 
-  /* FIX: Completely disable hover effects that cause iOS double-tap bug, fix modal sizing */
-  .mod-card:hover { transform: none; box-shadow: var(--shadow-soft); border-color: transparent; }
-  .mod-card:hover .mod-icon-wrap { background: rgba(26, 95, 122, 0.05); color: var(--teal-light); transform: none; }
-  .mod-card:active { transform: scale(0.98); border-color: var(--orange-pop); }
-  .mod-card:active .mod-icon-wrap { background: var(--orange-pop); color: #fff; transform: scale(1.05); }
-  
-  /* MODAL CLOSE BUTTON FIX: Pushed button back into the viewport so it isn't clipped off screen */
+  /* FIX: Completely disable hover effects that cause iOS double-tap bug */
   .media-modal-content { padding: 3.5rem 1.5rem 1.5rem; width: 95%; max-height: 95vh; overflow-y: auto; }
   .media-close { top: 12px; right: 12px; width: 36px; height: 36px; font-size: 20px; box-shadow: none; }
   .media-title { font-size: 1.1rem; }
@@ -826,7 +821,6 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
             <span class="r3-label" style="margin-bottom: 4px; display: inline-block; background: var(--teal-light); color: #fff;">Active Arena</span>
             <h3 id="active-arena-title" style="font-family: 'Inter', sans-serif; font-size: clamp(18px, 2.5vw, 24px); font-weight: 800; color: var(--teal-dark); margin: 0; letter-spacing: -0.02em;">In The Classroom</h3>
           </div>
-          <!-- Increased tap area using negative margin and padding -->
           <a href="#fog-arenas" style="font-size: 14px; font-weight: 700; color: var(--orange-pop); text-decoration: none; font-family: 'Inter', sans-serif; white-space: nowrap; padding: 10px; margin: -10px;">Change Arena ↑</a>
         </div>
 
@@ -853,9 +847,9 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 
   <section class="assessment-sec curve-flow fade-in" id="assessment">
     <div class="assessment-intro">
-      <span class="header-marker text-gradient-bronze">Check Your Levels</span>
-      <h2 class="assessment-intro-head">Where are you on the board right now?</h2>
-      <p class="assessment-intro-body">When the pressure builds, the noise takes over. R³ is the confident interjection that stops the spiral and takes it back to the root. Take 60 seconds to check your levels.</p>
+      <span class="header-marker text-gradient-bronze">Step 1: Check Your Levels</span>
+      <h2 class="assessment-intro-head">Where does your journey begin?</h2>
+      <p class="assessment-intro-body">The R³ Model is a sequenced journey from automatic reaction to conscious choice. Before you can remix your response, you need to know where you're currently stuck. Take 60 seconds to find your starting point, and we'll guide you to the Studio Desk to learn what to do next.</p>
     </div>
     <div class="assessment-card glass-panel-dark fade-in d1 max-w-4xl mx-auto">
       <div class="mixer-container">
@@ -886,36 +880,50 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
           <button type="button" class="a-opt" onclick="finishAssessment(this)">Clear — but only once it's too late to use that clarity.</button>
         </div>
       </div>
+      
+      <!-- Unified Results -->
       <div class="a-result" id="result-reflection">
         <span class="result-badge">Phase 1: Reflection (Hearing the Beat)</span>
-        <h3 class="result-head">The R³ Model begins exactly where you are.</h3>
+        <h3 class="result-head">Your journey begins with Reflection.</h3>
         <p class="result-body">Reflection is the practice of seeing clearly what's happening beneath the automatic response. Like a producer isolating an audio track, it’s about separating the raw truth from the emotional noise — while it's happening. This is where your work begins.</p>
-        <div class="result-actions">
-          <button type="button" class="btn-primary" onclick="playTrack(1); document.getElementById('phases').scrollIntoView({behavior: 'smooth'});">Load Track 1 →</button>
-          <button type="button" class="restart-btn" onclick="resetAssessment()">Reset Fader</button>
+        <div class="next-step-prompt" style="font-size: 15px; color: var(--secondary); margin-bottom: 1.5rem; font-weight: 600; background: rgba(212,175,55,0.1); padding: 12px 16px; border-left: 3px solid var(--secondary); border-radius: 0 8px 8px 0;">
+          Next Step: Head to the Studio Desk. Load your track to unlock your learning options and dive into the Playbook.
         </div>
+        <div class="result-actions">
+          <button type="button" class="btn-primary" onclick="routeToStudio(1)">Load Track 1 at the Desk →</button>
+        </div>
+        <div style="margin-top: 2rem;"><button type="button" class="restart-btn" onclick="resetAssessment()">Retake Assessment</button></div>
       </div>
+      
       <div class="a-result" id="result-resistance">
         <span class="result-badge">Phase 2: Resistance (Hitting Pause)</span>
-        <h3 class="result-head">You've done the listening. Now comes the pause.</h3>
+        <h3 class="result-head">Your journey moves to Resistance.</h3>
         <p class="result-body">Resistance is where automaticity—the conditioned reflex that skips like a scratched record—gets interrupted. By hitting pause on the track, conscious choice becomes possible. The R³ Model gives you a structure for exactly this space.</p>
-        <div class="result-actions">
-          <button type="button" class="btn-primary" onclick="playTrack(2); document.getElementById('phases').scrollIntoView({behavior: 'smooth'});">Load Track 2 →</button>
-          <button type="button" class="restart-btn" onclick="resetAssessment()">Reset Fader</button>
+        <div class="next-step-prompt" style="font-size: 15px; color: var(--secondary); margin-bottom: 1.5rem; font-weight: 600; background: rgba(212,175,55,0.1); padding: 12px 16px; border-left: 3px solid var(--secondary); border-radius: 0 8px 8px 0;">
+          Next Step: Head to the Studio Desk. Load your track to unlock your learning options and dive into the Playbook.
         </div>
+        <div class="result-actions">
+          <button type="button" class="btn-primary" onclick="routeToStudio(2)">Load Track 2 at the Desk →</button>
+        </div>
+        <div style="margin-top: 2rem;"><button type="button" class="restart-btn" onclick="resetAssessment()">Retake Assessment</button></div>
       </div>
+      
       <div class="a-result" id="result-revelation">
         <span class="result-badge">Phase 3: Revelation (Flipping the Sample)</span>
-        <h3 class="result-head">You've found the sample. Now make it your default.</h3>
+        <h3 class="result-head">Your journey builds toward Revelation.</h3>
         <p class="result-body">Purposeful Practice — applying insight consistently — is how neuroplasticity works. You have to play the new beat repeatedly until the nervous system updates its default rhythm. That's what Phase 3 builds toward.</p>
-        <div class="result-actions">
-          <button type="button" class="btn-primary" onclick="playTrack(3); document.getElementById('phases').scrollIntoView({behavior: 'smooth'});">Load Track 3 →</button>
-          <button type="button" class="restart-btn" onclick="resetAssessment()">Reset Fader</button>
+        <div class="next-step-prompt" style="font-size: 15px; color: var(--secondary); margin-bottom: 1.5rem; font-weight: 600; background: rgba(212,175,55,0.1); padding: 12px 16px; border-left: 3px solid var(--secondary); border-radius: 0 8px 8px 0;">
+          Next Step: Head to the Studio Desk. Load your track to unlock your learning options and dive into the Playbook.
         </div>
+        <div class="result-actions">
+          <button type="button" class="btn-primary" onclick="routeToStudio(3)">Load Track 3 at the Desk →</button>
+        </div>
+        <div style="margin-top: 2rem;"><button type="button" class="restart-btn" onclick="resetAssessment()">Retake Assessment</button></div>
       </div>
     </div>
   </section>
 
+  <!-- THE STUDIO DESK NOW HOUSES THE LEARNING MODALITIES -->
   <section class="sec curve-flow fade-in" id="phases">
     <div style="text-align: center;"><span class="header-marker text-gradient-teal">The Studio Desk</span></div>
     <div class="agency-console fade-in d1">
@@ -933,39 +941,44 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
         </div>
       </div>
       <div class="readout-panel">
-        <div class="readout-tag">Track Info</div>
+        <div class="readout-tag">Control Center</div>
         <div id="readout-content" class="readout-content"></div>
+        
+        <!-- NEW INTEGRATED MODALITY GRID -->
+        <div class="desk-modality-grid fade-in d2">
+          <a href="#" class="desk-mod-btn" onclick="openPlaybookForCurrentTrack(); return false;">
+            <div class="desk-mod-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
+            <span class="desk-mod-title">Read Playbook</span>
+            <span class="desk-mod-desc">Dive into the detailed liner notes of this phase.</span>
+          </a>
+          <a href="#" class="desk-mod-btn" onclick="openMediaModal('audio'); return false;">
+            <div class="desk-mod-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div>
+            <span class="desk-mod-title">Hear Track</span>
+            <span class="desk-mod-desc">Original music video breakdown of the method.</span>
+          </a>
+          <a href="#" class="desk-mod-btn" onclick="openMediaModal('video'); return false;">
+            <div class="desk-mod-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg></div>
+            <span class="desk-mod-title">Watch Studio</span>
+            <span class="desk-mod-desc">A visual deep-dive into the framework's core.</span>
+          </a>
+          <a href="The_Mind_Remix.pdf" class="desk-mod-btn" target="_blank" download="The_Mind_Remix.pdf">
+            <div class="desk-mod-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></div>
+            <span class="desk-mod-title">Grab Freebie</span>
+            <span class="desk-mod-desc">Download the complete R³ PDF guide.</span>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- PLAYBOOK DETAILS GRID (No longer has the big modality bridge here) -->
   <section class="sec-alt curve-flow fade-in">
     <div style="text-align: center;">
       <span class="header-marker text-gradient-amber">The Playbook</span>
       <h2 class="scenario-intro-head">A detailed breakdown of the R³ Architecture.</h2>
     </div>
-    <div class="modality-bridge fade-in d1">
-      <h3 class="modality-title">Choose Your Frequency</h3>
-      <p class="modality-desc">Everyone processes differently. How do you want to learn the method?</p>
-      <div class="modality-grid">
-        <a href="#rap-text-grid" class="mod-card" onclick="document.getElementById('rap-text-grid').scrollIntoView({behavior: 'smooth'}); return false;">
-          <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
-          <span class="mod-label">Read The Manual</span><span class="mod-desc-text">Dive into the detailed liner notes of each phase below.</span>
-        </a>
-        <a href="#" class="mod-card" onclick="openMediaModal('audio'); return false;">
-          <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg></div>
-          <span class="mod-label">Hear The Track</span><span class="mod-desc-text">Experience the original music video breaking down the framework.</span>
-        </a>
-        <a href="#" class="mod-card" onclick="openMediaModal('video'); return false;">
-          <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg></div>
-          <span class="mod-label">Watch The Studio</span><span class="mod-desc-text">Watch a visual deep-dive into the framework's core concepts.</span>
-        </a>
-        <a href="The_Mind_Remix.pdf" class="mod-card" target="_blank" download="The_Mind_Remix.pdf">
-          <div class="mod-icon-wrap"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></div>
-          <span class="mod-label">Grab The Freebie</span><span class="mod-desc-text">Download the complete R³ Mind Remix PDF guide.</span>
-        </a>
-      </div>
-    </div>
+    
     <div class="rap-grid fade-in d2" id="rap-text-grid">
       <div class="rap-col rc1">
         <span class="rap-col-head text-gradient-amber">Phase 1: Reflection</span>
@@ -1185,6 +1198,9 @@ body, html { font-family: 'Inter', sans-serif; background-color: var(--bg-color)
 </main>
 
 <script>
+// Global tracking for playbook navigation
+window.currentActiveTrack = 1;
+
 const initScrollEffects = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); } });
@@ -1551,12 +1567,40 @@ function resetAssessment() {
 }
 
 const tracks = {
-    1: { title: "Reflection", color: "var(--tertiary)", textColor: "var(--surface)", angle: "15deg", desc: "The objective examination of what is actually happening. Like a producer isolating an audio track, it’s about separating the raw truth from the emotional noise—listening past the noise to hear the underlying beat." },
-    2: { title: "Resistance", color: "var(--orange-pop)", textColor: "var(--surface)", angle: "28deg", desc: "The intentional interruption of automatic response patterns. This is where automaticity—the conditioned reflex that skips like a scratched record—gets interrupted. You hit pause on the track long enough to consciously choose your response." },
-    3: { title: "Revelation", color: "var(--secondary)", textColor: "var(--dark)", angle: "40deg", desc: "The emergence of truth that Reflection and Resistance produce. The AH-HA moment where you flip the sample and create a new flow. Through purposeful practice, you play the new beat repeatedly until the nervous system updates its default rhythm." }
+    1: { title: "Phase 1: Reflection", color: "var(--tertiary)", textColor: "var(--surface)", angle: "15deg", desc: "The objective examination of what is actually happening. Like a producer isolating an audio track, it’s about separating the raw truth from the emotional noise—listening past the noise to hear the underlying beat." },
+    2: { title: "Phase 2: Resistance", color: "var(--orange-pop)", textColor: "var(--surface)", angle: "28deg", desc: "The intentional interruption of automatic response patterns. This is where automaticity—the conditioned reflex that skips like a scratched record—gets interrupted. You hit pause on the track long enough to consciously choose your response." },
+    3: { title: "Phase 3: Revelation", color: "var(--secondary)", textColor: "var(--dark)", angle: "40deg", desc: "The emergence of truth that Reflection and Resistance produce. The AH-HA moment where you flip the sample and create a new flow. Through purposeful practice, you play the new beat repeatedly until the nervous system updates its default rhythm." }
 };
 
+// Unified routing functions
+function routeToStudio(trackId) {
+    playTrack(trackId);
+    document.getElementById('phases').scrollIntoView({behavior: 'smooth'});
+}
+
+function openPlaybookForCurrentTrack() {
+    let rapId = 'r1';
+    if (window.currentActiveTrack === 2) rapId = 'r4';
+    if (window.currentActiveTrack === 3) rapId = 'r7';
+    
+    const detailEl = document.getElementById(rapId);
+    if (detailEl) {
+        const itemEl = detailEl.previousElementSibling;
+        if (!detailEl.classList.contains('open')) {
+            toggleRap(itemEl, rapId);
+        }
+    }
+    
+    const grid = document.getElementById('rap-text-grid');
+    if (grid) {
+        const y = grid.getBoundingClientRect().top + window.pageYOffset - 100;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+}
+
 function playTrack(trackId) {
+    window.currentActiveTrack = trackId;
+    
     document.querySelectorAll('.pad-btn').forEach(btn => btn.classList.remove('active'));
     const pad = document.getElementById('pad-' + trackId);
     if (pad) pad.classList.add('active');
