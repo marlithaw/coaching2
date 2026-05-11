@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Grade 5 Rollout Playbook — AH-HA Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Permanent+Marker&family=Reenie+Beanie&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --primary:#8B2C2D;--secondary:#D4AF37;--tertiary:#9CAB88;
+  --dark:#1A1A1A;--body:#4A4A4A;--muted:#888888;
+  --bg-color:#F4F7F8;--surface:#FFFFFF;
+  --teal-dark:#0C3645;--teal-light:#1A5F7A;--teal-bright:#32758C;
+  --orange-pop:#FF6B00;--amber:#FF9800;--bronze:#C2822B;
+  --shadow-soft:0 15px 35px -5px rgba(0,0,0,0.1);
+  --shadow-hover:0 25px 50px -10px rgba(0,0,0,0.2);
+}
+body,html{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--body);line-height:1.6;min-height:100vh;overflow-x:clip;width:100%;max-width:100%;}
+::selection{background:var(--orange-pop);color:#fff;}
+.mono{font-family:'Space Mono',monospace;}
+.handwritten{font-family:'Reenie Beanie',cursive;font-size:32px;color:var(--teal-light);}
+
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.8s cubic-bezier(0.2,0.9,0.4,1),transform 0.8s cubic-bezier(0.2,0.9,0.4,1);}
+.fade-in.is-visible{opacity:1;transform:translateY(0);}
+.d1{transition-delay:0.1s;}.d2{transition-delay:0.2s;}.d3{transition-delay:0.3s;}.d4{transition-delay:0.4s;}
+@keyframes aFadeUp{0%{opacity:0;transform:translateY(15px);}100%{opacity:1;transform:translateY(0);}}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(244,247,248,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,0.07);padding:1rem max(1.5rem,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:-0.04em;color:var(--teal-dark);text-decoration:none;display:flex;align-items:baseline;gap:6px;}
+.logo span{color:var(--orange-pop);}
+.back-link{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--teal-light);text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;display:flex;align-items:center;gap:6px;transition:color 0.2s;}
+.back-link:hover{color:var(--orange-pop);}
+.header-badge{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;color:var(--orange-pop);background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.2);padding:4px 10px;border-radius:4px;letter-spacing:0.1em;text-transform:uppercase;}
+
+/* HERO */
+.hero{position:relative;width:100%;min-height:85vh;padding:7rem max(1.5rem,calc((100% - 1100px)/2)) 5rem;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:linear-gradient(135deg,#0C2232 0%,#0C3645 60%,#1A2A20 100%);}
+.hero-bg-pattern{position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#fff 0px,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0px,#fff 1px,transparent 1px,transparent 40px);z-index:0;}
+.hero-accent{position:absolute;top:-10%;right:-5%;width:clamp(280px,45vw,600px);height:clamp(280px,45vw,600px);background:radial-gradient(circle,rgba(255,107,0,0.12) 0%,transparent 70%);z-index:0;pointer-events:none;}
+.hero-content{position:relative;z-index:2;max-width:780px;}
+.eyebrow{font-family:'Space Mono',monospace;font-size:clamp(10px,1.2vw,12px);font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--orange-pop);margin-bottom:1rem;display:flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';width:30px;height:2px;background:var(--orange-pop);display:inline-block;}
+.hero-title{font-family:'Permanent Marker',cursive;font-size:clamp(36px,6vw,72px);background:linear-gradient(135deg,var(--orange-pop) 0%,var(--amber) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 6px 12px rgba(0,0,0,0.4));line-height:1.05;margin-bottom:0.75rem;}
+.hero-sub{font-family:'Inter',sans-serif;font-size:clamp(16px,2.5vw,22px);font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:1rem;}
+.hero-desc{font-family:'Inter',sans-serif;font-size:clamp(15px,1.8vw,18px);font-weight:300;color:rgba(255,255,255,0.8);line-height:1.7;max-width:620px;margin-bottom:2.5rem;}
+.context-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:2.5rem;}
+.chip{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;padding:6px 14px;border-radius:4px;letter-spacing:0.05em;text-transform:uppercase;}
+.chip-teal{background:rgba(26,95,122,0.3);color:#a8d8e8;border:1px solid rgba(26,95,122,0.4);}
+.chip-orange{background:rgba(255,107,0,0.2);color:#ffb380;border:1px solid rgba(255,107,0,0.3);}
+.chip-amber{background:rgba(212,175,55,0.2);color:#e8cc6a;border:1px solid rgba(212,175,55,0.3);}
+.hero-cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+.btn-primary{background:linear-gradient(90deg,var(--orange-pop),var(--amber));color:#fff;border:none;padding:0.85rem 2rem;font-weight:700;font-size:clamp(0.85rem,1.4vw,0.95rem);border-radius:6px;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif;letter-spacing:0.02em;display:inline-flex;align-items:center;gap:8px;text-decoration:none;box-shadow:0 10px 20px -5px rgba(255,107,0,0.4);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 25px -5px rgba(255,107,0,0.6);}
+.btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.35);padding:0.85rem 2rem;font-weight:700;font-size:clamp(0.85rem,1.4vw,0.95rem);border-radius:6px;cursor:pointer;transition:all 0.3s;font-family:'Inter',sans-serif;display:inline-flex;align-items:center;gap:8px;text-decoration:none;}
+.btn-outline:hover{border-color:#fff;background:rgba(255,255,255,0.08);transform:translateY(-2px);}
+
+/* SCROLL TABS NAV */
+.tabs-nav{position:sticky;top:68px;z-index:500;background:rgba(244,247,248,0.95);backdrop-filter:blur(10px);border-bottom:2px solid rgba(0,0,0,0.06);overflow-x:auto;scrollbar-width:none;}
+.tabs-nav::-webkit-scrollbar{display:none;}
+.tabs-inner{display:flex;gap:0;padding:0 max(1.5rem,calc((100% - 1100px)/2));min-width:max-content;}
+.tab-btn{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);padding:1rem 1.2rem;border:none;background:transparent;cursor:pointer;transition:all 0.2s;white-space:nowrap;border-bottom:3px solid transparent;position:relative;top:2px;}
+.tab-btn:hover{color:var(--teal-dark);}
+.tab-btn.active{color:var(--orange-pop);border-bottom-color:var(--orange-pop);}
+
+/* MAIN LAYOUT */
+.main{padding:0;}
+.section-wrap{padding:4rem max(1.5rem,calc((100% - 1100px)/2));}
+.section-wrap:nth-child(even){background:#fff;}
+
+/* SECTION HEADERS */
+.sec-eyebrow{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--orange-pop);margin-bottom:0.5rem;}
+.sec-title{font-family:'Permanent Marker',cursive;font-size:clamp(28px,4vw,42px);background:linear-gradient(135deg,var(--teal-dark) 0%,var(--teal-light) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;margin-bottom:0.75rem;line-height:1.15;}
+.sec-title-orange{background:linear-gradient(135deg,var(--orange-pop) 0%,var(--amber) 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent!important;}
+.sec-lead{font-size:clamp(16px,2vw,18px);color:var(--body);line-height:1.75;max-width:760px;margin-bottom:2rem;}
+
+/* RULE CARDS / GRID */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-top:2rem;}
+.rule-card{background:#fff;border:1px solid rgba(0,0,0,0.06);border-top:3px solid var(--teal-light);border-radius:8px;padding:1.5rem;box-shadow:var(--shadow-soft);transition:all 0.3s;}
+.rule-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-top-color:var(--orange-pop);}
+.rule-card-icon{width:36px;height:36px;border-radius:8px;background:rgba(26,95,122,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:18px;}
+.rule-card h4{font-family:'Inter',sans-serif;font-size:15px;font-weight:800;color:var(--teal-dark);margin-bottom:0.5rem;letter-spacing:-0.02em;}
+.rule-card p{font-size:14px;color:var(--body);line-height:1.65;}
+
+/* SCRIPT BOX */
+.script-box{background:linear-gradient(135deg,rgba(12,54,69,0.05) 0%,rgba(12,54,69,0.1) 100%);border:1px solid rgba(12,54,69,0.15);border-left:4px solid var(--teal-light);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1rem 0;}
+.script-box .script-label{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--teal-light);margin-bottom:0.5rem;display:block;}
+.script-box blockquote{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:var(--teal-dark);line-height:1.65;font-style:italic;}
+.script-box blockquote em{font-style:normal;color:var(--orange-pop);}
+
+.dont-box{background:rgba(139,44,45,0.04);border:1px solid rgba(139,44,45,0.15);border-left:4px solid var(--primary);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1rem 0;}
+.dont-box .script-label{color:var(--primary)!important;}
+
+.coaching-box{background:linear-gradient(135deg,rgba(255,107,0,0.05) 0%,rgba(255,152,0,0.12) 100%);border:1px solid rgba(255,107,0,0.2);border-radius:8px;padding:1.5rem;margin:1.5rem 0;position:relative;}
+.coaching-box::before{content:'🎙';position:absolute;top:1rem;right:1.25rem;font-size:24px;opacity:0.4;}
+.coaching-box .script-label{color:var(--orange-pop)!important;}
+.coaching-box p{font-size:15px;color:var(--body);line-height:1.7;}
+
+/* IF-THEN LADDER */
+.ladder{margin:1.5rem 0;display:flex;flex-direction:column;gap:0;}
+.ladder-step{display:flex;gap:0;position:relative;}
+.ladder-step:not(:last-child)::after{content:'';position:absolute;left:22px;top:52px;bottom:-2px;width:2px;background:linear-gradient(to bottom,var(--teal-light),rgba(26,95,122,0.2));z-index:0;}
+.ladder-node{flex-shrink:0;width:44px;height:44px;border-radius:50%;background:var(--teal-dark);display:flex;align-items:center;justify-content:center;margin-right:1rem;margin-top:4px;position:relative;z-index:1;box-shadow:0 4px 12px rgba(12,54,69,0.3);}
+.ladder-node span{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#fff;}
+.ladder-content{flex:1;background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:8px;padding:1rem 1.25rem;margin-bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,0.04);}
+.ladder-if{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
+.ladder-condition{font-size:14px;font-weight:600;color:var(--teal-dark);margin-bottom:8px;line-height:1.45;}
+.ladder-then{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--orange-pop);margin-bottom:4px;}
+.ladder-action{font-size:14px;color:var(--body);line-height:1.55;}
+.ladder-action em{font-style:italic;color:var(--teal-dark);font-weight:600;}
+.ladder-step.escalate .ladder-node{background:var(--orange-pop);}
+.ladder-step.critical .ladder-node{background:var(--primary);}
+.ladder-step.resolve .ladder-node{background:var(--tertiary);}
+
+/* STEPS LIST */
+.steps-list{list-style:none;counter-reset:steps;margin:1rem 0;display:flex;flex-direction:column;gap:10px;}
+.steps-list li{display:flex;gap:14px;align-items:flex-start;counter-increment:steps;font-size:15px;color:var(--body);line-height:1.6;}
+.steps-list li::before{content:counter(steps);flex-shrink:0;width:30px;height:30px;background:linear-gradient(135deg,var(--teal-dark),var(--teal-light));border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:11px;font-weight:700;color:#fff;box-shadow:0 3px 8px rgba(12,54,69,0.25);}
+
+/* BULLET CHECKLIST */
+.check-list{list-style:none;margin:1rem 0;display:flex;flex-direction:column;gap:8px;}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--body);line-height:1.6;}
+.check-list li::before{content:'✓';flex-shrink:0;color:var(--teal-light);font-weight:700;font-size:15px;margin-top:1px;}
+.check-list li.no::before{content:'✗';color:var(--primary);}
+
+/* EXPECTATION TABS */
+.exp-tabs{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.exp-tab{font-family:'Space Mono',monospace;font-size:10px;font-weight:700;padding:8px 16px;border:1px solid rgba(0,0,0,0.1);border-radius:4px;background:var(--bg-color);color:var(--muted);cursor:pointer;transition:all 0.2s;letter-spacing:0.05em;text-transform:uppercase;}
+.exp-tab.active{background:var(--teal-dark);color:#fff;border-color:var(--teal-dark);box-shadow:0 4px 12px rgba(12,54,69,0.25);}
+.exp-panel{display:none;animation:aFadeUp 0.4s ease forwards;}
+.exp-panel.active{display:block;}
+
+/* ROLLOUT DAYS */
+.days-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:2rem;}
+.day-card{background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;box-shadow:var(--shadow-soft);transition:all 0.3s;cursor:pointer;}
+.day-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);}
+.day-card.active-day{border:2px solid var(--orange-pop);box-shadow:0 15px 35px rgba(255,107,0,0.15);}
+.day-header{padding:1.25rem 1.5rem;background:var(--teal-dark);display:flex;justify-content:space-between;align-items:center;}
+.day-card.active-day .day-header{background:var(--orange-pop);}
+.day-num{font-family:'Permanent Marker',cursive;font-size:28px;color:#fff;line-height:1;}
+.day-label{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:rgba(255,255,255,0.7);text-transform:uppercase;letter-spacing:0.1em;}
+.day-focus-badge{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;background:rgba(255,255,255,0.2);color:#fff;padding:4px 8px;border-radius:3px;letter-spacing:0.05em;text-transform:uppercase;}
+.day-body{padding:1.25rem 1.5rem;}
+.day-focus{font-family:'Inter',sans-serif;font-size:14px;font-weight:700;color:var(--teal-dark);margin-bottom:0.75rem;letter-spacing:-0.01em;}
+.day-details{display:none;margin-top:0.75rem;padding-top:0.75rem;border-top:1px solid rgba(0,0,0,0.06);}
+.day-card.active-day .day-details{display:block;animation:aFadeUp 0.3s ease forwards;}
+.day-script{background:linear-gradient(135deg,rgba(255,107,0,0.05),rgba(255,152,0,0.1));border-left:3px solid var(--orange-pop);padding:0.75rem 1rem;border-radius:0 6px 6px 0;margin:0.75rem 0;}
+.day-script p{font-size:13px;font-style:italic;color:var(--teal-dark);font-weight:600;line-height:1.5;}
+.day-actions{display:flex;flex-direction:column;gap:6px;}
+.day-action{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--body);line-height:1.5;}
+.day-action::before{content:'→';color:var(--teal-light);font-weight:700;flex-shrink:0;}
+
+/* QUICK REFERENCE */
+.qr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2rem;}
+.qr-card{background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;box-shadow:var(--shadow-soft);}
+.qr-head{padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px;}
+.qr-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.qr-icon.seat{background:rgba(26,95,122,0.1);}
+.qr-icon.move{background:rgba(156,171,136,0.2);}
+.qr-icon.lang{background:rgba(255,107,0,0.1);}
+.qr-head-title{font-family:'Inter',sans-serif;font-size:16px;font-weight:800;color:var(--teal-dark);}
+.qr-head-sub{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;}
+.qr-rows{padding:0 1.5rem 1.5rem;}
+.qr-row{border-top:1px solid rgba(0,0,0,0.06);padding:0.75rem 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.qr-if{font-size:12px;color:var(--body);line-height:1.5;}
+.qr-if strong{font-family:'Space Mono',monospace;font-size:9px;display:block;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;}
+.qr-then{font-size:12px;color:var(--teal-dark);font-weight:600;line-height:1.5;font-style:italic;}
+.qr-then strong{font-family:'Space Mono',monospace;font-size:9px;display:block;color:var(--orange-pop);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:3px;font-style:normal;}
+
+/* LOOK-FORS */
+.lookfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:2rem;}
+.lookfor-card{background:#fff;border-radius:8px;border:1px solid rgba(0,0,0,0.07);padding:1.5rem;box-shadow:var(--shadow-soft);display:flex;gap:14px;align-items:flex-start;}
+.lf-check{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--tertiary),#7a9c6a);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(156,171,136,0.4);}
+.lf-check svg{width:16px;height:16px;fill:#fff;}
+.lf-text{font-size:15px;color:var(--body);line-height:1.65;}
+
+/* LANGUAGE CARDS */
+.phrase-grid{display:flex;flex-wrap:wrap;gap:10px;margin:1rem 0;}
+.phrase-chip{background:linear-gradient(135deg,var(--teal-dark),var(--teal-light));color:#fff;padding:10px 18px;border-radius:6px;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;font-style:italic;box-shadow:0 4px 12px rgba(12,54,69,0.2);}
+
+/* ECONOMY EXAMPLES */
+.economy-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1.5rem 0;}
+.economy-card{background:#fff;border-radius:8px;border:1px solid rgba(0,0,0,0.07);padding:1.25rem 1.5rem;box-shadow:var(--shadow-soft);}
+.economy-card .eco-label{font-family:'Space Mono',monospace;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:8px;}
+.economy-card blockquote{font-family:'Inter',sans-serif;font-size:17px;font-weight:700;color:var(--teal-dark);font-style:italic;line-height:1.4;}
+
+/* PREPARATION CHECKLIST */
+.prep-checklist{background:#fff;border:1px solid rgba(0,0,0,0.07);border-radius:10px;padding:2rem;box-shadow:var(--shadow-soft);max-width:700px;}
+.prep-item{display:flex;gap:14px;align-items:flex-start;padding:0.75rem 0;border-bottom:1px solid rgba(0,0,0,0.06);cursor:pointer;}
+.prep-item:last-child{border-bottom:none;}
+.prep-checkbox{width:24px;height:24px;border:2px solid rgba(0,0,0,0.15);border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.prep-item.checked .prep-checkbox{background:var(--teal-light);border-color:var(--teal-light);}
+.prep-item.checked .prep-checkbox::after{content:'✓';color:#fff;font-size:13px;font-weight:700;}
+.prep-item.checked .prep-text{text-decoration:line-through;color:var(--muted);}
+.prep-text{font-size:15px;color:var(--body);line-height:1.55;}
+.prep-why{font-size:13px;color:var(--muted);margin-top:3px;line-height:1.5;}
+
+/* DAY 1 SCRIPT */
+.script-flow{display:flex;flex-direction:column;gap:20px;margin-top:1.5rem;}
+.script-block{background:#fff;border-radius:10px;border:1px solid rgba(0,0,0,0.07);overflow:hidden;box-shadow:var(--shadow-soft);}
+.script-block-header{padding:1rem 1.5rem;background:var(--teal-dark);display:flex;align-items:center;justify-content:space-between;}
+.script-block-header.orange{background:var(--orange-pop);}
+.script-block-header.amber{background:linear-gradient(90deg,var(--bronze),var(--secondary));}
+.script-block-title{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff;}
+.script-block-tag{font-family:'Space Mono',monospace;font-size:9px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.1em;}
+.script-block-body{padding:1.5rem;}
+.script-block-body blockquote{font-family:'Inter',sans-serif;font-size:16px;font-weight:600;color:var(--teal-dark);font-style:italic;line-height:1.65;}
+
+/* SECTION DIVIDER */
+.divider{height:3px;background:linear-gradient(90deg,var(--orange-pop),var(--amber),transparent);max-width:200px;border-radius:4px;margin:0.5rem 0 2rem;}
+
+/* FOOTER */
+.footer{background:var(--teal-dark);padding:3rem max(1.5rem,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
+.footer-left{display:flex;flex-direction:column;gap:8px;}
+.footer-logo{font-family:'Inter',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;letter-spacing:-0.04em;}
+.footer-logo span{color:var(--orange-pop);}
+.footer-note{font-family:'Space Mono',monospace;font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;}
+.footer-link{color:rgba(255,255,255,0.7);font-family:'Inter',sans-serif;font-size:14px;font-weight:600;text-decoration:none;transition:color 0.2s;}
+.footer-link:hover{color:var(--orange-pop);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .days-grid{grid-template-columns:repeat(2,1fr);}
+  .qr-grid{grid-template-columns:1fr;}
+  .lookfor-grid{grid-template-columns:1fr;}
+  .economy-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .days-grid{grid-template-columns:1fr 1fr;}
+  .cards-grid{grid-template-columns:1fr;}
+  .hero-title{font-size:clamp(30px,10vw,52px);}
+  .hero{min-height:auto;padding-top:6rem;padding-bottom:3rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <a href="index.html" class="logo">AH-HA<span>.</span></a>
+  <div class="header-badge">Sample Resource</div>
+  <a href="index.html" class="back-link">← Back to Site</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-content fade-in">
+    <div class="eyebrow">Teacher-Facing SOP &nbsp;·&nbsp; Grade 5</div>
+    <h1 class="hero-title">Grade 5 Rollout<br>Playbook</h1>
+    <p class="hero-sub">Entry · Assigned Seats · Remaining Seated · Profanity</p>
+    <p class="hero-desc">A first-year teacher's complete script and response system for the first rollout cycle. Built for classrooms where predictability is the intervention.</p>
+    <div class="context-chips">
+      <span class="chip chip-teal">Grade 5</span>
+      <span class="chip chip-orange">Trauma-Informed</span>
+      <span class="chip chip-amber">Year 1 Teacher</span>
+      <span class="chip chip-teal">High Predictability Need</span>
+    </div>
+    <div class="hero-cta-row">
+      <a href="#tempo" class="btn-primary">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Start the Playbook
+      </a>
+      <a href="#quick-ref" class="btn-outline">Jump to Quick Ref →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TABS NAV -->
+<nav class="tabs-nav" id="tabs-nav">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="scrollToSection('tempo')">Teacher's Tempo</button>
+    <button class="tab-btn" onclick="scrollToSection('expectations')">Expectations</button>
+    <button class="tab-btn" onclick="scrollToSection('arrival')">Arrival SOP</button>
+    <button class="tab-btn" onclick="scrollToSection('seats')">Assigned Seats</button>
+    <button class="tab-btn" onclick="scrollToSection('seated')">Remain Seated</button>
+    <button class="tab-btn" onclick="scrollToSection('profanity')">Profanity</button>
+    <button class="tab-btn" onclick="scrollToSection('day1')">Day 1 Script</button>
+    <button class="tab-btn" onclick="scrollToSection('rollout')">4-Day Rollout</button>
+    <button class="tab-btn" onclick="scrollToSection('quick-ref')">Quick Ref</button>
+    <button class="tab-btn" onclick="scrollToSection('lookfors')">Look-Fors</button>
+  </div>
+</nav>
+
+<main class="main">
+
+  <!-- SECTION 1: TEACHER'S TEMPO -->
+  <section class="section-wrap fade-in" id="tempo">
+    <div class="sec-eyebrow">Section 01</div>
+    <h2 class="sec-title">Teacher's Tempo</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">The goal is not to win an argument. The goal is to make the routine more predictable than the chaos.</p>
+
+    <div class="cards-grid">
+      <div class="rule-card fade-in d1">
+        <div class="rule-card-icon">🎯</div>
+        <h4>One Direction at a Time</h4>
+        <p>Give a single direction. Let it land. Monitor. Do not stack instructions or explain during noncompliance.</p>
+      </div>
+      <div class="rule-card fade-in d2">
+        <div class="rule-card-icon">🔇</div>
+        <h4>Fewest Words Possible</h4>
+        <p>Brief, calm, predictable language lowers ambiguity. Long explanations invite argument and raise threat in trauma-affected rooms.</p>
+      </div>
+      <div class="rule-card fade-in d3">
+        <div class="rule-card-icon">🔁</div>
+        <h4>Say It Once, Then Monitor</h4>
+        <p>Repeat corrections invite negotiation. Say the direction once, scan the room, and follow through.</p>
+      </div>
+      <div class="rule-card fade-in d1">
+        <div class="rule-card-icon">🚫</div>
+        <h4>No Public Debates</h4>
+        <p>Do not negotiate seat assignments. Do not lecture on profanity. Do not explain a move publicly. Correct quietly unless safety requires otherwise.</p>
+      </div>
+      <div class="rule-card fade-in d2">
+        <div class="rule-card-icon">✅</div>
+        <h4>Follow Through Every Time</h4>
+        <p>Inconsistent follow-through teaches students the boundary is optional. If you say it, mean it — every single time.</p>
+      </div>
+      <div class="rule-card fade-in d3">
+        <div class="rule-card-icon">🎙</div>
+        <h4>Correct Privately When Possible</h4>
+        <p>Public correction can become performance. Move to the student, use a low voice, and keep moving. Reserve whole-room resets for safety.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:20px;font-weight:800;color:var(--teal-dark);margin:2.5rem 0 0.5rem;letter-spacing:-0.02em;">Economy of Language</h3>
+    <p style="font-size:15px;color:var(--body);margin-bottom:1rem;">Use this pattern for almost every correction: <strong style="color:var(--teal-dark);">Name + Direction + Timeframe</strong></p>
+    <div class="economy-grid">
+      <div class="economy-card"><div class="eco-label">Seat Correction</div><blockquote>"Jordan, seat now."</blockquote></div>
+      <div class="economy-card"><div class="eco-label">Seat Correction</div><blockquote>"Maya, back to your assigned seat. Now."</blockquote></div>
+      <div class="economy-card"><div class="eco-label">Language Correction</div><blockquote>"Language. Try that again."</blockquote></div>
+      <div class="economy-card"><div class="eco-label">Attention Reset</div><blockquote>"Eyes here in 3, 2, 1."</blockquote></div>
+    </div>
+
+    <div class="coaching-box fade-in">
+      <div class="script-label">Why This Matters Here</div>
+      <p>In a trauma-affected classroom, long explanations often increase noise, invite argument, and raise perceived threat. Brief, calm, predictable language lowers ambiguity and makes the adult feel more stable. Students may not like the boundary — but they can learn it because it is consistent.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 2: EXPECTATIONS -->
+  <section class="section-wrap fade-in" id="expectations">
+    <div class="sec-eyebrow">Section 02</div>
+    <h2 class="sec-title sec-title-orange">What Students Will Be Taught</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">Teach these explicitly before expecting compliance. Students cannot follow a routine they were never taught.</p>
+
+    <div class="exp-tabs">
+      <button class="exp-tab active" onclick="switchExp(0,this)">Expectation 1: Enter &amp; Sit</button>
+      <button class="exp-tab" onclick="switchExp(1,this)">Expectation 2: Stay Seated</button>
+      <button class="exp-tab" onclick="switchExp(2,this)">Expectation 3: Language</button>
+    </div>
+
+    <div class="exp-panel active" id="exp-0">
+      <p style="font-size:16px;font-weight:700;color:var(--teal-dark);margin-bottom:1rem;">Enter and go directly to your assigned seat.</p>
+      <ol class="steps-list">
+        <li>Walk into the room.</li>
+        <li>Look at the board or posted seat chart.</li>
+        <li>Go directly to your assigned seat.</li>
+        <li>Sit down.</li>
+        <li>Start the Do Now silently.</li>
+      </ol>
+      <div class="script-box" style="margin-top:1.5rem;">
+        <span class="script-label">Teacher Script — Teaching This</span>
+        <blockquote>"When you enter this room, there are five steps. Walk in. Find your assigned seat. Sit down. Start the Do Now. Stay silent unless I say otherwise. We are going to practice that until it is <em>automatic.</em>"</blockquote>
+      </div>
+    </div>
+
+    <div class="exp-panel" id="exp-1">
+      <p style="font-size:16px;font-weight:700;color:var(--teal-dark);margin-bottom:1rem;">Remain in your seat unless the teacher gives permission to move.</p>
+      <ol class="steps-list">
+        <li>Stay in your assigned seat during work time.</li>
+        <li>Raise your hand or use the class signal if you need help.</li>
+        <li>Keep working while waiting.</li>
+        <li>Move only when the teacher gives permission.</li>
+      </ol>
+      <div class="script-box" style="margin-top:1.5rem;">
+        <span class="script-label">Teacher Script — Teaching This</span>
+        <blockquote>"During class, your seat is your workspace. If you need something, do not get up. Raise your hand or use the signal. I will come to you. <em>You move when I give permission.</em>"</blockquote>
+      </div>
+      <div class="script-box" style="margin-top:0.75rem;">
+        <span class="script-label">Script — On Future Movement</span>
+        <blockquote>"Right now, assigned seats help us build a safe, focused classroom. As the class shows consistent success, I can reopen some movement privileges. <em>Freedom grows with consistency.</em>"</blockquote>
+      </div>
+      <div class="script-box" style="margin-top:0.75rem;">
+        <span class="script-label">Script — What Responsible Movement Looks Like</span>
+        <blockquote>"Movement is part of a productive classroom, but it has to look responsible. Moving with purpose, staying on task, returning quickly, and not pulling other people off track."</blockquote>
+      </div>
+      <div style="background:rgba(156,171,136,0.1);border:1px solid rgba(156,171,136,0.3);border-radius:8px;padding:1.25rem 1.5rem;margin-top:1.25rem;">
+        <p style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5a7a4a;margin-bottom:0.75rem;">Students Earn More Movement When They Consistently:</p>
+        <ul class="check-list">
+          <li>Enter and sit without redirection</li>
+          <li>Remain in assigned seats during independent work</li>
+          <li>Transition without roaming</li>
+          <li>Use appropriate language</li>
+          <li>Move with purpose and return quickly</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-panel" id="exp-2">
+      <p style="font-size:16px;font-weight:700;color:var(--teal-dark);margin-bottom:1rem;">Use school-appropriate language. No profanity.</p>
+      <ol class="steps-list">
+        <li>Pause before speaking.</li>
+        <li>Use school-appropriate words.</li>
+        <li>If profanity comes out, restate the message appropriately.</li>
+        <li>If frustrated, use a replacement phrase.</li>
+      </ol>
+      <div class="script-box" style="margin-top:1.5rem;">
+        <span class="script-label">Teacher Script — Teaching This</span>
+        <blockquote>"In this room, frustration is allowed. Profanity is not. If the wrong word comes out, you will pause and <em>say it again the school way.</em>"</blockquote>
+      </div>
+      <div style="margin-top:1.5rem;">
+        <p style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-light);margin-bottom:0.75rem;">Replacement Phrases — Post &amp; Teach These</p>
+        <div class="phrase-grid">
+          <span class="phrase-chip">"I am frustrated."</span>
+          <span class="phrase-chip">"Can you help me?"</span>
+          <span class="phrase-chip">"I need a minute."</span>
+          <span class="phrase-chip">"I do not like that."</span>
+          <span class="phrase-chip">"Can I try again?"</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: ARRIVAL SOP -->
+  <section class="section-wrap fade-in" id="arrival">
+    <div class="sec-eyebrow">Section 03</div>
+    <h2 class="sec-title">Arrival &amp; First 10 Minutes</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">If students enter before the room is ready, the teacher starts from behind. The room should already be telling students what to do.</p>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin-bottom:1rem;">Before Students Arrive</h3>
+    <div class="prep-checklist" id="prep-checklist">
+      <div class="prep-item" onclick="togglePrep(this)">
+        <div class="prep-checkbox"></div>
+        <div><div class="prep-text">Post the Do Now where students can see it from the doorway</div><div class="prep-why">Students should know what to do before they cross the threshold</div></div>
+      </div>
+      <div class="prep-item" onclick="togglePrep(this)">
+        <div class="prep-checkbox"></div>
+        <div><div class="prep-text">Post or project the seating chart</div><div class="prep-why">Removes the "I don't know where to sit" excuse on entry</div></div>
+      </div>
+      <div class="prep-item" onclick="togglePrep(this)">
+        <div class="prep-checkbox"></div>
+        <div><div class="prep-text">Put all needed materials on desks or in a visible pickup spot</div><div class="prep-why">Eliminates legitimate reasons to wander before class begins</div></div>
+      </div>
+      <div class="prep-item" onclick="togglePrep(this)">
+        <div class="prep-checkbox"></div>
+        <div><div class="prep-text">Stand at the threshold before students enter</div><div class="prep-why">Physical presence at the door sets tone and allows individual direction on entry</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin:2rem 0 1rem;">At the Door</h3>
+    <div class="script-box">
+      <span class="script-label">Door Script — Use This Every Time</span>
+      <blockquote>"Good morning. Find your assigned seat. Do Now on the board."</blockquote>
+    </div>
+    <div class="script-box">
+      <span class="script-label">Door Script — Add Time If Needed</span>
+      <blockquote>"Good morning. Find your assigned seat. Do Now on the board. <em>You have 3 minutes.</em>"</blockquote>
+    </div>
+    <div class="dont-box">
+      <span class="script-label">Do Not Say These</span>
+      <ul class="check-list" style="margin-top:0.5rem;">
+        <li class="no">"Please sit down, everybody." — Too broad, too emotional, easy to ignore</li>
+        <li class="no">"How many times do I have to tell y'all?" — Signals exasperation, invites argument</li>
+        <li class="no">"Come on, guys, settle down." — No direction, no accountability</li>
+      </ul>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin:2rem 0 1rem;">Once Students Begin Entering</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+      <div class="script-box" style="margin:0;">
+        <span class="script-label">For Students Who ARE Seated</span>
+        <blockquote style="font-size:15px;">Nod. Point to the paper. Quiet praise only: <em>"That is it."</em></blockquote>
+      </div>
+      <div class="script-box" style="margin:0;">
+        <span class="script-label">For Students Who Are NOT Seated</span>
+        <blockquote style="font-size:15px;"><em>"Malik, assigned seat. Now."</em> Point to the seat. Keep moving.</blockquote>
+      </div>
+    </div>
+
+    <div class="script-box" style="margin-top:1.5rem;">
+      <span class="script-label">Launching the Do Now</span>
+      <blockquote>"Eyes here in 3, 2, 1. You should be seated with your Do Now started."</blockquote>
+    </div>
+    <div class="coaching-box fade-in">
+      <div class="script-label">Coaching Note</div>
+      <p>Do not wait for perfection to start. When most students are seated, begin. The teacher should not get trapped in one student at the expense of the room. Correct, move, and circle back.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ASSIGNED SEATS -->
+  <section class="section-wrap fade-in" id="seats">
+    <div class="sec-eyebrow">Section 04</div>
+    <h2 class="sec-title sec-title-orange">SOP — Assigned Seats</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">Assigned seats are not a punishment. They are a classroom regulation tool. They reduce social ignition, lower roaming, and help the teacher monitor quickly.</p>
+
+    <div class="script-box">
+      <span class="script-label">Introducing Assigned Seats</span>
+      <blockquote>"I reset the room so we can learn faster and waste less time. Your assigned seat is part of that system. When you enter, you go to that seat every time <em>unless I change it.</em>"</blockquote>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin:2rem 0 1rem;">If a Student Challenges the Assignment</h3>
+    <p style="font-size:14px;color:var(--muted);margin-bottom:1rem;">Use the least language possible. Pick one of these:</p>
+    <div class="economy-grid">
+      <div class="economy-card"><div class="eco-label">Option A</div><blockquote>"That is your seat."</blockquote></div>
+      <div class="economy-card"><div class="eco-label">Option B</div><blockquote>"New seat. Go there now."</blockquote></div>
+      <div class="economy-card"><div class="eco-label">Option C</div><blockquote>"We are not debating seats. Go there now."</blockquote></div>
+    </div>
+    <div class="dont-box" style="margin-top:0.5rem;">
+      <span class="script-label">What Not to Do</span>
+      <ul class="check-list" style="margin-top:0.5rem;">
+        <li class="no">Explain why the student was moved</li>
+        <li class="no">Negotiate publicly</li>
+        <li class="no">Let the student delay entry by arguing</li>
+      </ul>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin:2rem 0 1rem;">If-Then Response Ladder — Seat Refusal</h3>
+    <div class="ladder">
+      <div class="ladder-step">
+        <div class="ladder-node"><span>1</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student questions the seat once</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Restate briefly: <em>"That is your seat. Go there now."</em></div>
+        </div>
+      </div>
+      <div class="ladder-step resolve">
+        <div class="ladder-node"><span>2</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student keeps talking but starts moving</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Let the movement count. Do not re-engage. Return to instruction.</div>
+        </div>
+      </div>
+      <div class="ladder-step escalate">
+        <div class="ladder-node"><span>3</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student refuses and remains standing</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Give a clear choice: <em>"You may go to your seat now, or I will follow the next school step."</em></div>
+        </div>
+      </div>
+      <div class="ladder-step critical">
+        <div class="ladder-node"><span>4</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student still refuses after the choice</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Implement the next campus consequence without argument — reset seat, buddy room, dean support, or office per school policy.</div>
+        </div>
+      </div>
+      <div class="ladder-step resolve">
+        <div class="ladder-node"><span>5</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student eventually complies at any step</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Do not add a lecture. Return directly to instruction.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coaching-box fade-in">
+      <div class="script-label">Coaching Note</div>
+      <p>The danger is not the first complaint. The danger is allowing the complaint to become a <strong>performance for the room</strong>. The teacher should sound calm, not offended.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 5: REMAINING SEATED -->
+  <section class="section-wrap fade-in" id="seated">
+    <div class="sec-eyebrow">Section 05</div>
+    <h2 class="sec-title">SOP — Remaining Seated</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">This expectation must be concrete. Students need an exact definition — not a feeling.</p>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin-bottom:1rem;">What Counts as "Out of Seat"</h3>
+    <ul class="check-list">
+      <li class="no">Stand without permission</li>
+      <li class="no">Walk to another student</li>
+      <li class="no">Walk to the teacher without permission</li>
+      <li class="no">Leave seat to show work or ask a question</li>
+      <li class="no">Wander during transitions</li>
+    </ul>
+
+    <div class="script-box" style="margin-top:1.5rem;">
+      <span class="script-label">Teaching Script</span>
+      <blockquote>"When class begins, your seat is your workspace. You do not get up to sharpen a pencil, show me your screen, ask a question, or talk to a friend unless I give permission. <em>I come to you.</em>"</blockquote>
+    </div>
+
+    <div style="background:rgba(156,171,136,0.1);border:1px solid rgba(156,171,136,0.3);border-radius:8px;padding:1.25rem 1.5rem;margin-top:1.25rem;max-width:400px;">
+      <p style="font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#5a7a4a;margin-bottom:0.75rem;">Student-Friendly Version — Post This</p>
+      <ul class="check-list">
+        <li>The teacher says move</li>
+        <li>It is a planned transition</li>
+        <li>It is an emergency</li>
+      </ul>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin:2rem 0 1rem;">If-Then Response Ladder — Out of Seat</h3>
+    <div class="ladder">
+      <div class="ladder-step">
+        <div class="ladder-node"><span>1</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student stands or starts walking for a non-emergency reason</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Quick redirect: <em>"Back to your seat."</em> or <em>"Seat. Now."</em></div>
+        </div>
+      </div>
+      <div class="ladder-step resolve">
+        <div class="ladder-node"><span>2</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student returns quickly</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Do not continue talking. Return to instruction immediately.</div>
+        </div>
+      </div>
+      <div class="ladder-step">
+        <div class="ladder-node"><span>3</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student walks to the teacher to show work</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Do not reward the movement: <em>"Return to your seat. I will come to you."</em></div>
+        </div>
+      </div>
+      <div class="ladder-step escalate">
+        <div class="ladder-node"><span>4</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student keeps moving or starts socializing while out of seat</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Use a choice: <em>"You may go back to your seat now, or I will choose a different seat for you."</em></div>
+        </div>
+      </div>
+      <div class="ladder-step critical">
+        <div class="ladder-node"><span>5</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student repeats behavior after correction</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Structured indoor recess, possible seat change, reflection sheet before returning to outdoor recess, teacher-student conference, or behavior referral per school policy.</div>
+        </div>
+      </div>
+      <div class="ladder-step critical">
+        <div class="ladder-node"><span>6</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Several students start moving at once</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Stop the class: <em>"Freeze. Back to seats in 3, 2, 1."</em> Once seated: <em>"We are resetting. During work time, I move. You stay seated unless I give permission. Practice it now."</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="coaching-box fade-in">
+      <div class="script-label">Coaching Note</div>
+      <p>Do not accidentally train students that standing up gets faster attention. If the teacher answers the student who walked up first, <strong>the teacher just taught the wrong system.</strong></p>
+    </div>
+  </section>
+
+  <!-- SECTION 6: PROFANITY -->
+  <section class="section-wrap fade-in" id="profanity">
+    <div class="sec-eyebrow">Section 06</div>
+    <h2 class="sec-title sec-title-orange">SOP — Profanity</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">Profanity should be addressed because it damages safety and tone. It should not become a moral speech or a public showdown.</p>
+
+    <div class="script-box">
+      <span class="script-label">Teaching Script</span>
+      <blockquote>"You are allowed to be upset. You are not allowed to use profanity in this room. If profanity comes out, you will pause and <em>say it again the school way.</em>"</blockquote>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin:2rem 0 1rem;">Three-Step Correction Sequence</h3>
+    <div class="cards-grid">
+      <div class="rule-card fade-in d1" style="border-top-color:var(--teal-light);">
+        <div class="rule-card-icon" style="background:rgba(26,95,122,0.1);">1️⃣</div>
+        <h4>Immediate Cue</h4>
+        <p>Use the lightest correction first. <br>"Language." &nbsp;|&nbsp; "School words." &nbsp;|&nbsp; "Try that again appropriately."</p>
+      </div>
+      <div class="rule-card fade-in d2" style="border-top-color:var(--amber);">
+        <div class="rule-card-icon" style="background:rgba(255,152,0,0.1);">2️⃣</div>
+        <h4>Restatement</h4>
+        <p>Student repeats the message without profanity. <em>"This is stupid as hell."</em> → <em>"Try again with school words."</em> → <em>"This is frustrating."</em></p>
+      </div>
+      <div class="rule-card fade-in d3" style="border-top-color:var(--primary);">
+        <div class="rule-card-icon" style="background:rgba(139,44,45,0.08);">3️⃣</div>
+        <h4>Private Follow-Up</h4>
+        <p>If student refuses to restate or repeats profanity, give a private consequence aligned to school policy.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Inter',sans-serif;font-size:18px;font-weight:800;color:var(--teal-dark);margin:2rem 0 1rem;">If-Then Response Ladder — Profanity</h3>
+    <div class="ladder">
+      <div class="ladder-step">
+        <div class="ladder-node"><span>1</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student blurts profanity out of frustration — not targeting a person</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Cue and restate: <em>"Language. Try again."</em></div>
+        </div>
+      </div>
+      <div class="ladder-step resolve">
+        <div class="ladder-node"><span>2</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student restates appropriately</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Move on. No lecture. No follow-up in the moment.</div>
+        </div>
+      </div>
+      <div class="ladder-step escalate">
+        <div class="ladder-node"><span>3</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Student uses profanity again after the cue</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Name the boundary: <em>"That is profanity. You now owe me a reset conversation at the end of class."</em></div>
+        </div>
+      </div>
+      <div class="ladder-step critical">
+        <div class="ladder-node"><span>4</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Profanity is directed at another student or adult</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Treat as more serious immediately: <em>"Stop. That language is not okay. Move to the reset seat now."</em> Follow school policy for abusive or aggressive language.</div>
+        </div>
+      </div>
+      <div class="ladder-step critical">
+        <div class="ladder-node"><span>5</span></div>
+        <div class="ladder-content">
+          <div class="ladder-if">If</div>
+          <div class="ladder-condition">Profanity spreads across multiple students</div>
+          <div class="ladder-then">Then</div>
+          <div class="ladder-action">Brief room reset: <em>"Pause. Our room uses school-appropriate language. Frustration can stay. Profanity cannot. Reset your language and we continue."</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dont-box" style="margin-top:1rem;">
+      <span class="script-label">What Not to Do</span>
+      <ul class="check-list" style="margin-top:0.5rem;">
+        <li class="no">Argue about whether the student "meant it like that"</li>
+        <li class="no">Start a long character lecture</li>
+        <li class="no">Match the student's emotional intensity</li>
+        <li class="no">Ignore repeated profanity once the expectation has been taught</li>
+      </ul>
+    </div>
+
+    <div class="coaching-box fade-in">
+      <div class="script-label">Coaching Note</div>
+      <p>Profanity is often fast, impulsive, and emotional. The teacher's job is to make the response <strong>more regulated than the language that triggered it.</strong></p>
+    </div>
+  </section>
+
+  <!-- SECTION 7: DAY 1 SCRIPT -->
+  <section class="section-wrap fade-in" id="day1">
+    <div class="sec-eyebrow">Section 07</div>
+    <h2 class="sec-title">Day 1 Script</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">Use this in order. Word for word if needed. The language is plain because pressure is real and the script has to hold under it.</p>
+
+    <div class="script-flow">
+      <div class="script-block fade-in d1">
+        <div class="script-block-header">
+          <span class="script-block-title">At the Door</span>
+          <span class="script-block-tag">Opening</span>
+        </div>
+        <div class="script-block-body">
+          <blockquote>"Good morning. Find your assigned seat. Start the Do Now on the board."</blockquote>
+        </div>
+      </div>
+
+      <div class="script-block fade-in d2">
+        <div class="script-block-header orange">
+          <span class="script-block-title">Once Most Students Are Seated</span>
+          <span class="script-block-tag">Launch</span>
+        </div>
+        <div class="script-block-body">
+          <blockquote>"Eyes here in 3, 2, 1. Today we are resetting how this room works so learning can happen faster. I am teaching three expectations first. One, you go directly to your assigned seat when you enter. Two, you stay in your seat unless I give permission to move. Three, you use school-appropriate language. We are going to practice all three."</blockquote>
+        </div>
+      </div>
+
+      <div class="script-block fade-in d3">
+        <div class="script-block-header">
+          <span class="script-block-title">Teach — Assigned Seats</span>
+          <span class="script-block-tag">Expectation 1</span>
+        </div>
+        <div class="script-block-body">
+          <blockquote>"When you walk in, you do not choose a seat. You go to your assigned seat. If you do not like the seat, that is still your seat. If I need to change it later, I will."</blockquote>
+        </div>
+      </div>
+
+      <div class="script-block fade-in d1">
+        <div class="script-block-header">
+          <span class="script-block-title">Teach — Remaining Seated</span>
+          <span class="script-block-tag">Expectation 2</span>
+        </div>
+        <div class="script-block-body">
+          <blockquote>"During class, your seat is your workspace. Do not get up to ask me something, show me something, or talk to somebody. I will come to you."</blockquote>
+        </div>
+      </div>
+
+      <div class="script-block fade-in d2">
+        <div class="script-block-header">
+          <span class="script-block-title">Teach — Language</span>
+          <span class="script-block-tag">Expectation 3</span>
+        </div>
+        <div class="script-block-body">
+          <blockquote>"You are allowed to be frustrated. You are not allowed to use profanity. If the wrong word comes out, I will stop you and you will say it again the school way."</blockquote>
+        </div>
+      </div>
+
+      <div class="script-block fade-in d3">
+        <div class="script-block-header amber">
+          <span class="script-block-title">Practice the Routine</span>
+          <span class="script-block-tag">Drill</span>
+        </div>
+        <div class="script-block-body">
+          <blockquote>"We are going to practice entry. Everyone stand behind your chair. When I say go, you will step out, re-enter, find your assigned seat, sit down, and begin the Do Now silently."</blockquote>
+          <blockquote style="margin-top:1rem;">"That was better. We will do it again until it is fast and quiet."</blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: 4-DAY ROLLOUT -->
+  <section class="section-wrap fade-in" id="rollout">
+    <div class="sec-eyebrow">Section 08</div>
+    <h2 class="sec-title sec-title-orange">Four-Day Rollout Plan</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">Click each day to expand actions and script. Build the habit across four days — less talking from the teacher each day, more automatic behavior from the class.</p>
+
+    <div class="days-grid" id="days-grid">
+      <div class="day-card active-day" id="day-card-1" onclick="toggleDay(1)">
+        <div class="day-header"><div><div class="day-num">1</div><div class="day-label">Day One</div></div><span class="day-focus-badge">Teach</span></div>
+        <div class="day-body">
+          <div class="day-focus">Teach all three expectations explicitly.</div>
+          <div class="day-details">
+            <div class="day-actions">
+              <div class="day-action">Teach the three expectations directly</div>
+              <div class="day-action">Practice entry at least two times</div>
+              <div class="day-action">Correct every out-of-seat behavior immediately</div>
+              <div class="day-action">Teach profanity restatement language</div>
+              <div class="day-action">End class with a brief review</div>
+            </div>
+            <div class="day-script"><p>"Eyes here in 3, 2, 1. Today we are resetting how this room works so learning can happen faster."</p></div>
+            <div style="background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:6px;padding:0.75rem 1rem;margin-top:0.75rem;">
+              <p style="font-family:'Space Mono',monospace;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--bronze);margin-bottom:6px;">End of Class — Reflect On This</p>
+              <p style="font-size:12px;color:var(--body);line-height:1.6;">Who still resisted assigned seats? Who kept leaving their seat? Who needed profanity correction? Which correction script felt easiest to use?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card" id="day-card-2" onclick="toggleDay(2)">
+        <div class="day-header"><div><div class="day-num">2</div><div class="day-label">Day Two</div></div><span class="day-focus-badge">Tighten</span></div>
+        <div class="day-body">
+          <div class="day-focus">Re-teach quickly. Emphasize speed and consistency.</div>
+          <div class="day-details">
+            <div class="day-actions">
+              <div class="day-action">Same door script as Day 1</div>
+              <div class="day-action">One short reminder before the Do Now</div>
+              <div class="day-action">Stronger follow-through on staying seated</div>
+              <div class="day-action">Praise the routine, not personalities</div>
+            </div>
+            <div class="day-script"><p>"Today the goal is faster entry and fewer reminders. Show me you know the routine."</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card" id="day-card-3" onclick="toggleDay(3)">
+        <div class="day-header"><div><div class="day-num">3</div><div class="day-label">Day Three</div></div><span class="day-focus-badge">Reduce</span></div>
+        <div class="day-body">
+          <div class="day-focus">Tighten transitions. Reduce teacher talk.</div>
+          <div class="day-details">
+            <div class="day-actions">
+              <div class="day-action">Reduce reminders — let the room prove it</div>
+              <div class="day-action">Monitor whether students begin independently</div>
+              <div class="day-action">Catch repeated out-of-seat behavior early</div>
+              <div class="day-action">Move profanity correction more privately</div>
+            </div>
+            <div class="day-script"><p>"By now, you know the system. I should not have to repeat it. Show it."</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card" id="day-card-4" onclick="toggleDay(4)">
+        <div class="day-header"><div><div class="day-num">4</div><div class="day-label">Day Four</div></div><span class="day-focus-badge">Verify</span></div>
+        <div class="day-body">
+          <div class="day-focus">Check whether the system holds with minimal prompting.</div>
+          <div class="day-details">
+            <div class="day-actions">
+              <div class="day-action">Run entry with almost no reminders</div>
+              <div class="day-action">Track how many students begin correctly on their own</div>
+              <div class="day-action">Notice who still needs individualized support</div>
+            </div>
+            <div class="day-script"><p>"Today I am watching to see what this class can do without extra reminders."</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: QUICK REFERENCE -->
+  <section class="section-wrap fade-in" id="quick-ref">
+    <div class="sec-eyebrow">Section 09</div>
+    <h2 class="sec-title">Quick Reference Guide</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">Under pressure, grab this. The full if-then for all three expectations at a glance.</p>
+
+    <div class="qr-grid">
+      <div class="qr-card fade-in d1">
+        <div class="qr-head">
+          <div class="qr-icon seat">🪑</div>
+          <div><div class="qr-head-title">Assigned Seats</div><div class="qr-head-sub">Entry behavior</div></div>
+        </div>
+        <div class="qr-rows">
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student questions the seat</div>
+            <div class="qr-then"><strong>Then say</strong>"That is your seat. Go there now."</div>
+          </div>
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student argues again</div>
+            <div class="qr-then"><strong>Then say</strong>"We are not debating seats. Go there now."</div>
+          </div>
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student refuses</div>
+            <div class="qr-then"><strong>Then</strong>Move to the next school consequence.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qr-card fade-in d2">
+        <div class="qr-head">
+          <div class="qr-icon move">🚶</div>
+          <div><div class="qr-head-title">Remaining Seated</div><div class="qr-head-sub">Work time</div></div>
+        </div>
+        <div class="qr-rows">
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student gets up without permission</div>
+            <div class="qr-then"><strong>Then say</strong>"Back to your seat."</div>
+          </div>
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student walks to the teacher</div>
+            <div class="qr-then"><strong>Then say</strong>"Return to your seat. I will come to you."</div>
+          </div>
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student repeats it</div>
+            <div class="qr-then"><strong>Then</strong>Change seat or apply next school consequence.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qr-card fade-in d3">
+        <div class="qr-head">
+          <div class="qr-icon lang">🗣</div>
+          <div><div class="qr-head-title">Profanity</div><div class="qr-head-sub">Language correction</div></div>
+        </div>
+        <div class="qr-rows">
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>General profanity (not targeted)</div>
+            <div class="qr-then"><strong>Then say</strong>"Language. Try again with school words."</div>
+          </div>
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student restates appropriately</div>
+            <div class="qr-then"><strong>Then</strong>Move on. No lecture.</div>
+          </div>
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Student repeats profanity</div>
+            <div class="qr-then"><strong>Then</strong>Assign the next consequence.</div>
+          </div>
+          <div class="qr-row">
+            <div class="qr-if"><strong>If</strong>Directed at a person</div>
+            <div class="qr-then"><strong>Then</strong>Stop, separate, follow school behavior policy immediately.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: LOOK-FORS -->
+  <section class="section-wrap fade-in" id="lookfors">
+    <div class="sec-eyebrow">Section 10</div>
+    <h2 class="sec-title sec-title-orange">Teacher Look-Fors</h2>
+    <div class="divider"></div>
+    <p class="sec-lead">By the end of the first rollout cycle, these indicators should be improving. If they are, the system is working. If they are not, the teacher should not add more words — the teacher should tighten consistency.</p>
+
+    <div class="lookfor-grid">
+      <div class="lookfor-card fade-in d1">
+        <div class="lf-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="lf-text">More students entering and sitting without redirection</div>
+      </div>
+      <div class="lookfor-card fade-in d2">
+        <div class="lf-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="lf-text">Less wandering during the first five minutes of class</div>
+      </div>
+      <div class="lookfor-card fade-in d3">
+        <div class="lf-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="lf-text">Fewer students leaving seats during independent work time</div>
+      </div>
+      <div class="lookfor-card fade-in d1">
+        <div class="lf-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="lf-text">Profanity corrected faster and with less classroom disruption</div>
+      </div>
+      <div class="lookfor-card fade-in d2">
+        <div class="lf-check"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg></div>
+        <div class="lf-text">Less teacher talking during corrections — the economy of language is holding</div>
+      </div>
+      <div class="lookfor-card fade-in d3" style="background:linear-gradient(135deg,rgba(255,107,0,0.05),rgba(255,152,0,0.1));border:1px solid rgba(255,107,0,0.2);">
+        <div class="lf-check" style="background:linear-gradient(135deg,var(--orange-pop),var(--amber));">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="lf-text" style="font-weight:700;color:var(--teal-dark);">If indicators are NOT improving: do not add more words. Tighten consistency.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;text-align:center;">
+      <span class="handwritten" style="font-size:40px;display:block;margin-bottom:0.5rem;">The routine is the intervention.</span>
+      <p style="font-size:15px;color:var(--muted);max-width:500px;margin:0 auto;">When the structure holds, the teacher can teach. That is what this playbook is for.</p>
+      <div style="margin-top:2rem;">
+        <a href="index.html" class="btn-primary">← Back to AH-HA Coaching</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-left">
+    <div class="footer-logo">AH-HA<span>.</span> Coaching</div>
+    <div class="footer-note">Sample Resource · Grade 5 Rollout Playbook</div>
+  </div>
+  <a href="index.html" class="footer-link">← Return to Main Site</a>
+</footer>
+
+<script>
+// Scroll fade-in observer
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+  });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Tab highlight on scroll
+const sections = ['tempo','expectations','arrival','seats','seated','profanity','day1','rollout','quick-ref','lookfors'];
+const tabBtns = document.querySelectorAll('.tab-btn');
+const scrollObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting && e.intersectionRatio >= 0.3) {
+      const id = e.target.id;
+      const idx = sections.indexOf(id);
+      if(idx > -1) { tabBtns.forEach(b=>b.classList.remove('active')); tabBtns[idx].classList.add('active'); }
+    }
+  });
+}, {threshold:0.3, rootMargin:'-80px 0px -60% 0px'});
+sections.forEach(id => { const el = document.getElementById(id); if(el) scrollObs.observe(el); });
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+
+// Expectation tabs
+function switchExp(idx, btn) {
+  document.querySelectorAll('.exp-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('exp-'+idx).classList.add('active');
+}
+
+// Preparation checklist
+function togglePrep(el) {
+  el.classList.toggle('checked');
+}
+
+// Day cards
+function toggleDay(num) {
+  document.querySelectorAll('.day-card').forEach(c => {
+    c.classList.remove('active-day');
+    c.querySelector('.day-details').style.display = 'none';
+  });
+  const card = document.getElementById('day-card-'+num);
+  card.classList.add('active-day');
+  const details = card.querySelector('.day-details');
+  details.style.display = 'flex';
+  details.style.flexDirection = 'column';
+}
+// Initialize day 1 open
+document.addEventListener('DOMContentLoaded',()=>{
+  const d = document.querySelector('#day-card-1 .day-details');
+  if(d){d.style.display='flex';d.style.flexDirection='column';}
+});
+</script>
+</body>
+</html>
